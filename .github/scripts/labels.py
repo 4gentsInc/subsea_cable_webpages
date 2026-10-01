@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate and synchronize the managed finding-process labels in .github/labels.json.
+"""Validate and synchronize the managed language-intake labels in .github/labels.json.
 
 The file is canonical only for the labels it lists. Other repository labels
 (for example GitHub's defaults) are unmanaged: `sync` keeps them and `diff`
@@ -26,7 +26,7 @@ from pathlib import Path
 LABELS = Path(__file__).resolve().parents[1] / "labels.json"
 COLOR = re.compile(r"^[0-9a-f]{6}$")
 REQUIRED_PREFIXES = ("finding", "area:", "triage:", "scp-candidate",
-                     "editorial-fix", "wontfix:", "moved:")
+                     "editorial-fix", "wontfix:", "moved:", "proposal:")
 
 
 def load(path=LABELS):
@@ -102,8 +102,10 @@ def plan(labels, remote):
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("command", choices=["validate", "diff", "sync"])
-    p.add_argument("--repo", default="on-the-ground/subsea_cable_language")
+    p.add_argument("--repo", help="target repository; required for diff and sync")
     args = p.parse_args(argv)
+    if args.command != "validate" and not args.repo:
+        p.error("--repo OWNER/NAME is required for diff and sync")
     labels = load()
     errors = validate(labels)
     if errors:

@@ -7,7 +7,7 @@ they use this helper to produce the same body shape and check it first.
 
   python .github/scripts/finding.py template > finding.md   # fill in every section
   python .github/scripts/finding.py check finding.md         # exit 1 if incomplete
-  gh issue create --repo on-the-ground/subsea_cable_language \\
+  gh issue create --repo OWNER/REPO \\
       --label finding --title "[finding] <short summary>" --body-file finding.md
 
 The headings match the rendered output of .github/ISSUE_TEMPLATE/finding.yml,
@@ -16,6 +16,8 @@ so triage reads browser and CLI findings the same way.
 import re
 import sys
 from pathlib import Path
+from datetime import date
+from urllib.parse import urlsplit
 
 KINDS = ["ambiguity", "gap", "conflict", "ergonomics"]
 # Must equal the `area` dropdown options in .github/ISSUE_TEMPLATE/finding.yml
@@ -84,6 +86,23 @@ def parse(text):
     return {k: "\n".join(v).strip() for k, v in sections.items()}
 
 
+def valid_baseline(value):
+    if re.fullmatch(r"`?[0-9a-f]{7,40}`?", value):
+        return True
+    parts = value.rsplit(" ", 1)
+    if len(parts) != 2:
+        return False
+    url, checked = parts
+    parsed = urlsplit(url)
+    if parsed.scheme not in {"https", "http"} or not parsed.netloc:
+        return False
+    try:
+        date.fromisoformat(checked)
+    except ValueError:
+        return False
+    return bool(re.fullmatch(r"\d{4}-\d{2}-\d{2}", checked))
+
+
 def check(text):
     got = parse(text)
     errors = []
@@ -108,8 +127,8 @@ def check(text):
             and reporter not in REPORTERS:
         errors.append(f"Reported by must be one of {REPORTERS}")
     rev = got.get("Language revision", "")
-    if rev and rev != PLACEHOLDER and not re.fullmatch(r"`?[0-9a-f]{7,40}`?", rev):
-        errors.append("Language revision must be a commit hash")
+    if rev and rev != PLACEHOLDER and not valid_baseline(rev):
+        errors.append("Language revision must be a commit hash or a documentation URL followed by YYYY-MM-DD")
     for c in CHECKS:
         if f"- [x] {c}" not in got.get("Checks", "") and f"- [X] {c}" not in got.get("Checks", ""):
             errors.append(f"check not ticked: {c}")

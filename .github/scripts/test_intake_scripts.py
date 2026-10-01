@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """Tests for labels.py and finding.py."""
+import contextlib
+import io
 import importlib.util
 import json
 import os
@@ -12,7 +14,7 @@ FORM = HERE.parent / "ISSUE_TEMPLATE" / "finding.yml"
 
 try:
     import yaml
-except ImportError:  # pragma: no cover - CI installs PyYAML via the docs requirements
+except ImportError:  # pragma: no cover - CI installs PyYAML for issue-form validation
     yaml = None
 
 
@@ -30,6 +32,15 @@ finding = load("finding")
 class LabelsTest(unittest.TestCase):
     def test_repository_file_is_valid(self):
         self.assertEqual(labels.validate(labels.load()), [])
+
+    def test_remote_operations_require_an_explicit_repository(self):
+        for command in ("diff", "sync"):
+            with self.subTest(command=command), contextlib.redirect_stderr(io.StringIO()):
+                with mock.patch.object(labels, "remote_labels") as remote:
+                    with self.assertRaises(SystemExit) as exited:
+                        labels.main([command])
+                    self.assertEqual(exited.exception.code, 2)
+                    remote.assert_not_called()
 
     def test_rejects_case_insensitive_duplicate(self):
         bad = [{"name": "finding", "color": "d93f0b", "description": "a"},
@@ -124,6 +135,15 @@ class FindingTest(unittest.TestCase):
     def test_filled_body_passes(self):
         self.assertEqual(finding.check(filled()), [])
 
+    def test_published_documentation_baseline_is_accepted(self):
+        baseline = "https://4gentsinc.github.io/subsea_cable_webpages/LANGUAGE_REFERENCE/ 2026-10-01"
+        self.assertEqual(finding.check(filled(**{"Language revision": baseline})), [])
+
+    def test_documentation_baseline_requires_a_valid_date(self):
+        for baseline in ("https://example.com/reference", "https://example.com/reference 2026-99-99", "main 2026-10-01"):
+            with self.subTest(baseline=baseline):
+                self.assertTrue(finding.check(filled(**{"Language revision": baseline})))
+
     def test_bad_revision_rejected(self):
         self.assertTrue(any("revision" in e for e in finding.check(filled(**{"Language revision": "main"}))))
 
@@ -141,6 +161,20 @@ class FindingTest(unittest.TestCase):
     def test_unticked_check_rejected(self):
         body = filled(Checks="\n".join(f"- [ ] {c}" for c in finding.CHECKS))
         self.assertTrue(any("check not ticked" in e for e in finding.check(body)))
+
+    def test_scp_form_requires_proposal_analysis_without_activating_it(self):
+        if yaml is None:
+            if os.environ.get("CI"):
+                self.fail("PyYAML is required in CI")
+            self.skipTest("PyYAML not installed")
+        form = yaml.safe_load((FORM.parent / "scp.yml").read_text(encoding="utf-8"))
+        self.assertEqual(form["labels"], ["proposal:scp"])
+        by_id = {field["id"]: field for field in form["body"] if "id" in field}
+        for name in ("revision", "problem", "sources", "reproduction", "invariants", "alternatives", "recommendation", "compatibility", "reporter"):
+            self.assertTrue(by_id[name]["validations"]["required"], name)
+        self.assertIn("no language change", by_id["alternatives"]["attributes"]["label"])
+        self.assertTrue(all(option["required"] for option in by_id["checks"]["attributes"]["options"]))
+        self.assertTrue(any("does not accept or activate" in option["label"] for option in by_id["checks"]["attributes"]["options"]))
 
     def test_enumerations_match_the_web_form(self):
         if yaml is None:

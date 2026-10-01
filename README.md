@@ -1,8 +1,8 @@
 # Subsea Cable website and community
 
 [Read the documentation](https://4gentsInc.github.io/subsea_cable_webpages/),
-[report a finding](https://github.com/4gentsInc/subsea_cable_webpages/issues/new/choose),
-or propose a language improvement under `proposals/`.
+[report a finding or SCP proposal](https://github.com/4gentsInc/subsea_cable_webpages/issues/new/choose),
+or open a Draft proposal PR under `proposals/`.
 
 This repository contains the site builder, generated static output, and public
 discussion. Language document originals are maintained separately. A finding or
