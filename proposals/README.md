@@ -17,8 +17,8 @@ do not yet have proposal-level analysis.
 
 The documentation lists Accepted decisions in a single decision index,
 `SCP.md`. Each index entry gives only the SCP number and title, its status
-(`Accepted`), and its effective language revision, in number order. Every
-activation adds the activated SCP to the index.
+(`Accepted`), and its effective language revision, in the same order as the maintained decision record. Every
+activation updates the index to match the maintained record.
 
 The index is informative. It identifies which decisions took effect and when;
 it is not a semantic contract, and it does not publish decision records, the

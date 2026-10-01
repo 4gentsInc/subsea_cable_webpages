@@ -1038,6 +1038,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#deferred-and-eager-goal-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deferred and eager Goal references
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#serial-routing" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1618,6 +1629,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#deferred-and-eager-goal-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deferred and eager Goal references
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#serial-routing" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1765,6 +1787,13 @@ implement one function leaf. <code>$name(...)</code> identifies a Host operation
 leaf produces one Value. Keep dependencies in structural stages, rather than
 nesting Goal or tool calls inside arguments. Primitive expressions such as
 <code>Next[x + 1]</code> remain usable.</p>
+<h2 id="deferred-and-eager-goal-references">Deferred and eager Goal references<a class="headerlink" href="#deferred-and-eager-goal-references" title="Permanent link">&para;</a></h2>
+<p><code>Goal[arguments]</code> is deferred: the referenced work is selected when needed.
+<code>Goal(arguments)</code> is eager: it requests that work immediately when the containing
+structure is demanded. The suffix changes demand timing, not the Goal's reduction
+rule. Both forms remain direct structural work, not ordinary synchronous scalar
+calls. They may be a complete structural body, serial or parallel stage, or
+keyed result branch; do not hide either form in another argument or expression.</p>
 <h2 id="serial-routing">Serial routing<a class="headerlink" href="#serial-routing" title="Permanent link">&para;</a></h2>
 <p><code>[Read[input], Normalize, Save]</code> routes Values through stages. A bare Goal in
 this position receives routed input; <code>Goal[arguments]</code> supplies arguments
@@ -1833,6 +1862,12 @@ needed. Check supported source validation in the chosen implementation.</p>
 </tr>
 </tbody>
 </table>
+<p>A named structural definition using plain <code>-&gt;</code> needs a uniquely inferable
+output count. Opaque Anchor output, an underdetermined recursive signature,
+or an unknown branch or external Goal signature can prevent inference; validation
+then reports <code>OutputMultiplicityCannotBeInferred</code>. Declare <code>-0&gt;</code>, <code>-1&gt;</code>, or
+<code>-N&gt;</code> on that named structural definition. An explicit declaration is checked,
+not an override of a provably different output count.</p>
 <p>A downstream Goal receives one invocation per upstream Value. <code>/0</code> and an
 empty <code>/N</code> cause zero downstream invocations and can complete successfully.
 Do not assume an implicit first Value or collection of the stream.</p>
@@ -1860,8 +1895,9 @@ and output-count violations require explicit reporting. Public
 <a href="../conformance/">source examples</a> retain their expected categories.
 Parsing them does not certify a Runtime.</p>
 <h2 id="grammar-downloads">Grammar downloads<a class="headerlink" href="#grammar-downloads" title="Permanent link">&para;</a></h2>
-<p><a href="../SubseaCable.g4">ANTLR</a> and <a href="../SubseaCable.ebnf">EBNF</a> describe syntax for source
-tooling, not the complete processing or execution contract. Compatibility needs
+<p><a href="../SubseaCable.g4">ANTLR</a>, <a href="../SubseaCable.ebnf">EBNF</a>, and the
+<a href="../conformance/#required-lexical-preprocessing">required lexical preprocessing</a>
+describe source recognition, not the complete Runtime execution contract. Compatibility needs
 a declared revision, profile, and corresponding verification evidence.</p>
 
 

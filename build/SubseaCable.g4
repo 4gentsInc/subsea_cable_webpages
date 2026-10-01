@@ -1,4 +1,5 @@
 // Subsea Cable syntax projection. See LANGUAGE_REFERENCE.md for authoring.
+// Required preprocessing: conformance/README.md.
 // Grammar recognition alone does not establish Runtime compatibility.
 
 grammar SubseaCable;

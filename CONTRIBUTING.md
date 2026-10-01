@@ -48,6 +48,18 @@ decision-index entry and identify the effective language revision.
 Accepted decisions are listed in the decision index `SCP.md` by number, title,
 status, and effective revision. See [Published decisions](proposals/README.md#published-decisions-the-decision-index).
 
+## Compatibility verification scope
+
+The public site provides authoring guidance, syntax/preprocessing contracts,
+source fixtures, observable guarantees, and decision metadata. Full Runtime
+conformance verification is available only against the maintained canonical
+baseline, which is not publicly distributed here. Public examples do not replace
+that baseline. Describe supported behaviors and profiles without implying full
+Runtime conformance from public syntax checks. Questions about verification
+scope may be raised here; this repository offers no baseline-access or
+certification service.
+
+
 ## Website changes
 
 Builder changes belong here. Document-original corrections can be described in

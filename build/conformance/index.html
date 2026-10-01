@@ -1426,6 +1426,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#required-lexical-preprocessing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required lexical preprocessing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-the-examples-cover" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1467,12 +1478,59 @@
 <h1 id="subsea-cable-conformance-examples">Subsea Cable conformance examples<a class="headerlink" href="#subsea-cable-conformance-examples" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Status:</strong> public source examples and diagnostic expectations, not a complete
-Runtime certification suite or execution implementation guide.</p>
+Runtime certification suite or execution implementation guide. The required
+lexical preprocessing section is the maintained syntax-level contract.</p>
 </blockquote>
 <p><a href="cases.tsv">cases.tsv</a> lists source cases by phase and diagnostic category.
 The <code>.vyg</code> files help authors and syntax-tool developers. A <code>validation</code> case
 can parse successfully while remaining an invalid program. Existing fixture
 expectations are unchanged.</p>
+<h2 id="required-lexical-preprocessing">Required lexical preprocessing<a class="headerlink" href="#required-lexical-preprocessing" title="Permanent link">&para;</a></h2>
+<p>The ANTLR lexer produces physical <code>TERMINATOR</code>, whitespace, and comment tokens.
+Before parsing, a token-source wrapper must perform this deterministic pass:</p>
+<ol>
+<li>Decode the source strictly as UTF-8. Reject malformed input as
+   <code>InvalidSourceEncoding</code> before lexing.</li>
+<li>Discard ordinary whitespace and line-comment tokens. The newline following a
+   line comment remains a physical <code>TERMINATOR</code> token.</li>
+<li>Replace each block-comment token conceptually with one whitespace boundary.
+   Its internal newlines never produce terminators. Because tokenization has
+   already occurred, discarding the token must not concatenate its neighbors.</li>
+<li>Track unmatched opening <code>(</code>, <code>[</code>, and <code>{</code> tokens with a delimiter stack.</li>
+<li>For each physical <code>TERMINATOR</code>, suppress it when the delimiter stack is not
+   empty or when the previous significant token is in this exact set:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>=  -&gt;  -0&gt;  -1&gt;  -N&gt;  ,  :  @  $
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>||  &amp;&amp;  ==  !=  &lt;=  &gt;=  &lt;  &gt;
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>+  -  *  /  %  !
+</code></pre></div>
+<ol>
+<li>Form named-Goal multiplicity arrows. Track the square-bracket group that
+   begins a Binding right-hand side: the <code>[</code> immediately following a <code>=</code> at
+   delimiter depth zero. When that group closes back to depth zero and the next
+   three significant tokens are <code>-</code>, one of <code>0</code>, <code>1</code> or <code>N</code>, and <code>&gt;</code> with no
+   intervening character (the end offset of each is immediately followed by the
+   start offset of the next), replace them with one <code>MULTIPLICITY_ARROW</code> token
+   whose text is <code>-0&gt;</code>, <code>-1&gt;</code> or <code>-N&gt;</code> and whose span covers all three. Nowhere
+   else are those tokens fused, so <code>(base)-1&gt;0</code> and <code>x-1&gt;0</code> keep their
+   subtraction and comparison, a spaced <code>[x] - 1 &gt; $a</code> is not an arrow, a
+   function-leaf definition <code>(params) -&gt; body</code> has no multiplicity arrow, and an
+   inline Goal-arrow stage has none either.</li>
+<li>Form the contextual Root keyword. When the first significant token of a
+   statement (the first of the file, or the first after an emitted logical
+   <code>TERMINATOR</code>, at delimiter depth zero) is the Identifier <code>root</code> and the next
+   significant token is an Identifier, retype it as <code>ROOT</code>. After <code>ROOT</code>, an
+   Identifier, an optional <code>HASH_QUALIFIER</code>, and <code>/</code>, retype a <code>NUMBER</code> with no
+   fractional part as <code>ROOT_ARITY</code>. Every other token is left unchanged, so
+   <code>root = 5</code> stays a Binding while <code>root A[5]</code>, <code>root A/1.0</code>, and <code>start A/1</code>
+   reach the parser as SyntaxErrors.</li>
+<li>Coalesce consecutive surviving physical newlines into one logical
+   <code>TERMINATOR</code>, preserving the span of the coalesced source region.</li>
+<li>Emit all other significant tokens unchanged and finally emit EOF. The parser,
+   not this pass, reports unmatched or misordered delimiters.</li>
+</ol>
+<p>The “previous significant token” ignores whitespace and comments. A newline
+before an operator is not continuation; only a newline after a listed token is.</p>
 <h2 id="what-the-examples-cover">What the examples cover<a class="headerlink" href="#what-the-examples-cover" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Core source forms, continuation, Strings, and root declarations.</li>
