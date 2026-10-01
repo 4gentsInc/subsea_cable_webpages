@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#runtime-availability-and-verified-progress" class="md-skip">
+        <a href="#runtime-availability" class="md-skip">
           Skip to content
         </a>
       
@@ -824,10 +824,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#evidence-checked-at-a-fixed-revision" class="md-nav__link">
+  <a href="#capabilities-and-availability" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Evidence checked at a fixed revision
+        Capabilities and availability
       
     </span>
   </a>
@@ -835,10 +835,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-runnable-acceptance-scenario" class="md-nav__link">
+  <a href="#reference-execution-scenario" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Next runnable acceptance scenario
+        Reference execution scenario
       
     </span>
   </a>
@@ -846,10 +846,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-an-adopter-can-do-now" class="md-nav__link">
+  <a href="#prepare-for-adoption" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What an adopter can do now
+        Prepare for adoption
       
     </span>
   </a>
@@ -1932,10 +1932,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#evidence-checked-at-a-fixed-revision" class="md-nav__link">
+  <a href="#capabilities-and-availability" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Evidence checked at a fixed revision
+        Capabilities and availability
       
     </span>
   </a>
@@ -1943,10 +1943,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-runnable-acceptance-scenario" class="md-nav__link">
+  <a href="#reference-execution-scenario" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Next runnable acceptance scenario
+        Reference execution scenario
       
     </span>
   </a>
@@ -1954,10 +1954,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-an-adopter-can-do-now" class="md-nav__link">
+  <a href="#prepare-for-adoption" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What an adopter can do now
+        Prepare for adoption
       
     </span>
   </a>
@@ -1981,81 +1981,73 @@
 
 
 
-<h1 id="runtime-availability-and-verified-progress">Runtime availability and verified progress<a class="headerlink" href="#runtime-availability-and-verified-progress" title="Permanent link">&para;</a></h1>
+<h1 id="runtime-availability">Runtime availability<a class="headerlink" href="#runtime-availability" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Last checked:</strong> 2026-10-01 (Asia/Seoul).
-This page is an evidence summary, not language authority or a release promise.
-Repository and CI links below require repository access. Site readers can use
-the status summary without access to internal implementation planning.</p>
+This is a dated availability report, not language authority or a release promise.</p>
 </blockquote>
 <p>Subsea Cable is an evolving pre-1.0 specification. There is no designated
-official Runtime or production release. Independent implementations own their
-support and compatibility claims. The active <code>subsea_cable_vessel</code> experiment
-has progressed beyond its original whole-Vessel POC; a general-purpose
-integration still needs its remaining acceptance gates.</p>
-<h2 id="evidence-checked-at-a-fixed-revision">Evidence checked at a fixed revision<a class="headerlink" href="#evidence-checked-at-a-fixed-revision" title="Permanent link">&para;</a></h2>
-<p>The implementation revision inspected was
-<a href="https://github.com/on-the-ground/subsea_cable_vessel/tree/f6bd2507c2ac93f88e653b2a5ccc09d459da65ab"><code>f6bd2507c2ac93f88e653b2a5ccc09d459da65ab</code></a>.
-Its <a href="https://github.com/on-the-ground/subsea_cable_vessel/actions/runs/36678026896">Test workflow</a>
-and <a href="https://github.com/on-the-ground/subsea_cable_vessel/actions/runs/36696338920">Language drift workflow</a>
-completed successfully. These are recorded CI results, not a fresh test run by
-this language repository. The implementation pins language revision <code>73d5859</code>
-and identifies its POC profiles; consult its pinned
-<a href="https://github.com/on-the-ground/subsea_cable_vessel/blob/f6bd2507c2ac93f88e653b2a5ccc09d459da65ab/README.md">README</a>
-for the exact test commands and profile limitations.</p>
+official Runtime or publicly available production release. An implementation
+prototype is being tested; its progress does not establish a supported package
+that an adopter can install today.</p>
+<h2 id="capabilities-and-availability">Capabilities and availability<a class="headerlink" href="#capabilities-and-availability" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Area</th>
-<th>Evidence or current limitation</th>
+<th>Capability</th>
+<th>Status</th>
+<th>What an adopter can rely on now</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Source parsing and validation</td>
-<td>The implementation reports coverage of its pinned language corpus</td>
+<td>Voyage Plan authoring, syntax, and reference examples</td>
+<td>Available</td>
+<td>Read the language reference and prepare a workflow</td>
 </tr>
 <tr>
-<td>Runtime composition and outward Cable lifecycle</td>
-<td><a href="https://github.com/on-the-ground/subsea_cable_vessel/issues/19">Implementation #19</a> is closed; the same-process composition surface is wired</td>
+<td>Parsing, structural deduction, routed results, and segment completion</td>
+<td>In progress</td>
+<td>Exercised in controlled prototype tests; no supported public release</td>
 </tr>
 <tr>
-<td>Vessel/Cable cooperation</td>
-<td><a href="https://github.com/on-the-ground/subsea_cable_vessel/issues/20">Implementation #20</a> is closed; the same-process harness covers DEDUCTION 23–25, LAID_CABLE 21–24, and the same-process parts of DEDUCTION 26 / LAID_CABLE 25</td>
+<td>A reproducible end-to-end execution demo</td>
+<td>In progress</td>
+<td>A reference scenario is specified; no public runnable command yet</td>
 </tr>
 <tr>
-<td>Invocation and multi-Value credit design</td>
-<td><a href="https://github.com/on-the-ground/subsea_cable_vessel/issues/34">Implementation #34</a> is closed; a design decision alone does not establish a shipped adapter</td>
+<td>Agent-authored revision and replanning demonstration</td>
+<td>In progress</td>
+<td>A distinct acceptance scenario; the execution demo alone will not establish it</td>
 </tr>
 <tr>
-<td>User-facing execution</td>
-<td>The legacy CLI does not exercise the new outward composition surface; the new clean-checkout demo is not complete</td>
+<td>Installable Runtime and supported Host integrations</td>
+<td>Not available</td>
+<td>No public package or installation procedure is offered here</td>
 </tr>
 <tr>
-<td>Cross-process parity and process isolation</td>
-<td>Separate acceptance work remains open; same-process evidence is not a distributed-conformance claim</td>
+<td>Durable recovery, exact replay, and complete incremental reuse</td>
+<td>Not established</td>
+<td>No deployment support claim is made</td>
 </tr>
 <tr>
-<td>Persistent recovery, exact replay, and incremental reuse</td>
-<td>Not established by this evidence snapshot; no support claim is made here</td>
-</tr>
-<tr>
-<td>Portable live Agent provenance queries</td>
-<td>Not part of the current portable contract; an explicit profile extension or future decision is needed</td>
+<td>Portable live provenance queries</td>
+<td>Not supported by the current contract</td>
+<td>Do not depend on live leaf-ancestry queries without an explicitly supported extension</td>
 </tr>
 </tbody>
 </table>
-<p>Closing an issue does not establish full language conformance. The scope of the
-associated tests and the invoked entrypoint remain part of the evidence.</p>
-<h2 id="next-runnable-acceptance-scenario">Next runnable acceptance scenario<a class="headerlink" href="#next-runnable-acceptance-scenario" title="Permanent link">&para;</a></h2>
-<p><a href="../conformance/PRIMES_UP_TO/">Primes Up To by Trial Division</a> has a checked-in
-Voyage Plan and observable acceptance oracle. It combines a candidate stream,
-visible conditional recursion, and per-input completion.</p>
+<p>No release date is promised. Public commands, traces, supported versions, and
+reproducible evidence will be linked when those artifacts are available.</p>
+<h2 id="reference-execution-scenario">Reference execution scenario<a class="headerlink" href="#reference-execution-scenario" title="Permanent link">&para;</a></h2>
+<p><a href="../conformance/PRIMES_UP_TO/">Primes Up To by Trial Division</a> supplies a Voyage
+Plan and observable acceptance oracle for streamed candidate generation,
+conditional recursion, and per-input completion.</p>
 <table>
 <thead>
 <tr>
 <th>Input</th>
-<th>Expected Values, presented by source provenance</th>
+<th>Expected prime Values, presented by source provenance</th>
 <th>Completion</th>
 </tr>
 </thead>
@@ -2077,26 +2069,14 @@ visible conditional recursion, and per-input completion.</p>
 </tr>
 </tbody>
 </table>
-<p>Independent evaluations need not arrive in that presentation order. After
-decommission and complete drainage, exactly one <code>EndOfStream</code> and the composed
-Cable result are required by the scenario.</p>
-<p>The clean-checkout gate remains open in
-<a href="https://github.com/on-the-ground/subsea_cable_vessel/issues/27">implementation #27</a>
-and <a href="https://github.com/on-the-ground/subsea_cable_language/issues/27">language #27</a>.
-The concrete WebAssembly Host and execution-primitive gates are still in
-progress. This page will add prerequisites, the runnable command, and its trace
-evidence when that gate passes; it does not provide a placeholder command.</p>
-<p>The broader execution-and-replanning POC also requires the separate
-<a href="https://github.com/on-the-ground/subsea_cable_language/issues/37">Agent-authored revision scenario</a>.
-A successful prime-stream demo will not establish that later scenario.</p>
-<h2 id="what-an-adopter-can-do-now">What an adopter can do now<a class="headerlink" href="#what-an-adopter-can-do-now" title="Permanent link">&para;</a></h2>
+<p>Live Values may arrive in another order. After decommission and complete
+drainage, the scenario requires one <code>EndOfStream</code> and the composed Cable result.
+The runnable demonstration remains in progress.</p>
+<h2 id="prepare-for-adoption">Prepare for adoption<a class="headerlink" href="#prepare-for-adoption" title="Permanent link">&para;</a></h2>
 <p>Use the <a href="../ADOPTION/">adoption guide</a> to describe one workflow and its genuine
-Host leaves. Check this page and the <a href="../ECOSYSTEM/">ecosystem</a> for a supported
-implementation before depending on execution, recovery, or provenance features.
-Provide expected Values, effect boundaries, and failure cases as concrete
-requirements. A specification capability is not a deployment availability claim.</p>
-<p>When evidence changes, update this page's checked date, pinned implementation
-revision, test scope, remaining gates, and the ecosystem listing together.</p>
+Host leaves. Record expected Values, effect boundaries, and failure cases. Check
+the <a href="../ECOSYSTEM/">ecosystem</a> for a supported implementation before depending on
+execution, recovery, or provenance features.</p>
 
 
 

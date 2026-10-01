@@ -852,10 +852,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#active-implementation-experiment" class="md-nav__link">
+  <a href="#current-availability" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Active implementation experiment
+        Current availability
       
     </span>
   </a>
@@ -863,10 +863,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#compatibility-evidence-to-request" class="md-nav__link">
+  <a href="#evidence-to-request-from-an-implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Compatibility evidence to request
+        Evidence to request from an implementation
       
     </span>
   </a>
@@ -1921,10 +1921,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#active-implementation-experiment" class="md-nav__link">
+  <a href="#current-availability" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Active implementation experiment
+        Current availability
       
     </span>
   </a>
@@ -1932,10 +1932,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#compatibility-evidence-to-request" class="md-nav__link">
+  <a href="#evidence-to-request-from-an-implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Compatibility evidence to request
+        Evidence to request from an implementation
       
     </span>
   </a>
@@ -1959,66 +1959,49 @@
 
 
 
-<h1 id="subsea-cable-ecosystem">Subsea Cable Ecosystem<a class="headerlink" href="#subsea-cable-ecosystem" title="Permanent link">&para;</a></h1>
+<h1 id="subsea-cable-ecosystem">Subsea Cable ecosystem<a class="headerlink" href="#subsea-cable-ecosystem" title="Permanent link">&para;</a></h1>
 <p>Implementations are maintained independently from the language specification.
-Choose one by its supported workload and evidence, not an unqualified
-“Subsea Cable-compatible” label. Listing does not designate an official Runtime
-or transfer maintenance to this repository.</p>
-<h2 id="active-implementation-experiment">Active implementation experiment<a class="headerlink" href="#active-implementation-experiment" title="Permanent link">&para;</a></h2>
+Choose one by its supported workloads and published evidence. Listing does not
+designate an official Runtime or transfer maintenance to the language project.</p>
+<h2 id="current-availability">Current availability<a class="headerlink" href="#current-availability" title="Permanent link">&para;</a></h2>
+<p>As of 2026-10-01, an implementation prototype is in development. There is no
+publicly available production Runtime, supported installation package, or
+complete execution-and-replanning demonstration to recommend.</p>
 <table>
 <thead>
 <tr>
-<th>Field</th>
-<th>Value</th>
+<th>Capability</th>
+<th>Availability</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Project</td>
-<td><code>on-the-ground/subsea_cable_vessel</code></td>
+<td>Language reference and Voyage Plan examples</td>
+<td>Available</td>
 </tr>
 <tr>
-<td>Status</td>
-<td>Independent POC; no production release claim</td>
+<td>Prototype execution and integration</td>
+<td>In progress</td>
 </tr>
 <tr>
-<td>Last evidence check</td>
-<td>2026-10-01; implementation revision <code>f6bd2507c2ac93f88e653b2a5ccc09d459da65ab</code></td>
+<td>Public runnable demonstration</td>
+<td>In progress</td>
 </tr>
 <tr>
-<td>Language pin</td>
-<td><code>73d5859</code>, with <code>poc-baseline/0</code>, <code>poc-rational/0</code>, and <code>poc-sha256-canon/2</code> profiles</td>
-</tr>
-<tr>
-<td>Demonstrated scope</td>
-<td>Pinned parser/validator coverage and the same-process Runtime-plane harness summarized in <a href="../RUNTIME_STATUS/">Runtime availability</a></td>
-</tr>
-<tr>
-<td>Adoption gate</td>
-<td>The clean-checkout prime-stream demo remains open; the legacy CLI is not the new composition surface</td>
-</tr>
-<tr>
-<td>Not established</td>
-<td>Production readiness, split-process parity, durable recovery, and complete incremental reuse</td>
-</tr>
-<tr>
-<td>License and maintainer</td>
-<td>Apache-2.0; on-the-ground</td>
+<td>Supported production Runtime and integrations</td>
+<td>Not available</td>
 </tr>
 </tbody>
 </table>
-<p><a href="../RUNTIME_STATUS/">Runtime availability</a> contains the fixed-revision evidence,
-test scope, and remaining runnable gates. Implementation repository links there
-require repository access. No source access is implied for anonymous site readers.</p>
-<h2 id="compatibility-evidence-to-request">Compatibility evidence to request<a class="headerlink" href="#compatibility-evidence-to-request" title="Permanent link">&para;</a></h2>
-<p>Every implementation should identify its exact language revision, Runtime and
-Host/Scheduler profiles, supported capabilities, reproducible test command,
-current result at a pinned commit, unsupported features, and maintenance and
-security-reporting channels. Passing one example or closing an implementation
-issue does not establish complete conformance.</p>
-<p>Independent implementations remain welcome. Their design and maintenance work
-belongs in their own repositories. <a href="../CONTRIBUTING/">Contributing</a> explains how
-language-level evidence returns to this project.</p>
+<p><a href="../RUNTIME_STATUS/">Runtime availability</a> gives the dated capability summary.
+Public implementation artifacts will be linked when available.</p>
+<h2 id="evidence-to-request-from-an-implementation">Evidence to request from an implementation<a class="headerlink" href="#evidence-to-request-from-an-implementation" title="Permanent link">&para;</a></h2>
+<p>Ask for its supported language revision, declared capabilities, reproducible
+examples and tests, unsupported features, and maintenance and security channels.
+Passing one example does not establish complete conformance or production support.</p>
+<p>Independent implementations remain welcome in their own repositories.
+<a href="../CONTRIBUTING/">Contributing</a> explains how language-level findings and proposals
+return to the project.</p>
 
 
 

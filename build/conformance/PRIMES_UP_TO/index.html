@@ -1303,10 +1303,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation-tracking" class="md-nav__link">
+  <a href="#execution-availability" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementation tracking
+        Execution availability
       
     </span>
   </a>
@@ -1992,10 +1992,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation-tracking" class="md-nav__link">
+  <a href="#execution-availability" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementation tracking
+        Execution availability
       
     </span>
   </a>
@@ -2021,8 +2021,8 @@
 
 <h1 id="primes-up-to-by-trial-division">Primes Up To by Trial Division<a class="headerlink" href="#primes-up-to-by-trial-division" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Status:</strong> reference scenario and acceptance oracle for
-<a href="https://github.com/on-the-ground/subsea_cable_language/issues/27"><code>subsea_cable_language#27</code></a>.
+<p><strong>Status:</strong> reference scenario and acceptance oracle for the streamed-primes
+runnable demonstration.
 Passing this scenario is required for that runnable vertical slice, not for
 every Runtime that claims laid-Cable conformance. It combines already-effective
 guarded-recursion, output-multiplicity, laid-Cable, and Runtime-plane rules;
@@ -2032,7 +2032,7 @@ it does not introduce new language semantics.</p>
 <a href="../valid/primes-up-to-by-trial-division.vyg"><code>valid/primes-up-to-by-trial-division.vyg</code></a>.
 It is the language-side fixture for the first clean-checkout runnable vertical
 slice tracked by
-<a href="https://github.com/on-the-ground/subsea_cable_language/issues/27"><code>subsea_cable_language#27</code></a>.</p>
+the streamed-primes demonstration.</p>
 <p>The scenario enumerates primes up to one input limit by <strong>streamed candidate
 generation plus recursive trial division</strong>. It is not a Sieve of Eratosthenes.
 Candidate generation is a Host leaf; divisor recursion and branch selection
@@ -2134,12 +2134,11 @@ following:</p>
   leaf, and the outward API has no input-bearing
   <code>evaluate(goal, arguments)</code> path.</li>
 </ul>
-<h2 id="implementation-tracking">Implementation tracking<a class="headerlink" href="#implementation-tracking" title="Permanent link">&para;</a></h2>
-<p>This language repository owns the Voyage Plan and oracle, not production
-Runtime or Host code. The clean-checkout command and normalized trace will be
-provided by
-<a href="https://github.com/on-the-ground/subsea_cable_vessel/issues/27"><code>subsea_cable_vessel#27</code></a>
-after its Runtime and WebAssembly Host dependencies are complete.</p>
+<h2 id="execution-availability">Execution availability<a class="headerlink" href="#execution-availability" title="Permanent link">&para;</a></h2>
+<p>This reference defines the Voyage Plan and acceptance oracle, not an available
+Runtime or Host package. See <a href="../../RUNTIME_STATUS/">Runtime availability</a> for the
+demonstration's current status. A runnable command and public trace will be
+provided when the implementation is available.</p>
 
 
 

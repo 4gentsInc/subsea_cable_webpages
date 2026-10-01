@@ -89,6 +89,16 @@ class PublicationTests(unittest.TestCase):
             with self.assertRaises(ConfigurationError):
                 publication.on_files(Files([]), c)
 
+    def test_private_urls_are_rejected_in_html_search_and_sitemap(self):
+        for filename in ("index.html", "search/search_index.json", "sitemap.xml"):
+            with self.subTest(filename=filename), tempfile.TemporaryDirectory() as temp:
+                c = config(Path(temp))
+                leaked = Path(c["site_dir"]) / filename
+                leaked.parent.mkdir(parents=True)
+                leaked.write_text("https://github.com/on-the-ground/subsea_cable_vessel/issues/27", encoding="utf-8")
+                with self.assertRaises(ConfigurationError):
+                    publication.on_post_build(c)
+
     def test_output_check_catches_a_late_plugin_leak(self):
         with tempfile.TemporaryDirectory() as temp:
             c = config(Path(temp))

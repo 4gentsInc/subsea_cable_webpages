@@ -2612,9 +2612,9 @@
 <li>Created: 2026-09-18</li>
 <li>Updated: 2026-09-18</li>
 <li>Requires owner decision: yes</li>
-<li>External implementation ADRs: <a href="https://github.com/on-the-ground/subsea_cable_vessel/blob/main/docs/decisions/0007-voyage-results-and-incremental-reuse.md">runtime ADR 0007 — Voyage results and incremental reuse boundary</a> (proposed; link becomes valid after the companion Runtime PR merges)</li>
+<li>External implementation ADRs: runtime ADR 0007 — Voyage results and incremental reuse boundary (proposed; link becomes valid after the companion Runtime PR merges)</li>
 <li>Evidence repositories/revisions: <code>on-the-ground/subsea_cable_vessel</code> POC and the owner-directed Vessel plan</li>
-<li>Activation pull request: <a href="https://github.com/on-the-ground/subsea_cable_language/pull/5">#5</a></li>
+<li>Activation pull request: #5</li>
 <li>Effective language revision: <code>003b1e2404e01ad3e33eee8781ec2f408055091c</code></li>
 <li>Supersedes: the source-level equation “Program = Cable” and the <code>.subc</code> source extension</li>
 <li>Superseded by: in part by <a href="../0014-laid-cable-channel-semantics/">SCP-0014</a>: the single Root outcome per voyage becomes ordered per-input segment outcomes, and the untagged child-ordinal ordering becomes <code>Input(k)</code> plus tagged <code>Authored(k)</code>/<code>Emission(k)</code> positions; and by <a href="../0015-vessel-control-cable-data-plane/">SCP-0015</a>: Subsea Cable Runtime replaces whole-Runtime Vessel, and a stateless Runtime composition layer assembles the final result from immutable Vessel provenance plus Cable completion evidence</li>

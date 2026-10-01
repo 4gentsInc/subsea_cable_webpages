@@ -1968,10 +1968,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#documentation-publication" class="md-nav__link">
+  <a href="#published-documentation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Documentation publication
+        Published documentation
       
     </span>
   </a>
@@ -2192,10 +2192,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#documentation-publication" class="md-nav__link">
+  <a href="#published-documentation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Documentation publication
+        Published documentation
       
     </span>
   </a>
@@ -2235,10 +2235,9 @@ Host responsibilities—explore different ecosystems.</p>
 <li>implementation-neutral consumer contracts and methodology.</li>
 </ul>
 <p>Runtime code remains external.</p>
-<p>The canonical public documents, grammars, and conformance corpus live under
-<code>export/</code> in the private language source repository. Document paths below are
-relative to that directory unless they explicitly identify repository-only
-<code>confidential/</code> records. Relocation changes no document's declared authority.</p>
+<p>The language documents, grammars, and conformance corpus form the canonical
+knowledge base. Paths below identify those sources, independently of their
+presentation on this website. Relocation changes no document's authority.</p>
 <h2 id="sources-of-language-authority">Sources of language authority<a class="headerlink" href="#sources-of-language-authority" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2299,29 +2298,24 @@ because they are tracked Markdown:</p>
 <li><code>Recursion.md</code> and similar topic guides explain synchronized accepted
   behavior; they introduce no semantics independently of their cited canonical
   sources and Accepted SCPs.</li>
-<li><code>confidential/implementation/README.md</code>, <code>CAROUSEL_ENGINE_PLAN.md</code>,
-  <code>RUNTIME_ORCHESTRATION_PLAN.md</code>, and <code>MIGRATION_PLAYBOOK.md</code> are implementation
-  methodology and planning. Their synchronized summaries of authoritative
-  sources are explanatory projections, not independent authority; unresolved
-  or profile-specific planning remains non-normative.</li>
-<li><code>confidential/implementation/CAROUSEL_POC_FINDINGS.md</code> and external ADRs are evidence and
-  history, not language authority.</li>
+<li>Implementation methodology and planning are guidance. Their synchronized
+  summaries are explanatory projections; unresolved or profile-specific
+  planning remains non-normative.</li>
+<li>Experimental findings and implementation ADRs are evidence and history,
+  not language authority.</li>
 </ul>
 <p>If authoritative sources or a synchronized explanatory projection disagree,
 the conflict is a repository defect. Implementations must not pick a winner
 silently; they freeze only the affected path and report the conflict.</p>
-<p><a href="https://github.com/on-the-ground/subsea_cable_language/blob/main/confidential/CSCK.md"><code>CSCK.md</code></a> defines the repository-maintenance procedure for detecting
-and recording cross-document drift. It governs the check, not the language:
-result classification and repair authority remain in
-<code>confidential/CONTRIBUTING.md</code>, and
-semantic changes still require the proposal and activation process. Maintainers
-run and record CSCK according to the triggers and cadence defined there.</p>
+<p>Maintainers perform and record cross-document consistency checks under their
+maintenance procedure. A check detects drift; it does not create language
+authority or replace the proposal and activation process.</p>
 <h2 id="roles">Roles<a class="headerlink" href="#roles" title="Permanent link">&para;</a></h2>
 <h3 id="language-maintainers">Language maintainers<a class="headerlink" href="#language-maintainers" title="Permanent link">&para;</a></h3>
 <p>Maintain coherence, review proposals against the design philosophy, decide
 proposal status, triage reported findings into proposal batches, and ensure
-normative projections stay synchronized. Run and record CSCK at its required
-triggers and cadence.</p>
+normative projections stay synchronized. Run and record consistency checks
+at the required maintenance triggers and cadence.</p>
 <h3 id="implementers">Implementers<a class="headerlink" href="#implementers" title="Permanent link">&para;</a></h3>
 <p>Build and maintain external consumer/Host/Runtime projects, publish supported
 profiles, retain implementation ADRs, and contribute evidence and proposals.</p>
@@ -2338,15 +2332,15 @@ needed. In the <strong>direct proposal lane</strong>, an author who already has
 proposal-ready evidence, alternatives, compatibility analysis, and conformance
 impact opens a Draft SCP directly, without a prior finding or batch. Both lanes
 converge on the same review, owner-decision, and activation rules below. The
-lane boundaries, triage, and batch rules are in
-<a href="https://github.com/on-the-ground/subsea_cable_language/blob/main/confidential/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+public entry lanes are described in <a href="../CONTRIBUTING/">Contributing</a>.
+Maintainers classify and batch findings during review.</p>
 <p>Substantial language changes use a Subsea Cable Proposal (SCP), analogous to a
-PEP. Accepted records live under <code>proposals/NNNN-short-name.md</code>; unactivated
+PEP. Accepted records live under <code>proposals/NNNN-short-name.md</code>.
 External authors submit Draft records to the
 <a href="https://github.com/4gentsInc/subsea_cable_webpages/tree/main/proposals">public proposal repository</a>
 using its intake template. Maintainers prepare the canonical decision and
-activation in the language source repository; internal Draft work may live under
-<code>confidential/proposals/</code>. Public intake merge is not language activation.</p>
+activation in the language source repository. Public intake merge is not
+language activation.</p>
 <p>Repository governance and contribution-process changes use a Governance or
 process pull request, not an SCP, unless they also change language syntax,
 semantics, identity, diagnostics, component boundaries, or portable policy
@@ -2476,29 +2470,15 @@ accept proposals derived from them. Listing, proposal acceptance, or conformance
 claims do not transfer maintenance and do not make an implementation official.</p>
 <p>Competing implementations are desirable. Disagreement should become evidence,
 ADRs, and proposals—not hidden dialects presented under one compatibility label.</p>
-<h2 id="documentation-publication">Documentation publication<a class="headerlink" href="#documentation-publication" title="Permanent link">&para;</a></h2>
-<p>The documentation site is a selected, generated projection, not a mirror of
-every repository file. Adoption pages explain usage, supported behavior, and
-implementation availability; the reference area preserves exact semantics,
-Runtime contracts, conformance, and Accepted design history.</p>
-<p>Repository-only implementation plans, operational procedures, templates, and
-unactivated Draft work live under <code>confidential/</code>. The root <code>AGENTS.md</code> is an
-automatic-discovery entry pointing there and is also excluded from the site.
-Public finding and proposal intake, site configuration, build code, and deployment
-workflows live in
-<a href="https://github.com/4gentsInc/subsea_cable_webpages">the website repository</a>.
-Language activation and its review gates remain in this private source repository.</p>
-<p>New Markdown is not automatically published. Site navigation selects published
-Markdown, and an explicit supporting-file list selects downloads and assets.
-The build rejects a navigation entry under <code>confidential/</code> and checks the output
-for excluded files. Publishing a page never changes its area-scoped authority.
-The local builder reads only <code>language/export/</code> through the arranged relative
-path. The website repository tracks generated static output, not another editable
-copy of the language documents. Deployment Actions publish that output without
-reading the private source repository.
-This directory transition changes paths and publication only: existing Accepted
-SCPs, canonical requirements, activation gates, and independent implementation
-rights remain in force. Existing activation records retain historical paths.</p>
+<h2 id="published-documentation">Published documentation<a class="headerlink" href="#published-documentation" title="Permanent link">&para;</a></h2>
+<p>The documentation is a selected view of the language knowledge base. Adoption
+pages explain usage, supported behavior, and implementation availability. The
+reference area provides semantics, Runtime contracts, conformance, and Accepted
+design history. Presentation never changes a source's area-scoped authority.</p>
+<p>Use <a href="https://github.com/4gentsInc/subsea_cable_webpages">the public community repository</a>
+for findings and proposal discussion. Canonical decisions and activation retain
+the review and synchronization requirements above. Existing Accepted decisions,
+effective revisions, and independent implementation rights remain in force.</p>
 
 
 

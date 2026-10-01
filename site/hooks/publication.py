@@ -2,6 +2,7 @@
 
 from pathlib import Path, PurePosixPath
 from fnmatch import fnmatchcase
+import re
 from urllib.parse import urlsplit
 
 from mkdocs.exceptions import ConfigurationError
@@ -87,6 +88,12 @@ def on_files(files, config):
 
 def on_post_build(config):
     for path in Path(config["site_dir"]).rglob("*"):
+        if path.is_file() and path.suffix in {".html", ".json", ".xml"}:
+            content = path.read_text(encoding="utf-8")
+            if re.search(r"https://github\.com/on-the-ground/(?:subsea_cable_language|subsea_cable_vessel)(?:/|[\"\s<])", content):
+                raise ConfigurationError("Private repository URL found in generated output: " + path.name)
+            if "https://on-the-ground.github.io/subsea_cable_language" in content:
+                raise ConfigurationError("Retired site URL found in generated output: " + path.name)
         parts = path.relative_to(config["site_dir"]).parts
         if any(part in BLOCKED_ROOTS for part in parts) or "AGENTS" in parts:
             raise ConfigurationError("Excluded source found in site output: "

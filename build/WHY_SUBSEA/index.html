@@ -2591,16 +2591,11 @@ Structurally this resembles Cable reuse. The purpose differs.</p>
 </tbody>
 </table>
 <div class="admonition warning">
-<p class="admonition-title">Open: hash identity inside lineage segments</p>
-<p>Lineage is <strong>not</strong> hash-addressed today. The Language Reference defines each
-lineage path segment as a Goal's <code>Name/Arity</code>, and the questions above are
-answered by joining lineage to hash-identified artifacts through deduction
-records. Operations that compare lineages directly, such as finding a
-regression point, computing a lowest common ancestor, or matching reusable
-structure, would need the resolved hash in the segment itself once an alias
-has been rebound mid-voyage. That direction is a proposal, tracked and frozen
-as unresolved in
-<a href="https://github.com/on-the-ground/subsea_cable_language/issues/35">finding #35</a>.</p>
+<p class="admonition-title">Current lineage limitation</p>
+<p>Lineage segments identify Goals by <code>Name/Arity</code>. Current analysis must use
+the recorded artifact hashes alongside those names when aliases change
+during a voyage. Hash-addressed lineage segments are not available in the
+current language contract.</p>
 </div>
 <hr />
 <h2 id="2-what-this-makes-possible-replanning-after-an-unexpected-failure">2. What this makes possible: replanning after an unexpected failure<a class="headerlink" href="#2-what-this-makes-possible-replanning-after-an-unexpected-failure" title="Permanent link">&para;</a></h2>
@@ -2879,33 +2874,21 @@ from the scenarios still in progress. It does not promise an available productio
 release or a delivery date.</p>
 <p><span id="6-open-problems"></span></p>
 <h2 id="7-open-problems">7. Open problems<a class="headerlink" href="#7-open-problems" title="Permanent link">&para;</a></h2>
+<p>These capabilities are not part of the current portable contract:</p>
 <ul>
-<li><strong>Hash identity in lineage segments.</strong> Lineage paths are specified by
-  <code>Name/Arity</code>; making the resolved hash part of segment identity, so lineage
-  comparison stays correct across mid-voyage rebinds, is a proposed direction
-  tracked in
-  <a href="https://github.com/on-the-ground/subsea_cable_language/issues/35">finding #35</a>.</li>
-<li><strong>Live provenance for Agents.</strong> A portable way for an Agent to query a failing
-  leaf's outcome and deduction ancestry while the Cable is still live. Today this
-  is available only after decommission and drainage, or through a
-  Runtime-profile extension.</li>
-<li><strong>Lineage-aware <code>@policy</code>.</strong> Expressing "after N regressions to the same
-  lowest common ancestor, hand over to a human" requires a policy that can take
-  lineage as a condition, not only a retry count.</li>
-<li><strong>Marking abandoned suffixes.</strong> A notation that distinguishes the valid path
-  from abandoned attempts, and a rule for extracting compensation candidates
-  from them. Because a <code>$</code> leaf is only a potential effect boundary, that rule
-  must rest on attempt and outcome evidence or an authorized Outcome Journal,
-  not on Cable membership.</li>
-<li><strong>First-class regression Goals.</strong> A path from a leaf whose output is a new Goal
-  definition to the alias rebind that installs it, so that "insert a regression
-  Goal after this failure" becomes part of the model rather than an out-of-band
-  authoring step.</li>
+<li><strong>Live provenance queries.</strong> The outward surface does not provide a portable
+  query for a failing leaf's outcome and ancestry while a Cable is live.</li>
+<li><strong>Lineage-conditioned policies.</strong> The language does not define a portable
+  policy that chooses behavior from provenance history.</li>
+<li><strong>Automatic compensation.</strong> Reusing structural evidence does not establish
+  whether a Host effect happened or authorize an undo.</li>
+<li><strong>Automatic replanning.</strong> An Agent or operator authors plan changes; the
+  Runtime does not invent them autonomously.</li>
 </ul>
-<p>For what is and is not settled elsewhere in the language, see
-<a href="../FOR_AGENTS/#what-is-available-and-what-is-still-open">For Agents: availability and open capabilities</a>.</p>
-<p>To prepare a workflow now, start with the <a href="../ADOPTION/">adoption guide</a>; check
-<a href="../RUNTIME_STATUS/">Runtime availability</a> before depending on any capability.</p>
+<p>The specification may describe a workflow pattern before a released Runtime
+supports it. Check <a href="../RUNTIME_STATUS/">Runtime availability</a> before depending on
+execution or recovery, and use the <a href="../ADOPTION/">adoption guide</a> to prepare a
+workflow and its explicit Host boundaries.</p>
 
 
 

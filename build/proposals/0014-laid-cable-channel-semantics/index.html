@@ -2704,11 +2704,11 @@
 <li>Created: 2026-09-26</li>
 <li>Updated: 2026-09-27</li>
 <li>Requires owner decision: no</li>
-<li>External implementation ADRs: <a href="https://github.com/on-the-ground/subsea_cable_vessel/tree/cea1fad94f04dedb9b5695e97dfa4568f16c80cc/docs/decisions">Vessel ADRs 0007, 0008, and 0009</a></li>
+<li>External implementation ADRs: Vessel ADRs 0007, 0008, and 0009</li>
 <li>Evidence repositories/revisions: owner decisions recorded in language issue
   #16; Vessel revisions <code>a75565d</code> (PR #5) and <code>cea1fad</code> (PR #6, ADR 0008
   aligned with the issue #16 decisions); implementation evidence pending</li>
-<li>Activation pull request: <a href="https://github.com/on-the-ground/subsea_cable_language/pull/18">#18</a></li>
+<li>Activation pull request: #18</li>
 <li>Effective language revision: the commit on <code>main</code> produced by squash-merging PR #18</li>
 <li>Supersedes: in part, <a href="../0003-explicit-value-producing-call-staging/">SCP-0003</a>
   (input-bearing Root and Anchor-bodied Goal in its example),
@@ -3611,12 +3611,12 @@ rule remains in force: published Touchdowns from failed or cancelled segments
 remain Cable members. No aggregate Cable outcome is inferred from those
 entries or encoded in <code>EndOfStream</code>.</p>
 <h3 id="121-resolution-of-the-planned-evaluation-surface-and-memo-work">12.1 Resolution of the planned evaluation surface and memo work<a class="headerlink" href="#121-resolution-of-the-planned-evaluation-surface-and-memo-work" title="Permanent link">&para;</a></h3>
-<p>Earlier designs recorded in language issues
-<a href="https://github.com/on-the-ground/subsea_cable_language/issues/11">#11</a> and
-<a href="https://github.com/on-the-ground/subsea_cable_language/issues/12">#12</a>, the
-tracking order in
-<a href="https://github.com/on-the-ground/subsea_cable_language/issues/13">#13</a> used an
-input-bearing evaluation model that this proposal replaces. Vessel PR #5
+<p>Earlier designs recorded in language issues</p>
+<h1 id="11-and">11 and<a class="headerlink" href="#11-and" title="Permanent link">&para;</a></h1>
+<h1 id="12-the">12, the<a class="headerlink" href="#12-the" title="Permanent link">&para;</a></h1>
+<p>tracking order in</p>
+<h1 id="13-used-an">13 used an<a class="headerlink" href="#13-used-an" title="Permanent link">&para;</a></h1>
+<p>input-bearing evaluation model that this proposal replaces. Vessel PR #5
 projected the replacement into ADRs 0007, 0008, and 0009 and was squash-merged
 as revision <code>a75565d</code>; issue #13 was then revised to v3.1. The resulting
 boundary is:</p>
@@ -3923,17 +3923,17 @@ frame shapes:</p>
   stream-capability extensions, and partial-<code>/N</code> retry/cancellation.</li>
 <li>Owner response: core direction decided through the design discussion captured
   in this draft; final drafting decisions recorded in issue #16 for
-  <a href="https://github.com/on-the-ground/subsea_cable_language/issues/16#issuecomment-5851172899">q3</a>,
-  <a href="https://github.com/on-the-ground/subsea_cable_language/issues/16#issuecomment-5851181282">q4</a>,
-  <a href="https://github.com/on-the-ground/subsea_cable_language/issues/16#issuecomment-5851188296">q7</a>,
-  <a href="https://github.com/on-the-ground/subsea_cable_language/issues/16#issuecomment-5851251249">q1</a>,
-  <a href="https://github.com/on-the-ground/subsea_cable_language/issues/16#issuecomment-5851300864">q1 conditional correction</a>,
-  and <a href="https://github.com/on-the-ground/subsea_cable_language/issues/16#issuecomment-5851259205">q2</a></li>
+  q3,
+  q4,
+  q7,
+  q1,
+  q1 conditional correction,
+  and q2</li>
 <li>Decision date: 2026-09-26 through 2026-09-27</li>
 <li>Conditions: this Draft records decisions but is not effective semantics;
   activation requires a complete compatibility and superseding audit.</li>
 <li>Activation review: the owner's merge-blocking
-  <a href="https://github.com/on-the-ground/subsea_cable_language/pull/18#issuecomment-5853272774">review</a>
+  review
   of PR #18 requested an owner decision on two activation-time additions and
   corrected the projection of the Section 7 terminal rules (post-seal faults
   leave the Host emission result unchanged, the segment outcome is determined
@@ -3941,7 +3941,7 @@ frame shapes:</p>
   emits its single failed <code>EndOfResult</code> after that drainage). That review
   requested the decisions; it did not itself make them.</li>
 <li>Owner confirmation (2026-09-27, PR #18
-  <a href="https://github.com/on-the-ground/subsea_cable_language/pull/18#issuecomment-5853462266">comment</a>):
+  comment):
   an arrow-function leaf <code>(params) -&gt; body</code> is a directly authored one-shot
   function evaluation and always has output multiplicity <code>/1</code>; <code>-0&gt;</code>, <code>-1&gt;</code>,
   and <code>-N&gt;</code> are permitted only on named structural <code>[params]</code> Goal

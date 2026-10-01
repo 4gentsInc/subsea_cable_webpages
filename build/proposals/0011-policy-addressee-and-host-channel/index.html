@@ -2580,7 +2580,7 @@
 <li>Requires owner decision: yes (decided; Owner decision R9 stays open separately)</li>
 <li>External implementation ADRs: pending (subsea_cable_vessel, Host policy channel)</li>
 <li>Evidence repositories/revisions: <code>on-the-ground/subsea_cable_vessel</code> POC; owner design review 2026-09-18</li>
-<li>Activation pull request: <a href="https://github.com/on-the-ground/subsea_cable_language/pull/10">#10</a></li>
+<li>Activation pull request: #10</li>
 <li>Effective language revision: the commit on <code>main</code> produced by squash-merging PR #10</li>
 <li>Supersedes: the implicit assumption that every <code>@policy</code> is addressed to the Scheduler</li>
 <li>Superseded by: in part by <a href="../0014-laid-cable-channel-semantics/">SCP-0014</a>: the three declarations are pinned when each input segment is admitted rather than once at run start, a pin failure rejects that send with <code>ProfileNegotiationFailed</code> rather than refusing a run, and "run-start" identities in the drift and journal rules mean the identities pinned at that segment's admission; and by <a href="../0015-vessel-control-cable-data-plane/">SCP-0015</a>: Scheduler projection and outcome authority remain Scheduler-owned, while Cable carries scope events, passes only <code>hostPolicies[]</code> to Host, and never sends <code>directPolicies[]</code>. Addressee rules are unchanged</li>
