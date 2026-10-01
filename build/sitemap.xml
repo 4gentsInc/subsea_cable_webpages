@@ -49,6 +49,10 @@
          <lastmod>2026-10-01</lastmod>
     </url>
     <url>
+         <loc>https://4gentsInc.github.io/subsea_cable_webpages/SCP/</loc>
+         <lastmod>2026-10-01</lastmod>
+    </url>
+    <url>
          <loc>https://4gentsInc.github.io/subsea_cable_webpages/TheProblem/</loc>
          <lastmod>2026-10-01</lastmod>
     </url>
@@ -78,62 +82,6 @@
     </url>
     <url>
          <loc>https://4gentsInc.github.io/subsea_cable_webpages/implementation/RUNTIME_CONTRACT/</loc>
-         <lastmod>2026-10-01</lastmod>
-    </url>
-    <url>
-         <loc>https://4gentsInc.github.io/subsea_cable_webpages/proposals/</loc>
-         <lastmod>2026-10-01</lastmod>
-    </url>
-    <url>
-         <loc>https://4gentsInc.github.io/subsea_cable_webpages/proposals/0001-touchdown-consumption-and-window-counting/</loc>
-         <lastmod>2026-10-01</lastmod>
-    </url>
-    <url>
-         <loc>https://4gentsInc.github.io/subsea_cable_webpages/proposals/0002-carousel-runtime-boundaries/</loc>
-         <lastmod>2026-10-01</lastmod>
-    </url>
-    <url>
-         <loc>https://4gentsInc.github.io/subsea_cable_webpages/proposals/0003-explicit-value-producing-call-staging/</loc>
-         <lastmod>2026-10-01</lastmod>
-    </url>
-    <url>
-         <loc>https://4gentsInc.github.io/subsea_cable_webpages/proposals/0004-voyage-plans-and-touchdown-cable-artifacts/</loc>
-         <lastmod>2026-10-01</lastmod>
-    </url>
-    <url>
-         <loc>https://4gentsInc.github.io/subsea_cable_webpages/proposals/0005-guarded-conditional-recursion/</loc>
-         <lastmod>2026-10-01</lastmod>
-    </url>
-    <url>
-         <loc>https://4gentsInc.github.io/subsea_cable_webpages/proposals/0006-live-vessel-host-cooperation/</loc>
-         <lastmod>2026-10-01</lastmod>
-    </url>
-    <url>
-         <loc>https://4gentsInc.github.io/subsea_cable_webpages/proposals/0007-inline-goal-arrow-stage-occurrence/</loc>
-         <lastmod>2026-10-01</lastmod>
-    </url>
-    <url>
-         <loc>https://4gentsInc.github.io/subsea_cable_webpages/proposals/0008-artifact-hash-value-closure/</loc>
-         <lastmod>2026-10-01</lastmod>
-    </url>
-    <url>
-         <loc>https://4gentsInc.github.io/subsea_cable_webpages/proposals/0009-structure-valued-lookup-maps/</loc>
-         <lastmod>2026-10-01</lastmod>
-    </url>
-    <url>
-         <loc>https://4gentsInc.github.io/subsea_cable_webpages/proposals/0010-dynamic-nooutput-errors/</loc>
-         <lastmod>2026-10-01</lastmod>
-    </url>
-    <url>
-         <loc>https://4gentsInc.github.io/subsea_cable_webpages/proposals/0011-policy-addressee-and-host-channel/</loc>
-         <lastmod>2026-10-01</lastmod>
-    </url>
-    <url>
-         <loc>https://4gentsInc.github.io/subsea_cable_webpages/proposals/0014-laid-cable-channel-semantics/</loc>
-         <lastmod>2026-10-01</lastmod>
-    </url>
-    <url>
-         <loc>https://4gentsInc.github.io/subsea_cable_webpages/proposals/0015-vessel-control-cable-data-plane/</loc>
          <lastmod>2026-10-01</lastmod>
     </url>
 </urlset>
