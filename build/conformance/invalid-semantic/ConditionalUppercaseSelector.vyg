@@ -1,0 +1,12 @@
+Flag = [] -1> $flag
+Done = [] -1> $done
+
+Bad = [] -> [
+    Flag,
+    {
+        true: Done[],
+        false: Done[],
+    },
+]
+
+root Bad/0

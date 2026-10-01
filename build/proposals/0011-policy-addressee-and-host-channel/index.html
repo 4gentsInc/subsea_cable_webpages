@@ -1,0 +1,3325 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A language-agnostic representation of executable intent.">
+      
+      
+      
+        <link rel="canonical" href="https://4gentsInc.github.io/subsea_cable_webpages/proposals/0011-policy-addressee-and-host-channel/">
+      
+      
+        <link rel="prev" href="../0010-dynamic-nooutput-errors/">
+      
+      
+        <link rel="next" href="../0014-laid-cable-channel-semantics/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>SCP-0011: Policy addressee and Host channel - __C — Subsea Cable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#scp-0011-policy-addressee-and-the-host-policy-channel" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="__C — Subsea Cable" class="md-header__button md-logo" aria-label="__C — Subsea Cable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            __C — Subsea Cable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SCP-0011: Policy addressee and Host channel
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/4gentsInc/subsea_cable_webpages" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    4gentsInc/subsea_cable_webpages
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Start
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ADOPTION/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Adopt
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../LANGUAGE_REFERENCE/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="__C — Subsea Cable" class="md-nav__button md-logo" aria-label="__C — Subsea Cable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    __C — Subsea Cable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/4gentsInc/subsea_cable_webpages" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    4gentsInc/subsea_cable_webpages
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WHY_SUBSEA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Subsea Cable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FOR_AGENTS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../METAPHORS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Subsea Cable World
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Philosophy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Philosophy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MANIFESTO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manifesto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TheProblem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Problem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BRAND/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brand & Mascot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adopt
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Adopt
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADOPTION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prepare a Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RUNTIME_STATUS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runtime Availability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECOSYSTEM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LANGUAGE_REFERENCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Recursion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guarded Conditional Recursion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../implementation/RUNTIME_CONTRACT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runtime Contract
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../conformance/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conformance
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Conformance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conformance/DEDUCTION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conformance/POLICY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conformance/LAID_CABLE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Laid Cable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conformance/PRIMES_UP_TO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Primes Up To
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accepted Design History
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Accepted Design History
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0001-touchdown-consumption-and-window-counting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0001: Touchdown consumption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0002-carousel-runtime-boundaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0002: Carousel boundaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0003-explicit-value-producing-call-staging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0003: Explicit call staging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0004-voyage-plans-and-touchdown-cable-artifacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0004: Voyage and Cable artifacts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0005-guarded-conditional-recursion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0005: Guarded conditional recursion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0006-live-vessel-host-cooperation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0006: Live Runtime–Host cooperation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0007-inline-goal-arrow-stage-occurrence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0007: Inline Goal-arrow stages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0008-artifact-hash-value-closure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0008: Values in artifact identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0009-structure-valued-lookup-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0009: Structure-valued lookup maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0010-dynamic-nooutput-errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0010: NoOutput errors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0011: Policy addressee and Host channel
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0011: Policy addressee and Host channel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motivation-and-reproduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motivation and reproduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#existing-invariant-under-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Existing invariant under pressure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proposed-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proposed specification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proposed specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addressee-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Addressee resolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pinned-declarations-and-resolution-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pinned declarations and resolution time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-claim-is-an-error-not-a-precedence-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Double claim is an error, not a precedence rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-a-host-addressed-policy-may-be-attached" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where a Host-addressed policy may be attached
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-host-policy-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Host policy channel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-host-addressed-policy-may-see-of-the-attempt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a Host-addressed policy may see of the attempt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancellation-stays-cooperative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancellation stays cooperative
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-host-addressed-policy-may-and-may-not-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a Host-addressed policy may and may not do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argument-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argument validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-allowlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment allowlist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identity-provenance-and-reuse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identity, provenance, and reuse
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identity, provenance, and reuse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#which-identities-are-pinned-and-which-are-reported" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which identities are pinned, and which are reported
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capability-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capability reporting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternatives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#philosophy-and-boundary-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Philosophy and boundary audit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compatibility-and-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compatibility and migration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grammar-and-conformance-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grammar and conformance impact
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference experiment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unresolved-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unresolved questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#owner-decision-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Owner decision record
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activation-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activation record
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-rationale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final rationale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ratification-note-2026-09-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ratification note (2026-09-20)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0014-laid-cable-channel-semantics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0014: Laid Cable channel semantics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0015-vessel-control-cable-data-plane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0015: Runtime planes and replanning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GOVERNANCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motivation-and-reproduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motivation and reproduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#existing-invariant-under-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Existing invariant under pressure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proposed-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proposed specification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proposed specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addressee-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Addressee resolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pinned-declarations-and-resolution-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pinned declarations and resolution time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#double-claim-is-an-error-not-a-precedence-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Double claim is an error, not a precedence rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-a-host-addressed-policy-may-be-attached" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where a Host-addressed policy may be attached
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-host-policy-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Host policy channel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-host-addressed-policy-may-see-of-the-attempt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a Host-addressed policy may see of the attempt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancellation-stays-cooperative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancellation stays cooperative
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-host-addressed-policy-may-and-may-not-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a Host-addressed policy may and may not do
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argument-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argument validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-allowlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment allowlist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identity-provenance-and-reuse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identity, provenance, and reuse
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identity, provenance, and reuse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#which-identities-are-pinned-and-which-are-reported" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which identities are pinned, and which are reported
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capability-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capability reporting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternatives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#philosophy-and-boundary-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Philosophy and boundary audit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compatibility-and-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compatibility and migration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grammar-and-conformance-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grammar and conformance impact
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference experiment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unresolved-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unresolved questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#owner-decision-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Owner decision record
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activation-record" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activation record
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-rationale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final rationale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ratification-note-2026-09-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ratification note (2026-09-20)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="scp-0011-policy-addressee-and-the-host-policy-channel">SCP-0011 — Policy addressee and the Host policy channel<a class="headerlink" href="#scp-0011-policy-addressee-and-the-host-policy-channel" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Status: Accepted</li>
+<li>Author(s): Claude (agent) for on-the-ground</li>
+<li>Created: 2026-09-18</li>
+<li>Updated: 2026-09-20</li>
+<li>Requires owner decision: yes (decided; Owner decision R9 stays open separately)</li>
+<li>External implementation ADRs: pending (subsea_cable_vessel, Host policy channel)</li>
+<li>Evidence repositories/revisions: <code>on-the-ground/subsea_cable_vessel</code> POC; owner design review 2026-09-18</li>
+<li>Activation pull request: <a href="https://github.com/on-the-ground/subsea_cable_language/pull/10">#10</a></li>
+<li>Effective language revision: the commit on <code>main</code> produced by squash-merging PR #10</li>
+<li>Supersedes: the implicit assumption that every <code>@policy</code> is addressed to the Scheduler</li>
+<li>Superseded by: in part by <a href="../0014-laid-cable-channel-semantics/">SCP-0014</a>: the three declarations are pinned when each input segment is admitted rather than once at run start, a pin failure rejects that send with <code>ProfileNegotiationFailed</code> rather than refusing a run, and "run-start" identities in the drift and journal rules mean the identities pinned at that segment's admission; and by <a href="../0015-vessel-control-cable-data-plane/">SCP-0015</a>: Scheduler projection and outcome authority remain Scheduler-owned, while Cable carries scope events, passes only <code>hostPolicies[]</code> to Host, and never sends <code>directPolicies[]</code>. Addressee rules are unchanged</li>
+</ul>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>A <code>@policy</code> is metadata addressed to somebody. Two addressees exist, and the
+language never said so:</p>
+<ul>
+<li><strong>Scheduler-addressed</strong> policies change eligibility, the attempt lifecycle, or
+  a scope's outcome: retry, timeout, cancellation, completion criteria. The
+  Scheduler interprets them, inside the Vessel. This is the case the documents
+  already assume.</li>
+<li><strong>Host-addressed</strong> policies change what happens inside exactly one grounded
+  leaf invocation: run it in a separate process, use a resource class. The Host
+  interprets them; the Scheduler must not.</li>
+</ul>
+<p>The test is mechanical: <strong>if it changes eligibility, the attempt lifecycle, or a
+scope's outcome, it is Scheduler-addressed; if it changes only what happens
+inside exactly one grounded leaf invocation, it is Host-addressed.</strong></p>
+<p>"Vessel" is the name of the whole Consumer Runtime — Scheduler Port and Host
+Port included — so it cannot name one side of this split. This proposal
+therefore says <em>Scheduler-addressed</em> throughout, and reserves <em>Vessel</em> for the
+assembled whole and for the product an operator addresses.</p>
+<p>The test rules out cases that look Host-shaped but are not. Batching or
+coalescing several leaves is Scheduler work: it touches ordering and eligibility
+across more than one occurrence, so it is Scheduler-addressed even though the
+batch is ultimately executed by the Host.</p>
+<p>Host-addressed policies travel with the evaluation request that already exists.
+The grounded leaf envelope already carries <code>directPolicies[]</code>; this proposal
+gives the Host the authority to interpret a declared subsequence of them, names
+that subsequence <code>hostPolicies[]</code>, and makes it the <em>only</em> policy field the
+Host-facing request carries. A Host declares the policy identifiers it
+accepts in its capability description, the same way it declares Anchors. A
+policy claimed by both the Scheduler registry and the Host is an error, not a
+precedence question.</p>
+<h2 id="motivation-and-reproduction">Motivation and reproduction<a class="headerlink" href="#motivation-and-reproduction" title="Permanent link">&para;</a></h2>
+<p><code>@policy</code> is defined as opaque, ordered occurrence metadata that the Scheduler
+interprets, and an unknown policy fails its scope with <code>UnknownPolicy</code>. That
+leaves no way to write a policy meant for the Host:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Patch = [d] -&gt; @separateProcess("worker") $editFiles(d)
+</code></pre></div>
+<p>Today this fails with <code>UnknownPolicy</code> in every conforming Runtime, because the
+Scheduler is the only interpreter and it cannot know the identifier.</p>
+<p>The envelope is not the gap. RUNTIME_CONTRACT §8 already delivers
+<code>directPolicies[]</code> — identifier, decoded arguments, target span — with every
+grounded arrow-function and Anchor occurrence, and the Scheduler already hands
+that envelope to the Host capability. What is missing is narrower and sharper:</p>
+<ul>
+<li>the metadata arrives <strong>undifferentiated</strong>, so a Host cannot tell which entries
+  were meant for it and which are the Scheduler's to interpret;</li>
+<li>no rule grants a Host the <strong>authority</strong> to interpret any of them; and</li>
+<li>there is no <strong>filtered projection</strong>, so honouring one entry would mean reading
+  all of them, including Scheduler-addressed policies the Host must not see.</li>
+</ul>
+<p>So the gap is a rule about who a policy is for, plus a named projection of
+metadata that already travels with the request: <strong>no new port, and no new policy
+payload</strong>. The Host-facing request schema does change — <code>directPolicies[]</code> comes
+out of it and <code>hostPolicies[]</code> goes in — because a projection that leaves the
+full envelope in place would hide nothing. What this proposal does not add is a
+second channel or a second kind of metadata.</p>
+<h2 id="existing-invariant-under-pressure">Existing invariant under pressure<a class="headerlink" href="#existing-invariant-under-pressure" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>$Anchor</code> and <code>@policy</code> identifiers remain <strong>external symbolic names</strong>; the
+  language does not enumerate them (RUNTIME_CONTRACT §2.3).</li>
+<li>The Scheduler owns eligibility, ordering, attempts, outcomes, and <code>@policy</code>
+  (SCP-0002).</li>
+<li>The Host supplies primitive semantics, function-leaf evaluation, and Anchor
+  invocation, and <strong>must not decide Goal topology</strong>.</li>
+<li>Ordered policies are part of the authored artifact identity and are erased in
+  the structural projection.</li>
+<li>Unknown policies are rejected rather than ignored, and they fail where they
+  are disclosed, not at validation time.</li>
+<li>The grounded leaf envelope already carries <code>directPolicies[]</code> —
+  <strong>only</strong> policies authored on that exact occurrence (RUNTIME_CONTRACT §8).
+  Policies do not inherit to descendants.</li>
+<li>The Frontend and Codebase MUST NOT depend on one Scheduler or Host registry
+  (RUNTIME_CONTRACT §1).</li>
+</ul>
+<p>The first invariant supplies the correction. Anchors are already resolved by
+the Host rather than by the language; a Host-addressed policy is the same kind
+of name and deserves the same treatment.</p>
+<h2 id="classification">Classification<a class="headerlink" href="#classification" title="Permanent link">&para;</a></h2>
+<p>This is a portable contract and diagnostic question, not a grammar question.
+The grammar already admits any policy identifier. What changes is who is
+authorized to interpret it, which projection of the existing envelope it appears
+in, where it may be attached, and which diagnostic a conflict produces. It
+cannot be a Runtime profile choice: two Runtimes that split policies differently
+would run the same source with different effects.</p>
+<h2 id="proposed-specification">Proposed specification<a class="headerlink" href="#proposed-specification" title="Permanent link">&para;</a></h2>
+<h3 id="addressee-resolution">Addressee resolution<a class="headerlink" href="#addressee-resolution" title="Permanent link">&para;</a></h3>
+<p>A Runtime resolves an occurrence's ordered policies against two declarations:</p>
+<ul>
+<li>the <strong>Scheduler policy registry</strong> (Scheduler-addressed identifiers), and</li>
+<li>the <strong>Host capability declaration</strong> (Host-addressed identifiers, with arity
+  or argument schema, declared alongside Anchors).</li>
+</ul>
+<p>Resolution outcomes:</p>
+<table>
+<thead>
+<tr>
+<th>Claimed by</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scheduler only</td>
+<td>Scheduler-addressed; the Scheduler interprets it; it never crosses to the Host</td>
+</tr>
+<tr>
+<td>Host only</td>
+<td>Host-addressed; the Scheduler does not interpret it; it rides in the Host-facing request as <code>hostPolicies[]</code></td>
+</tr>
+<tr>
+<td>Both</td>
+<td><strong><code>PolicyConflict</code></strong> — see below</td>
+</tr>
+<tr>
+<td>Neither</td>
+<td><code>UnknownPolicy</code>, unchanged</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pinned-declarations-and-resolution-time">Pinned declarations and resolution time<a class="headerlink" href="#pinned-declarations-and-resolution-time" title="Permanent link">&para;</a></h3>
+<p>Three declarations are <strong>pinned at run start</strong>: a Runtime MUST record a
+versioned Scheduler registry identity, a Host capability snapshot/profile
+identity, and the forwarding-allowlist revision (see <em>Deployment allowlist</em>) for
+the run, and MUST resolve every occurrence's policies against those pinned
+declarations, not against whatever is registered when the occurrence happens to
+be disclosed.</p>
+<p>This matters because occurrences are disclosed lazily. Without pinning, a
+registry or capability change mid-voyage could route the same identifier to a
+different addressee for a later occurrence, or turn it into a double claim
+partway through, and neither provenance nor replay would be deterministic. With
+pinning, addressee resolution is a function of the source plus the recorded
+version identities.</p>
+<p>Provenance records all three identities. A Runtime MUST NOT re-resolve an
+already disclosed occurrence's addressee.</p>
+<p>Pinning is a portable safety rule, so it has no permissive branch: when any of
+the three cannot be pinned, the run <strong>MUST refuse to start</strong>, before any
+occurrence is disclosed and before deduction begins. That refusal is a profile
+negotiation / run-start failure, not a new language diagnostic — this proposal
+adds no kind for it — but whether the run may proceed is single-valued. Leaving
+it optional would reopen exactly the non-deterministic fallbacks pinning exists
+to close: live resolution, or an empty declaration treated as "claims nothing".</p>
+<h3 id="double-claim-is-an-error-not-a-precedence-rule">Double claim is an error, not a precedence rule<a class="headerlink" href="#double-claim-is-an-error-not-a-precedence-rule" title="Permanent link">&para;</a></h3>
+<p>A policy identifier claimed by both the pinned Scheduler registry and the pinned
+Host capability is <code>PolicyConflict</code> in the <strong><code>policy</code> phase</strong>, reported when the
+bearing occurrence is disclosed — the same place <code>UnknownPolicy</code> is reported
+today. Host argument-schema mismatch is reported the same way.</p>
+<p>This is deliberately <em>not</em> a <code>validation</code>-phase error. The Frontend and Codebase
+MUST NOT depend on a Scheduler or Host registry (RUNTIME_CONTRACT §1), external
+policy identifiers and arguments are attached by the policy engine at occurrence
+disclosure, and structural validation is complete without them. Raising a
+registry-dependent conflict into <code>validation</code> would make the authored artifact's
+acceptance depend on an attached Runtime.</p>
+<p>A <code>check</code> or lint pass with profiles attached MAY report the same conflict
+earlier as a <strong>non-authoritative preflight diagnostic</strong>. A preflight report is a
+courtesy: it does not change the authoritative phase, and its absence does not
+make the source valid.</p>
+<p>No Runtime may resolve the collision by precedence, by configuration order, or
+by silently sending the policy to both. A Host that shadows a Scheduler policy
+must be rejected loudly, because the alternative lets a Host capture a future
+standard policy name.</p>
+<h3 id="where-a-host-addressed-policy-may-be-attached">Where a Host-addressed policy may be attached<a class="headerlink" href="#where-a-host-addressed-policy-may-be-attached" title="Permanent link">&para;</a></h3>
+<p>An evaluation request exists only for a grounded leaf. A Host-addressed policy
+therefore has <code>targetKinds = {function-leaf, anchor}</code>: it MUST be authored
+directly on the grounded leaf occurrence it configures.</p>
+<ul>
+<li>A Host-addressed identifier attached directly to any non-leaf occurrence —
+  Goal, serial, parallel, resolving-map, or <code>goal-arrow-stage</code>
+  (<a href="../0007-inline-goal-arrow-stage-occurrence/">SCP-0007</a>) — is
+  <code>UnsupportedPolicyTarget</code>, the kind already used when a policy targets an
+  occurrence kind that cannot carry it. The rule is the occurrence-kind list,
+  not a fixed enumeration: any future non-leaf kind is excluded by the same
+  sentence, because an evaluation request exists only for a grounded leaf.</li>
+<li>A Scheduler-addressed policy is unaffected and may target a
+  <code>goal-arrow-stage</code> like any other occurrence.</li>
+<li>A composite's policy MUST NOT be forwarded to its descendant leaves. Policies
+  do not inherit (RUNTIME_CONTRACT §8: <code>directPolicies[]</code> is <em>only</em> policies
+  authored on this exact occurrence), and forwarding would silently create the
+  inheritance the contract denies.</li>
+</ul>
+<h3 id="the-host-policy-channel">The Host policy channel<a class="headerlink" href="#the-host-policy-channel" title="Permanent link">&para;</a></h3>
+<p>Two boundaries must be kept apart, because a projection alone hides nothing.</p>
+<p><strong>Inside the Runtime</strong>, the occurrence record and the grounded leaf envelope keep
+<code>directPolicies[]</code> unchanged: all of the occurrence's authored policies, in
+source order. The Scheduler needs them, provenance records them, and nothing in
+this proposal removes them.</p>
+<p><strong>At the Host boundary</strong>, the Dispatcher constructs the Host-facing evaluation
+request, and that request carries only:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>hostPolicies[]   the source-order subsequence of this occurrence's
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>                 directPolicies[] that resolved as Host-addressed
+</code></pre></div>
+<ul>
+<li>The Host-facing evaluation request MUST NOT carry <code>directPolicies[]</code>. Handing
+  the Host the full envelope and asking it to read only a projection is not a
+  boundary; the Scheduler-addressed entries have to be absent from what crosses,
+  or "the Host never sees it" is unimplementable.</li>
+<li><code>hostPolicies[]</code> carries the same entries as the corresponding
+  <code>directPolicies[]</code> subsequence: same decoded arguments, same target spans, same
+  relative source order.</li>
+<li>The Scheduler MUST NOT interpret, reorder, drop, or synthesize the
+  Host-addressed subsequence; it only filters and forwards it.</li>
+<li>An empty <code>hostPolicies[]</code> is the ordinary case and MUST NOT be conflated with
+  a missing field.</li>
+<li>Cross-layer ordering is fixed: the <strong>Scheduler attempt lifecycle wraps the
+  Host invocation</strong>. A Scheduler-addressed <code>@timeout</code> or <code>@retry</code> governs the
+  attempt within which the Host applies its own policies.</li>
+<li>The Host MAY reject a policy it advertised but cannot honor for this call;
+  that is a Host-phase failure of the attempt, not <code>UnknownPolicy</code>.</li>
+</ul>
+<h3 id="what-a-host-addressed-policy-may-see-of-the-attempt">What a Host-addressed policy may see of the attempt<a class="headerlink" href="#what-a-host-addressed-policy-may-see-of-the-attempt" title="Permanent link">&para;</a></h3>
+<p>The Host already receives the attempt identity — the Dispatcher passes it with
+the leaf envelope, and <code>Host.Control.cancel(attemptId)</code> is how cancellation
+arrives — so this proposal does not forbid observation. Forbidding it would
+contradict the Host contract and the cancellation forwarding this proposal
+itself requires.</p>
+<p>What a Host-addressed policy MUST NOT have is <strong>authority over the attempt
+lifecycle</strong>, and that is enforced by non-exposure rather than by refusing calls:</p>
+<ul>
+<li>the Host-policy context exposes <strong>read-only</strong> access to the current
+  invocation's attempt identity and cancellation signal, which a policy MAY use
+  for delegation, tracing, and idempotency;</li>
+<li>it exposes <strong>no</strong> operation to create, retry, settle, extend, or abandon an
+  attempt, and none to read or interpret a Scheduler-addressed policy. Those
+  operations do not exist on this surface, so there is nothing to call and no
+  refusal to specify;</li>
+<li>consequently a Host-addressed policy changes Runtime attempt state only the
+  way any Host invocation does — by the outcome it returns, which the Scheduler
+  then interprets.</li>
+</ul>
+<p>Observation is inside one invocation; lifecycle control is the Scheduler's.</p>
+<h3 id="cancellation-stays-cooperative">Cancellation stays cooperative<a class="headerlink" href="#cancellation-stays-cooperative" title="Permanent link">&para;</a></h3>
+<p>A Host-addressed policy that moves work into another process, worker, or machine
+does not weaken cancellation, and does not strengthen it either. The existing
+rule is unchanged: <strong>cancellation is cooperative</strong>
+(RUNTIME_ORCHESTRATION_PLAN §9).</p>
+<ul>
+<li>On cancellation the Host MUST forward the request to the delegated worker and
+  MUST record that it did so in the trace.</li>
+<li>The Host MAY still return a late <code>Succeeded</code>. The Runtime records both the
+  cancellation request and the late outcome; the Scheduler policy decides what
+  the late success means.</li>
+<li>A Host MUST NOT claim a cancellation guarantee it cannot honour through a
+  delegating policy. Advertising such a policy is advertising delegation, not
+  preemption.</li>
+</ul>
+<h3 id="what-a-host-addressed-policy-may-and-may-not-do">What a Host-addressed policy may and may not do<a class="headerlink" href="#what-a-host-addressed-policy-may-and-may-not-do" title="Permanent link">&para;</a></h3>
+<ul>
+<li>It MAY change the outcome value, duration, resource usage, or failure mode of
+  one attempt.</li>
+<li>It MUST NOT create, remove, or reorder occurrences, change demand, alter
+  committed structure, or make the Host produce Goal structure.</li>
+<li><strong>Policy erasure is conditional, not absolute.</strong> Because a Host-addressed
+  policy may change an outcome value, and that value may later feed a
+  conditional selector or a routed argument, a policy-erased run may legitimately
+  reach a different topology. The invariant this proposal claims is the one
+  RUNTIME_ORCHESTRATION_PLAN §8.5 already states: a Host-addressed policy does
+  not directly edit topology, and for corresponding occurrences that select the
+  same artifact with the same arguments and the same required routed values,
+  erasing policy metadata does not change the structural reduction result.</li>
+</ul>
+<h3 id="argument-validation">Argument validation<a class="headerlink" href="#argument-validation" title="Permanent link">&para;</a></h3>
+<p>A Host declares each policy's arity or argument schema with the identifier. The
+Runtime validates Host-addressed policy arguments against the pinned declaration
+at occurrence disclosure — the same point it validates Scheduler policy
+arguments — and reports <code>InvalidPolicyArguments</code> in the <code>policy</code> phase.</p>
+<p>Structural validation is unaffected and still completes before deduction: it
+never consults either declaration, so nothing here moves work into or out of the
+<code>validation</code> phase.</p>
+<h3 id="deployment-allowlist">Deployment allowlist<a class="headerlink" href="#deployment-allowlist" title="Permanent link">&para;</a></h3>
+<p>A deployment MAY restrict which Host-addressed policies a Runtime forwards. A
+policy that a Host advertises but the deployment withholds is refused in the
+<code>policy</code> phase with the stable kind <strong><code>PolicyDenied</code></strong> and recorded in the
+trace; it is never silently dropped. The kind is distinct on purpose:
+<code>UnknownPolicy</code> is wrong because the Host does know the identifier, and
+<code>UnsupportedPolicyTarget</code> is wrong because the target is a legal one — what
+failed is the deployment's permission to forward it.</p>
+<p>This matters where agents commit source through an MCP surface: without it,
+source text is an unmediated channel into the Host.</p>
+<p><strong>The allowlist is pinned like the other two declarations.</strong> It decides whether
+a real Host effect happens, so its lifetime cannot be left implicit: a Runtime
+MUST pin an allowlist snapshot/revision identity at run start, alongside the
+Scheduler registry version and the Host capability snapshot, and MUST evaluate
+every forwarding decision in the run against that pinned revision. The pinned
+revision is recorded in provenance and is part of the granted-capability
+material in the Outcome Journal key. A run whose allowlist cannot be pinned
+refuses to start, exactly as for the other two declarations.</p>
+<p>Without pinning, the same Host-addressed policy on a later-disclosed occurrence
+could be forwarded by one Runtime and refused with <code>PolicyDenied</code> by another,
+and a change landing between disclosure and dispatch would leave the moment the
+<code>policy</code> phase is decided undefined. Pinning makes the decision a function of
+the source plus one recorded revision, and fixes it at disclosure.</p>
+<p><strong>Live revocation is deliberately out of scope here.</strong> An operator who must stop
+an in-flight run's Host effects today cancels the run, which is already defined
+and already cooperative. Making the allowlist revocable <em>within</em> a run is a
+separate proposal, and it would have to define at least: atomic observation and
+commit of the revision at each occurrence disclosure; what a revocation means
+for an occurrence already disclosed but not yet dispatched, and for one already
+in flight; how that interacts with cooperative cancellation and a late
+<code>Succeeded</code>; and how the journal is keyed when two attempts in one run saw
+different revisions. This proposal does not answer those, so it does not permit
+the behavior.</p>
+<h3 id="identity-provenance-and-reuse">Identity, provenance, and reuse<a class="headerlink" href="#identity-provenance-and-reuse" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Ordered policies of <strong>both</strong> kinds remain part of the authored <code>ArtifactHash</code>
+  and are erased in <code>StructureHash</code>, unchanged.</li>
+<li>A Touchdown content descriptor stays policy-erased (SCP-0004).</li>
+<li>Provenance records the split: which policies were Scheduler-addressed, which
+  were Host-addressed, the pinned Scheduler registry version, the pinned Host
+  capability snapshot and Host identity, the pinned forwarding-allowlist
+  revision, the granted capabilities, and — <strong>per attempt</strong> — the reported Host
+  capability snapshot identity plus the tagged execution identity that actually
+  served it.</li>
+<li>Consequently a future Outcome Journal MUST key an outcome by at least the
+  Touchdown descriptor, the Host identity, the serving attempt's <strong>tagged
+  reported execution identity</strong>, the <strong>Host capability snapshot/profile identity
+  and version that attempt reported</strong>, the Host-addressed policy digest, and the
+  granted capabilities including the pinned allowlist revision. Two attempts
+  with identical structure but different Host-addressed policies — <code>@dryRun</code> and
+  a real run — MUST NOT share a journal entry, and neither may two attempts that
+  differ only in execution-identity variant/value or capability profile version.</li>
+</ul>
+<h4 id="which-identities-are-pinned-and-which-are-reported">Which identities are pinned, and which are reported<a class="headerlink" href="#which-identities-are-pinned-and-which-are-reported" title="Permanent link">&para;</a></h4>
+<p>The two uses have different correctness conditions, so they observe at
+different times:</p>
+<ul>
+<li><strong>Addressee resolution</strong> must be deterministic across the whole voyage, so it
+  uses the identities pinned at run start and nothing else. Nothing in this
+  section changes that.</li>
+<li><strong>Outcome reuse</strong> must describe what actually produced the outcome, and only
+  the attempt knows that. For an outcome to be journal-reusable, a Host MUST
+  therefore report with it the capability snapshot identity that served the
+  attempt and exactly one tagged execution identity:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>reportedExecutionIdentity =
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    implementationRevision(revisionOrDigest)
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  | capabilitySnapshotSubstitute(snapshotIdentity, guaranteeProfile)
+</code></pre></div>
+<p>The journal MUST key by the variant tag as well as its value, so identical bytes
+in the two namespaces never collide.</p>
+<p>Run-start pinning alone cannot carry this. A Host may swap its binary or adapter
+mid-voyage; a Runtime keying by the run-start value would record the old
+implementation against a new implementation's outcome and reopen exactly the
+reuse this rule closes. The Runtime generally cannot verify a no-swap promise
+either, so requiring one would move the guarantee outside what the contract can
+check.</p>
+<ul>
+<li>An outcome whose attempt reports neither execution-identity variant, reports
+  both, or omits its serving capability snapshot identity MUST NOT be
+  journal-reusable. Refusing reuse is always safe; guessing is not.</li>
+<li>A deployment that cannot expose an implementation revision at all MAY instead
+  guarantee that its capability snapshot identity changes whenever any
+  implementation revision that can affect outcome meaning changes, and MUST
+  identify that guarantee as a profile. The attempt then reports
+  <code>capabilitySnapshotSubstitute(snapshotIdentity, guaranteeProfile)</code>. The
+  substitute's <code>snapshotIdentity</code> MUST equal the separately reported serving
+  capability snapshot identity; a mismatch makes the outcome non-reusable. The
+  fallback changes the execution-identity variant, never when it is observed;
+  its tag, snapshot identity, and guarantee profile all enter the journal key.</li>
+<li>When an attempt reports a capability snapshot identity that differs from the
+  run-start pinned one, that is <strong>drift</strong>: the Runtime MUST record it, the
+  outcome MUST NOT be reused under the pinned identity, and a deployment MAY
+  treat drift as a run-level failure. Addressee resolution still uses the pinned
+  identity, because changing it mid-voyage is the non-determinism pinning
+  exists to prevent.</li>
+<li>A deployment that wants replay determinism MAY additionally pin the
+  implementation revision at run start and refuse to start, or fail the run on
+  drift. That is a stricter profile layered on the reporting rule, not an
+  alternative to it.</li>
+<li>The tagged execution identity and reported capability snapshot belong in the
+  key rather than in structural identity because SCP-0004 places Host
+  implementation and capability version in <strong>outcome-reuse policy and the
+  journal</strong>. The same Host identity with the same allowlist and granted
+  capabilities can still be a different implementation after an upgrade, and
+  its earlier outcomes are not reusable.</li>
+</ul>
+<h3 id="capability-reporting">Capability reporting<a class="headerlink" href="#capability-reporting" title="Permanent link">&para;</a></h3>
+<p>A Runtime reports, for the attached Host and Scheduler: Anchor identifiers,
+Host-addressed policy identifiers with schemas, Scheduler-addressed policy
+identifiers, the pinned identities — Scheduler registry version, Host
+capability snapshot/profile version, and forwarding-allowlist revision — with
+the allowlist contents in effect, which per-attempt execution-identity variants
+the Host supports, and the guarantee-profile identifier for any
+capability-snapshot substitution.</p>
+<h2 id="alternatives">Alternatives<a class="headerlink" href="#alternatives" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Alternative</th>
+<th>Benefits</th>
+<th>Costs/reason rejected</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Accepted: Host capability declares its policy identifiers</strong></td>
+<td>Matches how Anchors already work; no grammar change; addressee can change without rewriting source or invalidating artifact hashes; forwarding gate is natural</td>
+<td>Reading source alone does not reveal the addressee; needs an explicit collision rule</td>
+</tr>
+<tr>
+<td>Encode the addressee in the identifier (<code>@host.x</code>)</td>
+<td>Addressee visible in source; no collisions by construction</td>
+<td>Language change while R9 is open; promoting a Host hint to a standard policy renames it and <strong>changes every artifact hash that uses it</strong>; forwarding gate must be added separately</td>
+</tr>
+<tr>
+<td>Send every policy to both sides</td>
+<td>Simplest wiring</td>
+<td><code>@timeout</code> would be interpreted twice with no source-visible winner</td>
+</tr>
+<tr>
+<td>Host silently ignores what it does not know</td>
+<td>No new errors</td>
+<td>Turns a typo into silent behavior change; contradicts the existing reject-unknown rule</td>
+</tr>
+<tr>
+<td>Infer the addressee from the target occurrence kind</td>
+<td>No declarations</td>
+<td>A Scheduler-addressed policy may also target a leaf, so the target kind narrows what a Host policy may target but cannot decide the addressee</td>
+</tr>
+<tr>
+<td>Resolve declarations live instead of pinning them at run start</td>
+<td>No snapshot machinery</td>
+<td>A mid-voyage registry change would re-route an identifier for later occurrences or create a double claim partway through; provenance and replay stop being deterministic</td>
+</tr>
+<tr>
+<td>Keep the status quo</td>
+<td>No change</td>
+<td>Host-directed How is unwritable; authors hide it inside Anchor arguments, which buries execution intent in data</td>
+</tr>
+</tbody>
+</table>
+<h2 id="philosophy-and-boundary-audit">Philosophy and boundary audit<a class="headerlink" href="#philosophy-and-boundary-audit" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Structure stays separate from execution policy: a Host-addressed policy never
+  directly edits topology.</li>
+<li>The Carousel is unaffected; it neither reads nor forwards policy.</li>
+<li>The Scheduler keeps demand, eligibility, attempts, and cancellation, and its
+  attempt lifecycle still wraps every Host invocation.</li>
+<li>The Host gains no power over Goal structure, only over its own invocation.</li>
+<li>Policy non-inheritance, alias laziness, and deduction immutability are
+  unchanged; policy erasure keeps exactly the conditional form §8.5 already
+  gives it.</li>
+<li>The Frontend and Codebase still depend on no Scheduler or Host registry.</li>
+<li>Portability holds: addressee resolution depends on pinned declarations, not on
+  an implementation's internal naming.</li>
+</ul>
+<h2 id="compatibility-and-migration">Compatibility and migration<a class="headerlink" href="#compatibility-and-migration" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Previously valid source affected: none.</li>
+<li>Previously invalid source newly accepted: source carrying Host-addressed
+  policies, once a Host advertises them.</li>
+<li>Stored artifact/hash impact: none. Policies were already part of the authored
+  hash and their spelling does not change.</li>
+<li>Diagnostic impact: <code>PolicyConflict</code> gains the double-claim case in the
+  <code>policy</code> phase; <code>UnsupportedPolicyTarget</code> gains Host-addressed policies
+  attached to non-leaf occurrences; <code>PolicyDenied</code> is new; <code>UnknownPolicy</code>
+  narrows to identifiers claimed by neither declaration. No diagnostic moves
+  into the <code>validation</code> phase.</li>
+<li>Migration strategy: Hosts that already accept out-of-band execution hints
+  declare them as policies and stop smuggling them through Anchor arguments.</li>
+<li>Version/profile requirement: consumers advertise support for the Host policy
+  channel.</li>
+</ul>
+<h2 id="grammar-and-conformance-impact">Grammar and conformance impact<a class="headerlink" href="#grammar-and-conformance-impact" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>README.md</code>: define the two addressees and the resolution table.</li>
+<li>ANTLR/EBNF: no production changes; synchronized comments only.</li>
+<li>valid cases / invalid syntax cases: none.</li>
+<li>invalid semantic cases: none that are source-only. Addressee resolution
+  depends on the attached Scheduler registry and Host capability, so the
+  corpus cannot express it as a <code>.vyg</code> fixture.</li>
+<li>runtime cases, stated with test doubles:</li>
+<li>a Host-addressed policy appears in <code>hostPolicies[]</code> in source order and the
+     Scheduler never interprets it;</li>
+<li>a Scheduler-addressed policy on the same leaf stays out of
+     <code>hostPolicies[]</code>, and the Host-facing evaluation request carries no
+     <code>directPolicies[]</code> at all — inspecting what crossed the boundary shows the
+     Scheduler-addressed entry is absent, not merely unread;</li>
+<li>a policy claimed by both pinned declarations is <code>PolicyConflict</code> in the
+     <code>policy</code> phase at disclosure; a <code>check</code> pass with profiles attached reports
+     it earlier as a non-authoritative preflight diagnostic and the
+     authoritative phase does not change;</li>
+<li>a policy claimed by neither is <code>UnknownPolicy</code>, unchanged;</li>
+<li>a Host-addressed identifier attached to a Goal, serial, parallel,
+     resolving-map or <code>goal-arrow-stage</code> occurrence is
+     <code>UnsupportedPolicyTarget</code>, and a composite's policy never reaches a
+     descendant leaf's <code>hostPolicies[]</code>;</li>
+<li>a registry or capability change mid-run does not alter the addressee of a
+     later-disclosed occurrence, and provenance records the pinned versions; a
+     run whose declarations cannot be pinned refuses to start before any
+     occurrence is disclosed;</li>
+<li>an allowlist change mid-run alters no forwarding decision in that run: the
+     pinned revision governs throughout, and provenance records it;</li>
+<li>the Host-policy context exposes read-only attempt identity and the
+     cancellation signal and exposes no retry/settle/extend operation at all;
+     a Host outcome is the only way that invocation changes Runtime attempt
+     state;</li>
+<li>cancellation of an attempt carrying a delegating Host-addressed policy is
+     forwarded to the worker and traced; a late <code>Succeeded</code> is recorded
+     alongside the cancellation request and the Scheduler decides its meaning;</li>
+<li>conditional policy erasure: for corresponding occurrences that select the
+      same artifact with the same arguments and required routed values, erasing
+      policy metadata leaves the structural reduction result unchanged;</li>
+<li>a withheld policy under a deployment allowlist is refused in the <code>policy</code>
+      phase with <code>PolicyDenied</code> and traced;</li>
+<li>two attempts differing only in Host-addressed policies produce different
+      Outcome Journal keys, and so do two attempts differing only in the
+      reported execution-identity variant/value, only in the reported capability
+      snapshot/profile version, or only in the pinned allowlist revision — an
+      <code>implementationRevision(x)</code> key never collides with a
+      <code>capabilitySnapshotSubstitute(x, profile)</code> key even when <code>x</code> has identical
+      bytes;</li>
+<li>a Host that swaps its implementation mid-run reports the new revision with
+      the affected attempt's outcome, that outcome is keyed by the reported
+      revision rather than the run-start value; an outcome reporting neither or
+      both execution-identity variants is not journal-reusable; a declared
+      substitute variant is reusable under its own tagged key and guarantee
+      profile only when its snapshot identity matches the separately reported
+      serving snapshot; and a reported capability snapshot identity differing
+      from the pinned one is recorded as drift without changing addressee
+      resolution.</li>
+</ul>
+<h2 id="reference-experiment">Reference experiment<a class="headerlink" href="#reference-experiment" title="Permanent link">&para;</a></h2>
+<p>The POC ships no concrete interpreters and rejects every policy, so it can
+implement this contract without inventing policy semantics: the Host interface
+gains a capability declaration, the Dispatcher builds a Host-facing request
+carrying <code>hostPolicies[]</code> and no <code>directPolicies[]</code>, and policy binding splits
+the ordered list into two source-order subsequences against pinned declarations.
+Scenarios 1–13 above become Runtime tests with the existing Scheduler and Host
+doubles.</p>
+<h2 id="unresolved-questions">Unresolved questions<a class="headerlink" href="#unresolved-questions" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Owner decision R9 — the policy observation model and the closed action set —
+  stays open. This proposal constrains it: the Scheduler-side action set is the
+  set of control verbs the Scheduler already owns (demand, withhold, reattempt,
+  cancel, withdraw, reconfigure prefetch, settle scope), and anything outside
+  it is either Host-addressed or not a policy.</li>
+<li>Whether any Scheduler-addressed policy becomes standardized across Runtimes
+  is a separate question; this proposal only routes identifiers.</li>
+<li>Whether a Host may observe Scheduler-addressed policies for logging is left
+  closed for now: it may not.</li>
+<li><code>PolicyDenied</code> is confirmed as a new stable kind for the deployment
+  allowlist (owner decision 2026-09-20).</li>
+<li>How a deployment pins a Host capability snapshot when the Host is a live
+  external process — a declared profile identity, a signed manifest, or a
+  handshake digest — is a Runtime-profile question. The requirement here is only
+  that some recorded identity exists and does not change mid-run.</li>
+</ul>
+<h2 id="owner-decision-record">Owner decision record<a class="headerlink" href="#owner-decision-record" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Status: Accepted on 2026-09-20. The core, every item previously submitted for
+  confirmation, and <code>PolicyDenied</code> as a new stable diagnostic kind are all
+  decided.</li>
+<li>Decision requested on: 2026-09-18</li>
+<li>Options presented: Host capability declaration versus encoding the addressee
+  in the identifier</li>
+<li>Owner response: adopt the Host capability declaration; a policy claimed by
+  both sides is a compile/lint error rather than a precedence rule</li>
+<li>Decision date: 2026-09-18</li>
+<li>Accepted core: two addressees, capability-declared Host policies, the How
+  travelling with the evaluation request, and double claim as an error</li>
+<li>Submitted for confirmation: the diagnostic kind and phase for double claim,
+  argument-schema validation, the deployment allowlist, provenance and Outcome
+  Journal key requirements, and the runtime case list</li>
+<li>Review round 1 (2026-09-18, language PR #8): the owner raised six P1 and two
+  P2 findings against this draft. All eight are addressed in this revision —
+  <code>Scheduler-addressed</code> replaces <code>Vessel-addressed</code> and the addressee test is
+  restated in eligibility/attempt-lifecycle/scope-outcome terms; the motivation
+  is corrected to acknowledge the existing <code>directPolicies[]</code> envelope and to
+  state the gap as authority plus filtered projection; declarations are pinned
+  at run start and resolved at disclosure; the authoritative phase for double
+  claim and schema mismatch is <code>policy</code>, with <code>check</code>/lint demoted to a
+  non-authoritative preflight; Host-addressed policies are restricted to
+  <code>{function-leaf, anchor}</code> with <code>UnsupportedPolicyTarget</code> otherwise and no
+  inheritance to descendants; cancellation is restated as cooperative; policy
+  erasure takes the conditional form of RUNTIME_ORCHESTRATION_PLAN §8.5; and
+  the allowlist refusal gets the distinct kind <code>PolicyDenied</code>.</li>
+<li>Review round 2 (2026-09-19, language PR #8): two further P1 and two P2
+  findings, all addressed. The projection is no longer only a derived field:
+  the Runtime-internal envelope keeps <code>directPolicies[]</code>, and the Host-facing
+  evaluation request the Dispatcher builds carries <code>hostPolicies[]</code> and no
+  <code>directPolicies[]</code>, so invisibility is implementable rather than asserted.
+  Pinning loses its permissive branch — a run whose declarations cannot be
+  pinned MUST refuse to start, as a profile-negotiation failure. The Host may
+  read its own invocation's attempt identity and cancellation context, since the
+  Dispatcher already passes them and <code>Host.Control.cancel(attemptId)</code> depends on
+  them; what is forbidden is authority over the attempt lifecycle. The Outcome
+  Journal key gains the pinned Host capability snapshot/profile identity and
+  version, per SCP-0004's placement of Host implementation version in
+  outcome-reuse policy rather than structural identity.</li>
+<li>Review round 3 (2026-09-19, language PR #8): one P1 and one P2, both
+  addressed. The forwarding allowlist is now pinned at run start like the other
+  two declarations, recorded in provenance and in the journal's
+  granted-capability material, and a runtime case fixes that a mid-run change
+  alters nothing in that run; live revocation is named as out of scope with the
+  questions a future proposal would have to answer, since cancelling the run is
+  the defined way to stop in-flight Host effects today. Attempt-lifecycle
+  authority is withheld by non-exposure rather than by an undefined refusal: the
+  Host-policy context has read-only attempt identity and cancellation signal and
+  simply has no retry/settle/extend operation, so there is no surface, phase or
+  outcome left to specify.</li>
+<li>Review round 4 (2026-09-19, language PR #8): one P1 and one P2, both
+  addressed. The Outcome Journal key gains the pinned Host implementation
+  revision/digest as a separate element, because a binary or adapter can be
+  upgraded while the capability manifest, allowlist and granted capabilities
+  stay identical; a deployment that cannot expose one must instead guarantee
+  that its capability snapshot identity changes with any outcome-affecting
+  implementation revision, and say so. The motivation no longer claims "not a
+  new field on the request": the Host-facing request schema does change — this
+  proposal adds no new port and no new policy payload, but <code>directPolicies[]</code>
+  leaves that schema and <code>hostPolicies[]</code> enters it.</li>
+<li>Review round 5 (2026-09-19, language PR #8): one P1, addressed. Calling the
+  implementation revision "pinned" left its observation point undefined, so a
+  mid-voyage binary swap would have been keyed under the run-start value. The
+  two uses are now separated: addressee resolution keeps the run-start pinned
+  identities, while outcome reuse is keyed by the implementation revision and
+  capability snapshot identity <strong>the serving attempt reports</strong>, since only the
+  attempt knows what ran and a Runtime cannot verify a no-swap promise. An
+  outcome with no reported revision is not reusable, a reported capability
+  identity differing from the pinned one is recorded as drift, and a deployment
+  wanting replay determinism may additionally pin at run start as a stricter
+  profile.</li>
+<li>Review round 6 (2026-09-20, language PR #8): one P1, addressed. The
+  implementation-revision fallback no longer contradicts the no-revision reuse
+  rule or the minimum journal key. Per-attempt execution identity is a tagged
+  union of <code>implementationRevision</code> and <code>capabilitySnapshotSubstitute</code>; the tag
+  and value enter the key, the substitute carries its declared guarantee
+  profile and must name the separately reported serving snapshot, and only an
+  outcome with exactly one variant plus its serving capability snapshot is
+  journal-reusable. Runtime cases cover missing, double, mismatched substitute,
+  and cross-variant collision behavior.</li>
+</ul>
+<h2 id="activation-record">Activation record<a class="headerlink" href="#activation-record" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Canonical documents synchronized: <code>README.md</code> policy-addressee,
+  policy-ownership and error-ownership sections; both grammar policy-boundary
+  projections; <code>implementation/RUNTIME_CONTRACT.md</code> §3, §8 envelope, §8.2, §10
+  and §10.1, §12 and §15; <code>AGENTS.md</code>; <code>FOR_AGENTS.md</code>;
+  <code>implementation/README.md</code>; <code>implementation/POLICY_DISCOVERY.md</code>; and
+  <code>implementation/RUNTIME_ORCHESTRATION_PLAN.md</code> §8.1, §§8.2–8.5 scoped to
+  Scheduler-addressed interpreters, and §8.6 for the Host-addressed path;
+  <code>implementation/CAROUSEL_ENGINE_PLAN.md</code>; and
+  <code>implementation/CAROUSEL_POC_FINDINGS.md</code></li>
+<li>Grammar projections synchronized: no production change; both grammar comments
+  separate Runtime-owned resolution, collision, target and allowlist checks from
+  addressee-owned interpretation, while keeping non-inheritance and Scheduler
+  lifecycle ownership explicit</li>
+<li>Diagnostics and examples synchronized: <code>PolicyConflict</code> in the <code>policy</code> phase, <code>InvalidPolicyArguments</code>, <code>UnsupportedPolicyTarget</code> for any non-leaf occurrence kind, and the new stable kind <code>PolicyDenied</code></li>
+<li>Conformance cases synchronized: <code>conformance/POLICY.md</code> §§1–13, with §§12–13 covering the execution-identity tagged union: variant-tag collision, an admissible <code>capabilitySnapshotSubstitute</code>, and the four reporting shapes</li>
+<li>Compatibility and migration notes synchronized: SCP compatibility section; no previously valid source changes meaning and no stored hash impact</li>
+<li>Verification commands and results: <code>python .github/scripts/validate_scp_activation.py</code> passes; <code>python .github/scripts/test_validate_scp_activation.py</code> passes; <code>mkdocs build --strict</code> passes; every markdown link resolves and every <code>conformance/cases.tsv</code> path exists</li>
+</ul>
+<h2 id="final-rationale">Final rationale<a class="headerlink" href="#final-rationale" title="Permanent link">&para;</a></h2>
+<p>A policy says how something should happen. Some of those sentences are about
+whether and when work becomes eligible and how its attempts end, and some are
+about what happens inside one grounded leaf invocation. The first set belongs to
+the Scheduler; the second belongs to the Host, and the language has never said
+so. The language already treats Anchor names as the Host's to resolve;
+policies meant for the Host are the same kind of name and belong in the same
+request. Naming the addressee explicitly keeps the Scheduler from interpreting
+sentences that were never addressed to it, and keeps the Host from acquiring
+any say over structure.</p>
+<h2 id="ratification-note-2026-09-20">Ratification note (2026-09-20)<a class="headerlink" href="#ratification-note-2026-09-20" title="Permanent link">&para;</a></h2>
+<p>Accepted together with SCP-0007–SCP-0010. Two cross-proposal seams were closed
+in that pass:</p>
+<ul>
+<li>the non-leaf enumeration for <code>UnsupportedPolicyTarget</code> now names
+  <code>goal-arrow-stage</code> and states the rule as "any non-leaf occurrence kind", so
+  a later kind cannot silently become a legal Host-policy target;</li>
+<li><code>PolicyDenied</code> is a decided kind, recorded in the error-ownership table in
+  <code>README.md</code> and in <code>implementation/RUNTIME_CONTRACT.md</code> §3.</li>
+</ul>
+<p>The runtime cases are recorded in <code>conformance/POLICY.md</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Subsea Cable is licensed under Apache-2.0. The website is a generated view of the canonical repository sources.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,38 @@
+Echo = (x) -> x
+Add = (a, b) -> a + b
+Print = [x] -0> $print(x)
+Read = [x] -1> $read(x)
+Sieve = [limit] -N> $sieve(limit)
+
+FanOut = [x] -> {Print[x], Read[x]}
+Both = [x] -> {left: Read[x], right: Echo[x]}
+
+ZeroZero = [x] -> [Print[x], Print]
+ZeroOne = [x] -> [Print[x], Read]
+ZeroMany = [x] -> [Print[x], Sieve]
+OneZero = [x] -> [Read[x], Print]
+OneOne = [x] -> [Read[x], Read]
+OneMany = [x] -> [Read[x], Sieve]
+ManyZero = [x] -> [Sieve[x], Print]
+ManyOne = [x] -> [Sieve[x], Read]
+ManyMany = [x] -> [Sieve[x], Sieve]
+
+Reset = [x] -> [Sieve[x], Add[x, 1]]
+Absorb = [x] -> [$source(x), Print]
+AfterParallel = [x] -> [{Print[x], Read[x]}, Read]
+Mixed = [key] -> [
+    key,
+    {
+        "none": Print[key],
+        "one": Read[key],
+    },
+]
+Checked = [x] -N> Mixed[x]
+
+Table = [x] -0> {
+    ZeroZero[x], ZeroOne[x], ZeroMany[x],
+    OneZero[x], OneOne[x], OneMany[x],
+    ManyZero[x], ManyOne[x], ManyMany[x],
+}
+Run = [x] -> {FanOut[x], Both[x], Table[x], Reset[x], Absorb[x], AfterParallel[x], Checked[x]}
+root Run/1

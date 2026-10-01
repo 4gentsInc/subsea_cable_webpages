@@ -1,0 +1,2 @@
+Pair = [x] -2> $pair(x)
+root Pair/1

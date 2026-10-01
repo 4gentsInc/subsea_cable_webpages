@@ -1,0 +1,3 @@
+B = [] -> $b
+Upper = [] -> B
+root Upper/0

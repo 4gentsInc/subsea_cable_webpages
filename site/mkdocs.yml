@@ -1,0 +1,128 @@
+site_name: "__C — Subsea Cable"
+site_description: "A language-agnostic representation of executable intent."
+site_url: "https://4gentsInc.github.io/subsea_cable_webpages/"
+repo_url: "https://github.com/4gentsInc/subsea_cable_webpages"
+repo_name: "4gentsInc/subsea_cable_webpages"
+edit_uri: ""
+
+# Canonical documentation stays in the repository tree. The site is only a
+# generated projection and deliberately has no second editable content copy.
+docs_dir: "../language/export"
+
+theme:
+  name: material
+  language: en
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+nav:
+  - Start:
+      - Overview: README.md
+      - Why Subsea Cable: WHY_SUBSEA.md
+      - For Agents: FOR_AGENTS.md
+      - The Subsea Cable World: METAPHORS.md
+      - Philosophy:
+          - Manifesto: MANIFESTO.md
+          - The Problem: TheProblem.md
+      - Brand & Mascot: BRAND.md
+  - Adopt:
+      - Prepare a Workflow: ADOPTION.md
+      - Runtime Availability: RUNTIME_STATUS.md
+      - Ecosystem: ECOSYSTEM.md
+  - Reference:
+      - Language:
+          - Language Reference: LANGUAGE_REFERENCE.md
+          - Guarded Conditional Recursion: Recursion.md
+      - Runtime Contract: implementation/RUNTIME_CONTRACT.md
+      - Conformance:
+          - Corpus: conformance/README.md
+          - Deduction: conformance/DEDUCTION.md
+          - Policy: conformance/POLICY.md
+          - Laid Cable: conformance/LAID_CABLE.md
+          - Primes Up To: conformance/PRIMES_UP_TO.md
+      - Accepted Design History:
+          - Guide: proposals/README.md
+          - "SCP-0001: Touchdown consumption": proposals/0001-touchdown-consumption-and-window-counting.md
+          - "SCP-0002: Carousel boundaries": proposals/0002-carousel-runtime-boundaries.md
+          - "SCP-0003: Explicit call staging": proposals/0003-explicit-value-producing-call-staging.md
+          - "SCP-0004: Voyage and Cable artifacts": proposals/0004-voyage-plans-and-touchdown-cable-artifacts.md
+          - "SCP-0005: Guarded conditional recursion": proposals/0005-guarded-conditional-recursion.md
+          - "SCP-0006: Live Runtime–Host cooperation": proposals/0006-live-vessel-host-cooperation.md
+          - "SCP-0007: Inline Goal-arrow stages": proposals/0007-inline-goal-arrow-stage-occurrence.md
+          - "SCP-0008: Values in artifact identity": proposals/0008-artifact-hash-value-closure.md
+          - "SCP-0009: Structure-valued lookup maps": proposals/0009-structure-valued-lookup-maps.md
+          - "SCP-0010: NoOutput errors": proposals/0010-dynamic-nooutput-errors.md
+          - "SCP-0011: Policy addressee and Host channel": proposals/0011-policy-addressee-and-host-channel.md
+          - "SCP-0014: Laid Cable channel semantics": proposals/0014-laid-cable-channel-semantics.md
+          - "SCP-0015: Runtime planes and replanning": proposals/0015-vessel-control-cable-data-plane.md
+      - Project:
+          - Governance: GOVERNANCE.md
+          - Contributing: CONTRIBUTING.md
+
+hooks:
+  - hooks/publication.py
+
+extra:
+  publication_assets:
+    - SubseaCable.g4
+    - SubseaCable.ebnf
+    - conformance/cases.tsv
+    - assets/subsea-cable-concept.jpg
+    - assets/branding/subsea-cable-footballfish-mascot-transparent.png
+    - assets/branding/subsea-cable-footballfish-scene.png
+  publication_asset_globs:
+    - conformance/valid/*.vyg
+    - conformance/invalid-syntax/*.vyg
+    - conformance/invalid-semantic/*.vyg
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      title: On this page
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+
+extra_css:
+  - stylesheets/extra.css
+
+exclude_docs: |
+  /confidential/
+  /AGENTS.md
+  /.private/
+  .antlr/
+  .git/
+  .github/
+  site/mkdocs.yml
+  site/requirements.txt
+
+copyright: "Subsea Cable is licensed under Apache-2.0. The website is a generated view of the canonical repository sources."

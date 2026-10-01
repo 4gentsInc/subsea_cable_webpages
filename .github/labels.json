@@ -1,0 +1,22 @@
+[
+  {"name": "finding", "color": "d93f0b", "description": "Language problem found while using or implementing Subsea Cable"},
+  {"name": "finding:ambiguity", "color": "fbca04", "description": "The specification admits more than one reading"},
+  {"name": "finding:gap", "color": "fbca04", "description": "The specification does not say"},
+  {"name": "finding:conflict", "color": "fbca04", "description": "Two normative sources disagree"},
+  {"name": "finding:ergonomics", "color": "fbca04", "description": "The rule is clear but hard to use correctly"},
+  {"name": "area:grammar", "color": "c5def5", "description": "Grammar and syntax"},
+  {"name": "area:multiplicity", "color": "c5def5", "description": "Goal output multiplicity"},
+  {"name": "area:laid-cable", "color": "c5def5", "description": "Laid Cable lifecycle, segments, and terminals"},
+  {"name": "area:runtime-planes", "color": "c5def5", "description": "Vessel / Cable / Carousel boundary"},
+  {"name": "area:deduction", "color": "c5def5", "description": "Deduction, aliases, and demand"},
+  {"name": "area:policy", "color": "c5def5", "description": "Policy addressing and the Scheduler/Host channel"},
+  {"name": "area:codebase", "color": "c5def5", "description": "Codebase, artifacts, and hashing"},
+  {"name": "area:conformance", "color": "c5def5", "description": "Conformance corpus and scenarios"},
+  {"name": "area:docs", "color": "c5def5", "description": "Documentation only"},
+  {"name": "triage:needs-owner", "color": "b60205", "description": "Needs an owner design decision"},
+  {"name": "triage:needs-evidence", "color": "e99695", "description": "Reproduction or normative source missing"},
+  {"name": "scp-candidate", "color": "0e8a16", "description": "Accepted into an SCP batch milestone"},
+  {"name": "editorial-fix", "color": "0e8a16", "description": "Projects one unique, already-effective rule; adds no new behavior. Otherwise it stays a finding"},
+  {"name": "wontfix:by-design", "color": "cccccc", "description": "Intended behavior; rationale recorded in the issue"},
+  {"name": "moved:vessel", "color": "cccccc", "description": "Runtime bug or profile choice; moved to the implementation repository"}
+]

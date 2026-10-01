@@ -1,0 +1,11 @@
+Left = [] -1> $left
+Right = [] -1> $right
+
+routes = {
+    "left": [x] -> Left[],
+    _: Right[],
+}
+
+Pick = [key] -> routes[key]
+
+root Pick/1

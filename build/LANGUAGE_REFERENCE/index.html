@@ -1,0 +1,4067 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A language-agnostic representation of executable intent.">
+      
+      
+      
+        <link rel="canonical" href="https://4gentsInc.github.io/subsea_cable_webpages/LANGUAGE_REFERENCE/">
+      
+      
+        <link rel="prev" href="../ECOSYSTEM/">
+      
+      
+        <link rel="next" href="../Recursion/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Language Reference - __C — Subsea Cable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#subsea-cable-language-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="__C — Subsea Cable" class="md-header__button md-logo" aria-label="__C — Subsea Cable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            __C — Subsea Cable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Language Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/4gentsInc/subsea_cable_webpages" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    4gentsInc/subsea_cable_webpages
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Start
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ADOPTION/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Adopt
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="__C — Subsea Cable" class="md-nav__button md-logo" aria-label="__C — Subsea Cable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    __C — Subsea Cable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/4gentsInc/subsea_cable_webpages" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    4gentsInc/subsea_cable_webpages
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href=".." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WHY_SUBSEA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Subsea Cable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FOR_AGENTS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../METAPHORS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Subsea Cable World
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Philosophy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Philosophy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MANIFESTO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manifesto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TheProblem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Problem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BRAND/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brand & Mascot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adopt
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Adopt
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADOPTION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prepare a Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RUNTIME_STATUS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runtime Availability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECOSYSTEM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language Reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository Scope
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Repository Scope">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agents-are-the-first-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agents are the first users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#language-base-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Language base map
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voyage-plans-are-blueprints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voyage Plans are Blueprints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Voyage Plans are Blueprints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#runtime-planes-and-live-replanning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime planes and live replanning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-generic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Language Generic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure-generic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure Generic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reduction-deduction-and-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reduction, Deduction, and Evaluation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goal-arrows-and-function-arrows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal Arrows and Function Arrows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Goal Arrows and Function Arrows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conditional-structural-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conditional structural pipelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laid-cables-and-output-multiplicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Laid Cables and Output Multiplicity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Laid Cables and Output Multiplicity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#laying-sending-and-decommissioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Laying, sending, and decommissioning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-active-input-segment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One active input segment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminals-and-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminals and results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#goal-signatures-and-output-multiplicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal signatures and output multiplicity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Routing Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-result-obligations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host result obligations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compatibility-and-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compatibility and migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-voyage-plan-materializes-as-a-goal-dag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Voyage Plan Materializes as a Goal DAG
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deduction-preserves-lineages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deduction Preserves Lineages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-identity-lineage-and-evaluation-are-different" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node Identity, Lineage, and Evaluation Are Different
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leaves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leaves
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Leaves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#who-a-policy-is-addressed-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Who a policy is addressed to
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#names-codebase-references-and-anchors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Names, Codebase References, and Anchors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Names, Codebase References, and Anchors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-ownership" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error ownership
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bring-your-own-scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bring Your Own Scheduler
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Philosophy
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Recursion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guarded Conditional Recursion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation/RUNTIME_CONTRACT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runtime Contract
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../conformance/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conformance
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Conformance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conformance/DEDUCTION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conformance/POLICY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conformance/LAID_CABLE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Laid Cable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conformance/PRIMES_UP_TO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Primes Up To
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../proposals/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accepted Design History
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Accepted Design History
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proposals/0001-touchdown-consumption-and-window-counting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0001: Touchdown consumption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proposals/0002-carousel-runtime-boundaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0002: Carousel boundaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proposals/0003-explicit-value-producing-call-staging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0003: Explicit call staging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proposals/0004-voyage-plans-and-touchdown-cable-artifacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0004: Voyage and Cable artifacts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proposals/0005-guarded-conditional-recursion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0005: Guarded conditional recursion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proposals/0006-live-vessel-host-cooperation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0006: Live Runtime–Host cooperation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proposals/0007-inline-goal-arrow-stage-occurrence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0007: Inline Goal-arrow stages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proposals/0008-artifact-hash-value-closure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0008: Values in artifact identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proposals/0009-structure-valued-lookup-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0009: Structure-valued lookup maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proposals/0010-dynamic-nooutput-errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0010: NoOutput errors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proposals/0011-policy-addressee-and-host-channel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0011: Policy addressee and Host channel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proposals/0014-laid-cable-channel-semantics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0014: Laid Cable channel semantics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proposals/0015-vessel-control-cable-data-plane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0015: Runtime planes and replanning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GOVERNANCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository Scope
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Repository Scope">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agents-are-the-first-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agents are the first users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#language-base-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Language base map
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voyage-plans-are-blueprints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voyage Plans are Blueprints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Voyage Plans are Blueprints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#runtime-planes-and-live-replanning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime planes and live replanning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-generic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Language Generic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure-generic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure Generic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reduction-deduction-and-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reduction, Deduction, and Evaluation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goal-arrows-and-function-arrows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal Arrows and Function Arrows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Goal Arrows and Function Arrows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conditional-structural-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conditional structural pipelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laid-cables-and-output-multiplicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Laid Cables and Output Multiplicity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Laid Cables and Output Multiplicity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#laying-sending-and-decommissioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Laying, sending, and decommissioning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-active-input-segment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One active input segment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminals-and-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminals and results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#goal-signatures-and-output-multiplicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goal signatures and output multiplicity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Routing Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-result-obligations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Host result obligations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compatibility-and-migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compatibility and migration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-voyage-plan-materializes-as-a-goal-dag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Voyage Plan Materializes as a Goal DAG
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deduction-preserves-lineages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deduction Preserves Lineages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-identity-lineage-and-evaluation-are-different" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node Identity, Lineage, and Evaluation Are Different
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leaves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leaves
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Leaves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#who-a-policy-is-addressed-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Who a policy is addressed to
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#names-codebase-references-and-anchors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Names, Codebase References, and Anchors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Names, Codebase References, and Anchors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-ownership" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error ownership
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bring-your-own-scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bring Your Own Scheduler
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Philosophy
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="subsea-cable-language-reference">Subsea Cable Language Reference<a class="headerlink" href="#subsea-cable-language-reference" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>This is the detailed semantic reference. If Subsea Cable is new to you,
+begin with the <a href="../">README</a> for the short, breadth-first introduction.</p>
+<p>Accepted SCP activation records written before this split refer to semantic
+sections in <code>README.md</code>. Those references now resolve to this file; the moved
+headings and their contents are preserved here.</p>
+</blockquote>
+<p><img alt="The Subsea Cable footballfish mascot discovering a cable on the seafloor" src="../assets/branding/subsea-cable-footballfish-scene.png" /></p>
+<blockquote>
+<p><strong>Programs are not instruction sequences. They are executable intent.</strong></p>
+<p><strong>Status:</strong> evolving pre-1.0 language specification. There is no official
+Runtime. Implementations must pin the exact specification revision/profile
+they support.</p>
+</blockquote>
+<p><img alt="The original Subsea Cable concept sketch" src="../assets/subsea-cable-concept.jpg" /></p>
+<p>The sketch above is the conceptual anchor for the language. The Sea is Goal
+Space; a <code>.vyg</code> source file is a Voyage Plan; the <strong>Subsea Cable Runtime</strong> is
+the complete deployment; its Vessel control plane navigates the voyage and
+uses Carousel for one demanded deduction at a time; and its Cable data plane
+operates installed topology. Touchdown is reached when successive deductions
+arrive at a Host-provided concrete leaf. A laid Cable accepts inputs one result
+segment at a time; once decommissioned and drained it yields a Fully Touchdown
+Cable and one ordered outcome per admitted input. See
+<a href="../METAPHORS/">METAPHORS.md</a> for the precise textual model.</p>
+<p>Subsea Cable is not another programming language.</p>
+<p>It is a language-agnostic, infrastructure-agnostic representation of programs.</p>
+<p>Instead of describing <em>how</em> computations should execute, Subsea Cable describes <em>what</em> a program is.</p>
+<p>A Subsea program is a dependency structure. In this specification,
+<strong>Program</strong> names that semantic Goal/dependency program, while <strong>Voyage Plan</strong>
+names the authored <code>.vyg</code> unit that describes it. Neither term is a synonym for
+the realized Cable.</p>
+<p>Everything else is an implementation strategy.</p>
+<p>The official language name is <strong>Subsea Cable</strong>. <strong><code>__C</code></strong> is its visual short
+mark, <code>.vyg</code> is its source-file extension, and <code>subsea-cable</code> is the portable
+slug and language identifier. <code>__C</code> is branding, not a source identifier,
+namespace, package, CLI name, or generated symbol. The language is not called
+“SubC.”</p>
+<hr />
+<h2 id="why">Why?<a class="headerlink" href="#why" title="Permanent link">&para;</a></h2>
+<p>Modern languages ask functions to play two completely different roles.</p>
+<p>Functions implement computation.</p>
+<p>But functions are also forced to describe the dependency structure of an entire program.</p>
+<p>As a result, implementation and orchestration become inseparable.</p>
+<p>Program structure becomes execution order.</p>
+<p>Subsea Cable separates them.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Program
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    ↓
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Goal Structure
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Implementation
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    ↓
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Functions
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Execution
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    ↓
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Schedulers
+</code></pre></div>
+<p>Functions remain implementations.</p>
+<p>Schedulers remain execution strategies.</p>
+<p>Subsea Cable defines only the structure of the program.</p>
+<h2 id="repository-scope">Repository Scope<a class="headerlink" href="#repository-scope" title="Permanent link">&para;</a></h2>
+<p>This repository is the canonical <strong>language base</strong> for Subsea Cable. It contains
+the philosophy, structural semantics, grammar, conformance corpus, proposal
+process, and guidance for independent implementers.</p>
+<p>It does <strong>not</strong> contain or accept production Host, Carousel, Scheduler, or complete
+Runtime implementations. Implementations belong in independently maintained
+repositories. Their authors may discover missing concepts while implementing or
+migrating real programs; those findings return here as evidence-backed language
+proposals and conformance cases, not as implementation code.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>This repository                 External repositories
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>-----------------------------   --------------------------------
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>philosophy and terminology      Host/Runtime/Scheduler code
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>language specification          language-specific adapters
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>ANTLR and EBNF grammar          storage and deployment backends
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>conformance cases               framework integrations
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>accepted design proposals       implementation-specific ADRs
+</code></pre></div>
+<p>See <a href="../CONTRIBUTING/">Contributing</a> and <a href="../GOVERNANCE/">Governance</a>.
+Implementation planning is repository-only; the public
+<a href="../implementation/RUNTIME_CONTRACT/">Runtime Contract</a> states the conformance
+requirements independently of any implementation plan.</p>
+<h3 id="agents-are-the-first-users">Agents are the first users<a class="headerlink" href="#agents-are-the-first-users" title="Permanent link">&para;</a></h3>
+<p>The files in this repository are the language knowledge base, not source
+material waiting to be rewritten into a documentation product. They must remain
+easy for an agent to discover, read in a deliberate order, cite by path and
+heading, and bind directly into its working context.</p>
+<p>Any website is therefore a generated projection of these canonical files. It
+may add navigation, search, presentation, and interactive explanations, but it
+must not become a second editable specification or require agents to scrape or
+build the site to understand Subsea Cable.</p>
+<h3 id="language-base-map">Language base map<a class="headerlink" href="#language-base-map" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Need</th>
+<th>Start here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Why the language exists</td>
+<td><a href="../MANIFESTO/">MANIFESTO.md</a>, <a href="../TheProblem/">TheProblem.md</a></td>
+</tr>
+<tr>
+<td>Core metaphors and boundaries</td>
+<td><a href="../METAPHORS/">METAPHORS.md</a></td>
+</tr>
+<tr>
+<td>Public naming, mascot, and downloadable assets</td>
+<td><a href="../BRAND/">BRAND.md</a></td>
+</tr>
+<tr>
+<td>Semantics and usage</td>
+<td>this <code>LANGUAGE_REFERENCE.md</code></td>
+</tr>
+<tr>
+<td>Executable/neutral grammar</td>
+<td><a href="../SubseaCable.g4">SubseaCable.g4</a>, <a href="../SubseaCable.ebnf">SubseaCable.ebnf</a></td>
+</tr>
+<tr>
+<td>Validity and diagnostics</td>
+<td><a href="../conformance/">conformance</a></td>
+</tr>
+<tr>
+<td>Guarded conditional recursion</td>
+<td><a href="../Recursion/">Recursion.md</a>, <a href="../proposals/0005-guarded-conditional-recursion/">SCP-0005</a></td>
+</tr>
+<tr>
+<td>Guidance for reasoning and contributing agents</td>
+<td><a href="../FOR_AGENTS/">FOR_AGENTS.md</a></td>
+</tr>
+<tr>
+<td>Accepted boundary and language decisions</td>
+<td><a href="../proposals/0002-carousel-runtime-boundaries/">SCP-0002</a>, <a href="../proposals/0003-explicit-value-producing-call-staging/">SCP-0003</a>, <a href="../proposals/0004-voyage-plans-and-touchdown-cable-artifacts/">SCP-0004</a>, <a href="../proposals/0005-guarded-conditional-recursion/">SCP-0005</a>, <a href="../proposals/0006-live-vessel-host-cooperation/">SCP-0006</a></td>
+</tr>
+<tr>
+<td>Occurrence kinds, artifact identity, and diagnostics</td>
+<td><a href="../proposals/0007-inline-goal-arrow-stage-occurrence/">SCP-0007</a>, <a href="../proposals/0008-artifact-hash-value-closure/">SCP-0008</a>, <a href="../proposals/0009-structure-valued-lookup-maps/">SCP-0009</a>, <a href="../proposals/0010-dynamic-nooutput-errors/">SCP-0010</a></td>
+</tr>
+<tr>
+<td>Policy addressee and the Host policy channel</td>
+<td><a href="../proposals/0011-policy-addressee-and-host-channel/">SCP-0011</a></td>
+</tr>
+<tr>
+<td>Laid Cables, terminals, and Goal output multiplicity</td>
+<td><a href="../proposals/0014-laid-cable-channel-semantics/">SCP-0014</a>, <a href="../conformance/LAID_CABLE/">laid-Cable conformance</a></td>
+</tr>
+<tr>
+<td>Runtime whole, Vessel control plane, Cable data plane, and Agent-authored replanning</td>
+<td><a href="../proposals/0015-vessel-control-cable-data-plane/">SCP-0015</a></td>
+</tr>
+<tr>
+<td>Proposing a language change</td>
+<td><a href="../proposals/">proposals</a></td>
+</tr>
+<tr>
+<td>Governance and contribution scope</td>
+<td><a href="../GOVERNANCE/">GOVERNANCE.md</a>, <a href="../CONTRIBUTING/">Contributing</a></td>
+</tr>
+<tr>
+<td>Independent implementations</td>
+<td><a href="../ECOSYSTEM/">ECOSYSTEM.md</a></td>
+</tr>
+</tbody>
+</table>
+<p>Subsea Cable is licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.</p>
+<hr />
+<h2 id="voyage-plans-are-blueprints">Voyage Plans are Blueprints<a class="headerlink" href="#voyage-plans-are-blueprints" title="Permanent link">&para;</a></h2>
+<p>A <code>.vyg</code> file is not executable code.</p>
+<p>It is not bytecode.</p>
+<p>It is not a virtual machine instruction set.</p>
+<p>It is not another runtime.</p>
+<p>A <code>.vyg</code> file is a Voyage Plan: an authored blueprint for a Cable.</p>
+<p>It describes</p>
+<ul>
+<li>goals</li>
+<li>dependencies</li>
+<li>expansion boundaries</li>
+<li>execution anchors</li>
+</ul>
+<p>Nothing more.</p>
+<p>Each <code>.vyg</code> Voyage Plan has exactly one <code>root</code> declaration naming its default
+laid target as a symbolic signature reference:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>root BuildProduct/1
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>root BuildProduct#7fa31c/1
+</code></pre></div>
+<p>The base identifier's first ASCII letter is uppercase and the integer after <code>/</code>
+is input arity only. There is no argument position: the Root carries no input,
+evaluates nothing, resolves no alias, creates no occurrence, and lays no Cable.
+<code>root</code> is a contextual keyword, so <code>root = 5</code> is still an ordinary binding. A
+Voyage Plan may contain any number of bindings, but any other top-level
+statement, including the former input-bearing form <code>BuildProduct[input]</code>, is
+<code>InvalidRoot</code>, as is a file with no <code>root</code> declaration or more than one. The
+declaration does not control codebase storage or visibility.</p>
+<p>The plan is input, not the realized Cable. The Runtime validates and stores it
+through Vessel's Codebase-facing control surface. When a caller lays the target
+and sends an input, Vessel asks Carousel to commit each structure step that the
+input segment demands and publishes the result to the Cable data plane; the
+segment's Root occurrence is its first deduction demand. After decommissioning
+and drainage the Runtime composition layer returns a
+Fully Touchdown Cable, a canonical ordered list of hashes for the grounded
+leaves its segments actually reached, together with one ordered outcome per
+admitted input. Provenance keeps the reverse mapping to intermediate deductions
+so later voyages can reuse unchanged segments without mutating old records. See
+<a href="../proposals/0004-voyage-plans-and-touchdown-cable-artifacts/">SCP-0004</a> and
+<a href="#laid-cables-and-output-multiplicity">Laid Cables and Output Multiplicity</a>.</p>
+<p>The Runtime remains a logical participant until the laid Cable ends. Vessel
+owns the voyage, open occurrence frontier, structural demand, and deduction
+publication. Cable owns installed topology, channels, routed Values, Host
+emission sessions, and terminals. Scheduler still decides eligibility and
+outcomes; Host still supplies concrete computation. The Runtime is not merely
+a compiler that hands a completed Cable or generated Host program to a detached
+executor. This requirement does not prescribe deployment: both planes and Host
+may share one process, link as libraries, embed generated code, or communicate
+remotely. See <a href="../proposals/0006-live-vessel-host-cooperation/">SCP-0006</a> and
+<a href="../proposals/0015-vessel-control-cable-data-plane/">SCP-0015</a>.</p>
+<h3 id="runtime-planes-and-live-replanning">Runtime planes and live replanning<a class="headerlink" href="#runtime-planes-and-live-replanning" title="Permanent link">&para;</a></h3>
+<p>The complete deployment is the <strong>Subsea Cable Runtime</strong>, not Vessel alone:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Subsea Cable Runtime
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├─ Vessel control plane
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>│  └─ Carousel — one requested atomic deduction
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>├─ Cable data plane
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>├─ Codebase and append-only deduction ledger
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>├─ Scheduler port
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>├─ Host port
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>└─ stateless result-composition layer
+</code></pre></div>
+<p>Vessel owns the voyage's still-open structural future. It tracks occurrences
+and the frontier, coordinates Scheduler demand and bounded speculation, asks
+Carousel to deduce one exact occurrence, commits the result, and publishes an
+append-only <code>TopologyInstall</code> to Cable. Carousel neither runs an autonomous
+voyage loop nor owns channels, outcomes, or Cable lifecycle.</p>
+<p>Cable operates only topology it has atomically installed. It owns input
+admission, declaration-pin leases, channel capacity and backpressure, routed
+Values, the Outcome &amp; Value Store, Host emission sessions, multiplicity checks,
+and terminal propagation. Cable never reads a mutable Goal alias or applies a
+reduction rule. Scheduler decides attempt and scope outcomes; Cable records and
+routes accepted outcomes and Values.</p>
+<p>An Agent or operator authors replanning. After observing authorized Cable
+Values, outcomes, or terminals, it may store a new immutable Goal artifact and
+atomically rebind <code>Name/Arity</code>. An occurrence already committed to a hash never
+changes. A later undeduced occurrence—even in the same active segment—observes
+the alias only when Vessel demands its deduction, so it may select the new
+artifact. Vessel never invents this plan change from an outcome by itself.</p>
+<p>The planes complete a segment together: Vessel must prove that no reachable
+structural work remains, and Cable must prove that installed work has drained.
+Only then may Cable propagate the segment's <code>EndOfResult</code>. After decommission,
+<code>EndOfStream</code> additionally requires structural publication to be closed and all
+segments and channels drained. A stateless Runtime composition layer combines
+Vessel provenance with Cable segment order and drainage evidence into the final
+result; outward adapters do not bypass it to read either plane's storage.</p>
+<hr />
+<h2 id="language-generic">Language Generic<a class="headerlink" href="#language-generic" title="Permanent link">&para;</a></h2>
+<p>Subsea Cable does not replace Java.</p>
+<p>It does not replace Go.</p>
+<p>It does not replace Rust.</p>
+<p>It complements them.</p>
+<p>Every language can become a Subsea consumer simply by implementing the specification.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>.vyg
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        ↓
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Java
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>Go
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>Rust
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>Kotlin
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>Python
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>...
+</code></pre></div>
+<hr />
+<h2 id="infrastructure-generic">Infrastructure Generic<a class="headerlink" href="#infrastructure-generic" title="Permanent link">&para;</a></h2>
+<p>Execution is not prescribed.</p>
+<p>The same program may execute using</p>
+<ul>
+<li>a sequential scheduler</li>
+<li>a parallel scheduler</li>
+<li>a distributed runtime</li>
+<li>Kubernetes</li>
+<li>Temporal</li>
+<li>eBPF</li>
+<li>custom schedulers</li>
+</ul>
+<p>Subsea Cable intentionally leaves execution strategy outside of the language.</p>
+<hr />
+<h2 id="reduction-deduction-and-evaluation">Reduction, Deduction, and Evaluation<a class="headerlink" href="#reduction-deduction-and-evaluation" title="Permanent link">&para;</a></h2>
+<p>Subsea Cable separates three things that ordinary programs often collapse.</p>
+<p><strong>Reduction</strong> is the language rule that describes how a resolved Goal definition
+and its arguments produce subordinate structure or a leaf.</p>
+<p><strong>Deduction</strong> is the demand-driven Runtime event that resolves one Goal
+occurrence, applies its reduction rule, and commits the selected artifact hash
+and resulting structure. Deduction—not Touchdown—is the commit boundary.</p>
+<p><strong>Evaluation</strong> runs a concrete leaf after successive deductions have grounded
+it. Evaluation remains distinct from deduction.</p>
+<p>An unqualified child exposed by one deduction is a new symbolic <code>Name/Arity</code>
+occurrence. Its position is committed, but its current alias is not resolved to
+an <code>ArtifactHash</code> until that child is itself demanded. The concrete Goal DAG is
+therefore disclosed incrementally rather than frozen in full before work begins.</p>
+<hr />
+<h2 id="goal-arrows-and-function-arrows">Goal Arrows and Function Arrows<a class="headerlink" href="#goal-arrows-and-function-arrows" title="Permanent link">&para;</a></h2>
+<p>A Goal arrow describes a structural reduction rule:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Upper = [] -&gt; [A, B, C]
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>C = [b] -&gt; [D[b], E]
+</code></pre></div>
+<p>Square brackets are serial composition. <code>B</code> depends on <code>A</code> and receives its
+result, while <code>C</code> likewise depends on <code>B</code>. When <code>C</code> is deduced, its reduction
+rule produces a serial structure that
+becomes conceptually <code>[A, B, D, E]</code>, while lineage still records <code>Upper.C.D</code> and
+<code>Upper.C.E</code>.</p>
+<p>A serial composition contains at least two elements and exports the Values of
+its final element. A routed stage runs once for every Value its predecessor
+emits, so <code>[A, B]</code> exports B's Values for every Value of A, and its output
+multiplicity follows the composition table in
+<a href="#goal-signatures-and-output-multiplicity">Goal signatures and output multiplicity</a>.
+Earlier results are discarded unless they are routed explicitly.</p>
+<p>Bare <code>[]</code> and singleton <code>[A]</code> are not expressions. This does not affect
+<code>[] -&gt; ...</code>, which declares a zero-arity Goal, or <code>Goal[]</code>, which is a deferred
+zero-argument Goal reference.</p>
+<p>Curly braces with commas are parallel composition:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Upper = [x, y] -&gt; { C[x], D[y] }
+</code></pre></div>
+<p><code>C[x]</code> and <code>D[y]</code> have no dependency edge between them, so a Scheduler may run
+them concurrently. Braces permit concurrency but do not require simultaneous
+execution. A no-argument Goal is written as bare <code>A</code> inside a composition rather
+than <code>A[]</code> when it is an initial serial stage or a parallel sibling.</p>
+<p>An unkeyed parallel composition exports no value. When followed by another
+serial element, the structure contains a dependency from the composite node to
+that element, but the language does not decide when the composite is considered
+satisfied. Goal names are never turned into result keys automatically:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>[{A, B}, C[]] // C has a structural dependency on the parallel composite
+</code></pre></div>
+<p>An unkeyed parallel composition also requires at least two elements. Singleton
+<code>{A}</code> is invalid, while <code>{}</code> is an ordinary empty map value. Its output
+multiplicity is always <code>/0</code>, regardless of branch results: it publishes no
+outward Value and emits one composite <code>EndOfResult</code>.</p>
+<p>A <code>/0</code> predecessor invokes a routed successor zero times, and its empty segment
+completes normally:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>[{A, B}, C[]]          // valid: runs once after {A, B}; C/0
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>[{A, B}, C[y]]         // valid: y comes from lexical scope
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>[{A, B}, C]            // valid: C is invoked zero times; the whole is /0
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>[{A, B}, [x] -&gt; C[x]]  // valid: no parameter is bound; the whole is /0
+</code></pre></div>
+<p><code>NoOutput</code> survives only as the internal absence of a scalar that a
+resolving-map binding or a function-leaf body explicitly requires, where it
+still reports <code>NoOutputNotRoutable</code>. It is not a runtime value: it is not
+<code>null</code>, unit, or an empty map, and it has no source literal. Empty channel
+segments are not <code>NoOutput</code>.</p>
+<p>To pass parallel results downstream, every exported result needs an explicit
+key in a resolving map:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>[
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    [] -&gt; {x: A, y: B},
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    [{x, y}] -&gt; [C[x], D[y]]
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>]
+</code></pre></div>
+<p>The keyed map is the direct body of a Goal arrow. Its branches are independent
+and expose one immutable map-shaped result
+<code>{x: resultOfA, y: resultOfB}</code>. The following Goal arrow receives that one value
+and destructures it. <code>{A, B}</code> alone can never provide values for <code>[{x, y}]</code>
+because it exports nothing.</p>
+<p>A resolving map is still a value producer, not a Goal stage. It may never stand
+beside Goals in a composition:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>[A, {x: B, y: C}, D]          // invalid
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>[A, [] -&gt; {x: B, y: C}, D]    // valid; ignores A's output
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>[A, [i] -&gt; {x: B[i], y: C[i]}, D] // valid; routes A's output
+</code></pre></div>
+<p>Only a map literal used as the direct body of a Goal arrow is a resolving map.
+Every other map is an ordinary value or selective lookup map. Resolving-map
+keys must be concrete, and every branch must have output multiplicity exactly
+<code>/1</code>. The map and a Goal arrow whose direct body it is are then <code>/1</code>. A <code>/0</code> or
+<code>/N</code> branch reports
+<code>OutputMultiplicityMismatch(expected = /1, context = resolving-map-branch)</code>
+even when one invocation would emit a single Value; no first Value is chosen, no
+Values are collected, and no key is omitted. Singleton <code>[] -&gt; {x: A}</code> is valid, while <code>{}</code> is
+always an ordinary empty map.</p>
+<p>Bare downstream Goals are the one contextual shorthand: <code>[A, B]</code> means A/0
+followed by B/1, with A's result as B's sole argument. Explicit brackets never
+receive an implicit argument:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>[A[x], B]                         // B/1 receives A's result
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>[A[x], B[y]]                      // B structurally follows A and receives only y
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>[A[x], [Aresult] -&gt; B[Aresult, y]] // B/2 receives both explicit values
+</code></pre></div>
+<p>The serial container still orders <code>B[y]</code> after <code>A[x]</code>, but A's result is
+discarded unless it is forwarded explicitly through a Goal-arrow stage. No
+upstream value is automatically inserted or appended to a written argument
+list.</p>
+<p>A downstream parallel composition has one narrowly defined implicit fan-out.
+It works only when every branch is a bare Goal with a unary implementation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>[A, {B, C}]
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>// exactly equivalent routing
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>[A, [i] -&gt; {B[i], C[i]}]
+</code></pre></div>
+<p>The same one upstream value is sent to both branches. If either branch is not
+unary or needs any other value, all routing must be explicit:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>[A, [i] -&gt; {B[i], C[i, y]}]
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>[A, [i] -&gt; {B[y], C[i]}]
+</code></pre></div>
+<p>A fully explicit parallel group ignores the upstream value while retaining the
+outer structural dependency:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>[A, {B[a], C[b]}]
+</code></pre></div>
+<p>Implicit and explicit branches may not be mixed in one unkeyed parallel group.
+This fan-out shorthand never applies to resolving maps because maps cannot be
+composition stages. Keyed routing must be wrapped in a Goal arrow:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>[A, [i] -&gt; {x: B[i], y: C[i]}]
+</code></pre></div>
+<p>A Goal arrow may destructure and route one resolving-map result:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Distribute = [{x, y}] -&gt; [T1[y], T2[x]]
+</code></pre></div>
+<p>A Goal-arrow body must be reduction structure. It cannot be a primitive,
+ordinary map value, or computed operator result. Valid direct forms are a Goal
+reference/call, an Anchor leaf/call, another Goal arrow, serial composition,
+unkeyed parallel composition, a resolving map, or an ordinary-map lookup whose
+selectable entries are all valid Goal structure. Ordinary value expressions
+remain valid inside Goal and Anchor argument lists, but those argument
+expressions may not themselves contain a value-producing <code>Goal(...)</code> or
+<code>$anchor(...)</code> call.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Value = [x] -&gt; 42          // invalid: primitive body
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>Zero  = [x] -1&gt; $host      // valid: Anchor/0; x is unused
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>Call  = [x] -1&gt; $host(x)   // valid: Anchor/1
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>Bad   = [x] -&gt; (y) -&gt; y    // invalid: function arrow is never inline
+</code></pre></div>
+<p>A bare Anchor receives no implicit Goal parameters. <code>$host</code> and <code>$host()</code> are
+the same zero-argument occurrence. Signature compatibility and resolution belong
+to the Host, not structural validation. Serial and parallel elements follow the
+same structural restriction, so a value cannot stand beside Goals merely because
+it parses as an expression.</p>
+<h3 id="conditional-structural-pipelines">Conditional structural pipelines<a class="headerlink" href="#conditional-structural-pipelines" title="Permanent link">&para;</a></h3>
+<p>A pure selector expression may be followed by a keyed branch map as one
+structural pipeline:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>CountDown = [n] -1&gt; [
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    n == 0,
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    {
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>        true: Done[],
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>        false: CountDown[n - 1],
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>    },
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>]
+</code></pre></div>
+<p><code>CountDown</code> declares <code>-1&gt;</code> because its own recursive branch constrains its
+signature: without an explicit boundary the recursive component admits both
+<code>/1</code> and <code>/N</code>, which is <code>OutputMultiplicityCannotBeInferred(reason =
+recursive-signature-cycle)</code>.</p>
+<p>Carousel evaluates <code>n == 0</code> through the active Host primitive-semantics profile
+and exposes exactly one Goal-structure branch. The selector creates no Goal
+occurrence, leaf, or Scheduler work. The branch map is contextual structure: it
+is neither an ordinary value map nor a resolving map. It uses the ordinary
+normalized-key rules, including exact-match precedence and optional <code>_</code>
+fallback. A missing match reports <code>KeyNotFound</code> in the existing phase.</p>
+<p>All branches undergo structural validation, but an unselected branch creates no
+occurrence, resolves no alias, observes no routed value, and contributes no
+Touchdown. The selected branch's Values are the conditional pipeline's Values.
+Its output multiplicity joins the branch multiplicities: all <code>/0</code> is <code>/0</code>, all
+<code>/1</code> is <code>/1</code>, and any other known mix is <code>/N</code>. A branch whose multiplicity is
+unknown during authoring requires an explicit arrow on the containing named
+Goal.</p>
+<p>The selector may contain parameters, immutable values, ordinary value
+maps/lookups, literals, and primitive operators. It may not contain a Goal or
+Anchor occurrence or call. The conditional pipeline receives no implicit
+upstream value; bind an upstream value with an enclosing Goal arrow before
+using it in the selector or branch arguments.</p>
+<p>This conditional form has exactly two elements: the selector and the branch
+map, plus an optional trailing comma. <code>[selector, {true: Left[], false:
+Right[]}, Next]</code> is a syntax error. To continue after the selected branch, make
+the conditional pipeline one nested serial stage:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>[
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    [selector, {true: Left[], false: Right[]}],
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    Next,
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>]
+</code></pre></div>
+<p>A bare uppercase Goal name is not a value selector. For example, if <code>Flag</code> is a
+Goal, <code>[Flag, {true: Left[], false: Right[]}]</code> reports <code>UnboundName</code> because
+Goal definitions never satisfy value lookup.</p>
+<p>If the selector requires an unresolved routed value, the containing deduction
+stops at the conservative value barrier. It selects no key, creates no branch
+occurrence or observation, and commits no placeholder. Explicit demand reports
+<code>DeductionBlocked(pendingValue)</code>; speculative consideration reports
+<code>PrefetchBlocked</code> until the value resolves.</p>
+<p>The resolved selector is a value observation for SCP-0004 reuse. Provenance
+records a stable selector-value slot, its canonical digest, the normalized key
+selected, and the Host primitive profile. A prior selected-branch segment may
+be reused only when that digest and the other SCP-0004 identity inputs match;
+matching only the selected key is insufficient.</p>
+<p>This contextual form is distinct from a reusable structure-valued ordinary map
+binding, whose general closure and routing rules remain a separate design
+question.</p>
+<p>Outside a function-arrow leaf, an eager Goal call or Anchor call must itself be
+the direct structural occurrence: the complete Goal-arrow body, a serial or
+parallel element, or a resolving-map branch.
+It may not be hidden inside another call's arguments, a policy argument, an
+operator operand, a lookup key, or an ordinary value container.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>[C[x], D]                 // valid: explicit dependency and routing
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>[C(x), [v] -&gt; D[v]]       // valid: eager C is a visible stage
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>D[C(x)]                   // invalid: hidden eager Goal dependency
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>D[$fetch(x)]              // invalid: hidden Anchor effect
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>B[x + 1]                  // valid: effect-free primitive expression
+</code></pre></div>
+<p>The invalid nested forms report <code>InvalidStructuralContext</code>. Validation never
+invents a hoisted occurrence, and deduction never commits a placeholder while
+waiting for a hidden evaluation.</p>
+<p>The square-bracket arrow remains structural and may appear inline in Goal
+composition. By contrast, a function arrow exists only as the complete leaf
+implementation of a named Goal:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Add = (x, y) -&gt; x + y
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>Notify = ({x, y}) -&gt; { $C(x); $D(y) }
+</code></pre></div>
+<p><code>(x, y)</code> receives two arguments. <code>({x, y})</code> receives one map value and
+destructures it. The function composite uses semicolons to declare strict
+left-to-right dependencies. It does not forward non-final values and exposes
+the final value. It is not a map or a parallel Goal composition; <code>;</code> is valid
+only inside this leaf implementation. Error handling remains Scheduler policy.</p>
+<p>Function arrows have fixed arity with no default or variadic parameters.
+Destructuring requires one map containing every requested key. A non-map or a
+missing key produces <code>DestructureMismatch</code>; unrelated extra keys are allowed.
+Statically evident mismatches are validation errors, while dynamically known
+mismatches are deduction errors.</p>
+<p>A function arrow is never a value. It cannot be anonymous inline content,
+aliased, passed, returned, stored in a map, used as an argument, or inserted as
+a stage such as <code>[Goal1, (x) -&gt; ..., Goal2]</code>.</p>
+<p>Its body is the terminal content of its Goal and may use parameters, literals,
+operators, ordinary maps/lookups, and host calls written with Anchors. It may
+not reference or call another Subsea Goal at any depth. Therefore <code>C(x)</code> and
+<code>C[x]</code> are both invalid in a function body; Host Anchor calls must be written as
+<code>$C(x)</code> and <code>$D(y)</code>. This keeps all Subsea-level composition in Goal arrows and
+pushes executable functions to the Goal graph's leaf boundary. Those Anchor calls do
+not create additional Subsea Goal nodes.</p>
+<p>Subsea defines structure, not execution policy. Serial and parallel composition
+specify dependency edges, independence, value routing, and result keys. They do
+not specify success criteria, failure propagation, all/any/quorum completion,
+retry, cancellation, timeout, fire-and-forget behavior, or error aggregation.
+Those decisions belong to the Scheduler. A dependent evaluation instance can
+become eligible only when the Scheduler considers its upstream structure
+satisfied and supplies every value that the instance structurally requires.</p>
+<hr />
+<h2 id="laid-cables-and-output-multiplicity">Laid Cables and Output Multiplicity<a class="headerlink" href="#laid-cables-and-output-multiplicity" title="Permanent link">&para;</a></h2>
+<p>A Goal is not a synchronous function. Subsea defines no call stack, generator,
+<code>yield</code>, lazy list, or channel value. An authorized outward caller asks the
+Runtime to <strong>lay</strong> a Goal target as a live Cable, sends inputs into its left
+end, and observes Values that leave its right end through the composition
+surface. Every authored Goal
+connection behaves as an implicit channel-equivalent edge. See
+<a href="../proposals/0014-laid-cable-channel-semantics/">SCP-0014</a>.</p>
+<h3 id="laying-sending-and-decommissioning">Laying, sending, and decommissioning<a class="headerlink" href="#laying-sending-and-decommissioning" title="Permanent link">&para;</a></h3>
+<p>The outward Runtime operations are conceptually:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>cable = lay(Eratosthenes/1)   // live Cable for a symbolic Name/inputArity
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>send(cable, [50])             // admit one complete input tuple
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>send(cable, [100])
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>decommision(cable)            // admit nothing more, drain, then EndOfStream
+</code></pre></div>
+<p>These are Runtime API operations, not Voyage expressions, and <code>decommision</code> is
+the owner-selected spelling. <code>lay</code> is a Vessel control operation that returns
+only after the voyage and Cable data-plane lifecycle both exist; sends,
+admission, pin leases, and <code>decommision</code> belong to Cable lifecycle. The
+resulting Cable handle is a Runtime
+capability, not a Subsea value: it cannot pass through a Map, a Goal argument,
+<code>$Anchor(cable)</code>, a Host invocation, a <code>StructureHash</code>, or a memo key. A caller
+laying a stored Voyage Plan lays its <code>root</code> target by default; an authorized
+operator or debugger may lay any permitted <code>Name/inputArity</code> through the same
+operation. There is no one-shot <code>evaluate(goal, arguments)</code> and no
+input-bearing entry under another name, including <code>lay + send + implicit
+decommision</code>.</p>
+<p><code>lay</code> creates no evaluation segment, pins nothing, and resolves no alias. Each
+send checks the complete tuple arity, pins the Scheduler registry, the Host
+capability profile, and the forwarding allowlist, and then commits admission.
+That commit is the linearization point against <code>decommision</code>: a send that
+commits first becomes input segment <code>Input(k)</code>, the next contiguous zero-based
+ordinal; a send that loses returns <code>AdmissionClosed</code> and releases its pins. A
+rejected send (<code>AdmissionClosed</code>, <code>InputArityMismatch</code>,
+<code>ProfileNegotiationFailed</code>) consumes no ordinal and creates no segment,
+occurrence, terminal, Cable member, or segment outcome. A slow pre-admission
+attempt never delays decommission drainage.</p>
+<p>Pins belong to one input segment, not to the Cable, and each admitted segment
+keeps its pinned declaration snapshots resolvable until its terminal has
+propagated. Neither <code>lay</code> nor admission pins a codebase revision or resolves the
+laid target: its Root occurrence observes the alias only when demanded, so
+successive segments on one Cable may run different artifacts.</p>
+<h3 id="one-active-input-segment">One active input segment<a class="headerlink" href="#one-active-input-segment" title="Permanent link">&para;</a></h3>
+<p>Inputs are admitted in FIFO order and exactly one input segment is active at a
+time. Within it, Values flow downstream immediately and independent branches
+may run asynchronously. The next input begins only after the current segment's
+<code>EndOfResult</code> has propagated through the whole Cable and every operation it
+caused has drained. Until then the queued input receives no disclosure,
+deduction, alias observation, prefetch, or Host dispatch.</p>
+<p>Runtime state has three isolation layers:</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>State</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input segment</td>
+<td>declaration pins, occurrence and deduction namespace, attempts, routed Values, one <code>EndOfResult</code></td>
+</tr>
+<tr>
+<td>laid Cable data plane</td>
+<td>input queue, installed topology, Outcome &amp; Value Store, channel buffers and capacity, lifecycle and decommission state, completed segment order and drainage evidence</td>
+</tr>
+<tr>
+<td>Vessel control plane</td>
+<td>voyage, occurrence set, undeduced frontier, pending deductions and topology publication, Touchdown-window accounting</td>
+</tr>
+<tr>
+<td>shared Runtime services</td>
+<td>Codebase and alias index, append-only ledger backend, Scheduler and Host ports, any separately authorized Outcome Journal</td>
+</tr>
+</tbody>
+</table>
+<p>A Value or outcome from one segment never satisfies a binding, value barrier,
+or occurrence in another.</p>
+<p>Every edge is FIFO. Receiving from an empty live edge waits, sending to a full
+buffer waits, capacity <code>0</code> is a rendezvous, and silence is never termination.
+Capacity is Runtime-profile configuration with a profile default, not Voyage syntax or
+<code>@policy</code>; it changes blocking only, never results. It is independent of the
+SCP-0001 Touchdown prefetch window, and a send blocked on a full channel stays
+one active attempt.</p>
+<h3 id="terminals-and-results">Terminals and results<a class="headerlink" href="#terminals-and-results" title="Permanent link">&para;</a></h3>
+<p><code>EndOfResult(Succeeded | Failed(diagnostic) | Cancelled(diagnostic?))</code> ends
+one input segment while the Cable stays live. It is a control frame, not a
+value, and carries no identifier because segments never overlap. A successful
+segment may contain no Value; a Goal connected downstream is then invoked zero
+times. An unkeyed parallel composite emits exactly one <code>EndOfResult</code> for its
+whole scope; branch terminals remain internal.</p>
+<p>A failed or cancelled segment ends only itself. Its published Values, effects,
+deduction records, and Touchdowns remain, and the next queued input proceeds
+normally after the terminal propagates and its work drains.</p>
+<p><code>EndOfStream</code> ends the whole Cable. Cable propagates it only after
+<code>decommision</code>, Vessel has closed structural publication, every admitted segment
+has reached its completion handshake, complete drainage, and propagation of
+the final <code>EndOfResult</code>.
+It carries no aggregate outcome. The final Cable result is the Fully Touchdown
+Cable plus one <code>SegmentOutcome(Input(k), outcome)</code> per admitted input in
+increasing <code>Input(k)</code> order.</p>
+<h3 id="goal-signatures-and-output-multiplicity">Goal signatures and output multiplicity<a class="headerlink" href="#goal-signatures-and-output-multiplicity" title="Permanent link">&para;</a></h3>
+<p>Every Goal signature has an output multiplicity:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>GoalName / inputArity / outputMultiplicity
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>/0   success produces exactly zero Values       PrintLn/1/0
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>/1   success produces exactly one Value         ReadConfig/1/1
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>/N   success produces zero or more Values       Eratosthenes/1/N
+</code></pre></div>
+<p>Output multiplicity is part of the Goal's <code>StructureHash</code>, and therefore of its
+<code>GoalNodeId</code>, but not of the <code>Name/Arity</code> alias lookup key. One codebase
+revision cannot publish <code>/0</code>, <code>/1</code>, and <code>/N</code> overloads under one
+<code>Name/inputArity</code>, and a multiplicity change is a structural signature change.</p>
+<p>A named Goal's plain <code>-&gt;</code> asks for inference. It never defaults to <code>/1</code>. When
+inference cannot be unique, the named definition declares its contract with a
+multiplicity arrow:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>Add          = (a, b) -&gt; a + b                  // inferred /1
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>FanOut       = [x] -&gt; {A[x], B[x]}              // inferred /0
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>Print        = [x] -0&gt; $PrintLn(x)              // declared /0
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>ReadConfig   = [path] -1&gt; $readConfig(path)     // declared /1
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>Eratosthenes = [limit] -N&gt; $Eratosthenes(limit) // declared /N
+</code></pre></div>
+<p>The arrows <code>-0&gt;</code>, <code>-1&gt;</code>, and <code>-N&gt;</code> are written without internal spaces and
+apply only to a named Goal's complete structural definition <code>[params] -&gt; ...</code>.
+A function-leaf definition <code>(params) -&gt; body</code> always uses <code>-&gt;</code> and is always
+<code>/1</code>; an inline Goal-arrow stage keeps <code>-&gt;</code> and takes its body's multiplicity.
+The arrows are recognized only directly after a binding's leading <code>[...]</code>
+group, so <code>x-1&gt;0</code> and a parenthesized value such as <code>(base)-1&gt;0</code> keep their
+subtraction and comparison.</p>
+<p>Inference may use a pure scalar function-arrow result (<code>/1</code>), the composite
+rules below, an explicit or uniquely inferred signature in the same source
+unit, and the signature of a hash-qualified artifact. It never uses the
+artifact an unqualified alias currently selects, a Host registry or capability
+snapshot, observed output counts, the branch one run selected, or Scheduler
+state. A direct <code>$Anchor</code> output is opaque, so its containing named Goal
+normally declares a contract. Examples elsewhere in this document are
+fragments; they assume the Goals they reference are defined in the same source
+unit with known signatures.</p>
+<p>When inference is not unique, validation reports
+<code>OutputMultiplicityCannotBeInferred</code> with a reason:
+<code>recursive-signature-cycle</code> for an underdetermined definition cycle,
+<code>unknown-conditional-branch</code> for an unknown conditional or lookup branch,
+<code>opaque-host-output</code> for a direct Anchor output, or
+<code>external-symbolic-reference</code> for an unqualified reference that the source unit
+does not define. Which reason is reported when several causes apply to one
+definition, for example a recursive branch or a direct Anchor inside a
+conditional, is not yet specified. An explicit arrow is a checked contract, not an override: a
+disagreement reports <code>OutputMultiplicityMismatch(context = goal-declaration)</code>
+in validation when provable and in deduction, before Host dispatch, when it
+becomes known only after alias resolution. Inference never pins the child it
+used: the occurrence stays a symbolic <code>Name/inputArity</code> until demand.</p>
+<p>Composite multiplicity is derived from structure:</p>
+<ul>
+<li>an unkeyed parallel composite is <code>/0</code>: it publishes no outward Value;</li>
+<li>a resolving map is <code>/1</code>, and each of its branches must be exactly <code>/1</code>;</li>
+<li>a routed serial connection composes upstream and downstream by the table
+  below;</li>
+<li>a stage whose argument tuple is written in full consumes no upstream Value,
+  runs once after its predecessor, and resets the multiplicity to its own;</li>
+<li>a conditional joins known branches: all <code>/0</code> is <code>/0</code>, all <code>/1</code> is <code>/1</code>, and
+  any other mix is <code>/N</code>; an unknown branch requires an explicit arrow.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>upstream</th>
+<th>downstream <code>/0</code></th>
+<th>downstream <code>/1</code></th>
+<th>downstream <code>/N</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/0</code></td>
+<td><code>/0</code></td>
+<td><code>/0</code></td>
+<td><code>/0</code></td>
+</tr>
+<tr>
+<td><code>/1</code></td>
+<td><code>/0</code></td>
+<td><code>/1</code></td>
+<td><code>/N</code></td>
+</tr>
+<tr>
+<td><code>/N</code></td>
+<td><code>/0</code></td>
+<td><code>/N</code></td>
+<td><code>/N</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>/0</code> absorbs and <code>/1</code> is the identity, so a downstream <code>/0</code> fixes the composite
+at <code>/0</code> even when the upstream is unknown during authoring.</p>
+<h3 id="routing-values">Routing Values<a class="headerlink" href="#routing-values" title="Permanent link">&para;</a></h3>
+<p>A routed downstream Goal runs once per upstream Value. The bare unary stage in
+<code>[A, B]</code> is shorthand only for <code>[A, [x] -&gt; B[x]]</code>; no other arity has a
+shorthand, and there is no partial application or currying. If A emits <code>10</code>,
+<code>20</code>, and <code>30</code>, then <code>[A, [x] -&gt; B[y, x]]</code> produces three complete evaluations
+<code>B[y, 10]</code>, <code>B[y, 20]</code>, and <code>B[y, 30]</code> in FIFO order. An empty <code>/N</code> or a <code>/0</code>
+creates none, and the Runtime never chooses a first Value, collects Values, or
+converts a stream to a scalar. <code>[A, B[y]]</code> still demands and evaluates A, keeps
+its effects, Touchdowns, outcome, and provenance, and discards only its routed
+Values.</p>
+<p>A sink is ordinary Goal structure; there is no <code>cable</code> variable:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>PrintPrimes = [limit] -&gt; [Eratosthenes[limit], PrintPrime]
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>PrintPrime  = [prime] -0&gt; $PrintLn(prime)
+</code></pre></div>
+<p>Each prime creates one <code>PrintPrime/1</code> invocation, and the input's
+<code>EndOfResult</code> waits until all of them terminate. Values that no authored
+structure consumes leave the right end for the outward caller.</p>
+<p>A <code>/N</code> Value's zero-based FIFO position is Runtime metadata
+<code>emissionOrdinal</code>, never part of its payload. A downstream occurrence caused by
+the k-th Value carries a tagged <code>Emission(k)</code> position segment ahead of its
+<code>Authored(k)</code> segments, and every occurrence carries its segment's <code>Input(k)</code>
+prefix. These tags order the Fully Touchdown Cable independently of Host
+timing and never enter a Touchdown content hash.</p>
+<h3 id="host-result-obligations">Host result obligations<a class="headerlink" href="#host-result-obligations" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>/0</code>: success publishes no Value. An attempted Value is rejected before
+  routing and fails with <code>OutputMultiplicityMismatch(expected = /0, context =
+  host-emission)</code>.</li>
+<li><code>/1</code>: success publishes exactly one Value. Zero or a second Value fails with
+  <code>OutputMultiplicityMismatch(expected = /1, context = host-emission)</code>; an
+  excess Value is rejected before routing, and an accepted first Value is not
+  rolled back.</li>
+<li><code>/N</code>: the Host publishes zero or more Values and then exactly one Host
+  terminal. The first terminal seals the emission session. A later Value records
+  <code>HostTerminalProtocolViolation(kind = late-value)</code> and a second terminal
+  records <code>kind = duplicate-terminal</code>; both are fault evidence that never enter
+  the Value stream or change the Host emission result that the first terminal
+  determined. A normal return without a terminal fails the segment with
+  <code>kind = missing-terminal</code>.</li>
+</ul>
+<p>The Host terminal does not fix the segment outcome. Downstream work caused by
+accepted Values can still fail the segment, so its outcome is determined only
+after all of that work has drained, and then exactly one outward <code>EndOfResult</code>
+is emitted. A missing <code>/N</code> terminal or a <code>/0</code> or <code>/1</code> count mismatch also lets
+the work caused by already accepted Values drain before that single failed
+<code>EndOfResult</code>.</p>
+<p>A crashed or disconnected Host becomes a failed terminal. A live but silent
+Host leaves the input pending until policy such as <code>@timeout</code> intervenes. A
+missing <code>/1</code> Value is a multiplicity violation, never <code>NoOutputNotRoutable</code>.
+Retry and cancellation after a <code>/N</code> Host has already published Values are not
+yet defined.</p>
+<h3 id="compatibility-and-migration">Compatibility and migration<a class="headerlink" href="#compatibility-and-migration" title="Permanent link">&para;</a></h3>
+<p>This model replaces the input-bearing Root, the one-result-per-Goal assumption,
+and the single Root outcome. Existing <code>.vyg</code> programs migrate as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Before</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>last line <code>Build[input]</code></td>
+<td><code>root Build/1</code>; the input is sent to the laid Cable</td>
+</tr>
+<tr>
+<td><code>Done = [] -&gt; $done</code></td>
+<td><code>Done = [] -1&gt; $done</code>, or <code>-0&gt;</code> / <code>-N&gt;</code> when that is the Host contract</td>
+</tr>
+<tr>
+<td><code>[{A, B}, C]</code> rejected</td>
+<td>valid; C runs zero times and the whole is <code>/0</code></td>
+</tr>
+<tr>
+<td>resolving-map branch "exports a value"</td>
+<td>branch must be exactly <code>/1</code></td>
+</tr>
+<tr>
+<td>one Root outcome</td>
+<td>ordered <code>SegmentOutcome(Input(k), outcome)</code> entries</td>
+</tr>
+</tbody>
+</table>
+<p><code>-1&gt;</code> preserves the former single-result reading of a named Goal whose body is a
+direct Anchor. Internal <code>Goal[...]</code> and <code>Goal(...)</code> occurrences keep their
+meanings, and <code>root</code> remains an ordinary identifier outside the Root
+declaration.</p>
+<hr />
+<h2 id="a-voyage-plan-materializes-as-a-goal-dag">A Voyage Plan Materializes as a Goal DAG<a class="headerlink" href="#a-voyage-plan-materializes-as-a-goal-dag" title="Permanent link">&para;</a></h2>
+<p>The Voyage Plan exists from the start; its realized Cable does not.
+Demand-driven deductions materialize reachable structure as a directed acyclic graph (DAG), not
+necessarily a tree. The complete future graph need not exist or remain fixed in
+advance because every undeduced unqualified occurrence still observes a mutable
+<code>Name/Arity</code> alias when it is demanded.</p>
+<p>Source expressions use tree-shaped notation, but occurrences that resolve to the
+same policy-erased Goal definition and arity point to one shared structural Goal
+node. They add incoming dependency edges; they do not clone the node. Occurrences
+that resolve at different times may select different hashes and therefore point
+to different nodes even when their human-readable names are equal.</p>
+<p>Serial and parallel placement, argument routing, conditional selection, and
+resolving keys belong to edges and composite structure. A guarded recursive
+definition creates a fresh child occurrence each time its recursive branch is
+selected. The child may share a <code>GoalNodeId</code> with an ancestor, but the committed
+edge points to the new occurrence rather than back to the ancestor. The realized
+Cable therefore remains a DAG.</p>
+<p>Sharing a Goal node does not combine incoming values or create an implicit
+all-parent barrier. Each edge keeps its own routing and may create a separate
+evaluation instance. Multiple upstream results feed one evaluation instance
+only when an explicit structure such as a resolving map combines them.</p>
+<h2 id="deduction-preserves-lineages">Deduction Preserves Lineages<a class="headerlink" href="#deduction-preserves-lineages" title="Permanent link">&para;</a></h2>
+<p>Deduction is not textual substitution, and lineage is not node identity.</p>
+<p>When a Goal occurrence is deduced, the reduction result extends its active
+lineages onto every exposed child occurrence.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>PrepareOrder = [userId, orderInfo] -&gt;
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>    { GetUserInfo[userId], ValidateOrder[orderInfo] }
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>root PrepareOrder/2
+</code></pre></div>
+<p>laid and sent the input <code>[10, {...}]</code> deduces the explanatory lineage projection</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>{ PrepareOrder/2.GetUserInfo/1[10],
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>  PrepareOrder/2.ValidateOrder/1[{...}] }
+</code></pre></div>
+<p>not to bare <code>GetUserInfo</code> / <code>ValidateOrder</code> Goals.</p>
+<p>Each path segment contains the Goal's name and arity. The dotted <code>Name/Arity</code>
+form is explanatory pretty-printing of one Root-to-occurrence lineage held in
+Vessel provenance and supplied to Carousel for the requested deduction. It is
+not <code>.vyg</code> source syntax, a unique node address, or reparsable deduction output.
+Path <code>.</code> and <code>/arity</code> are not source-language syntax.</p>
+<p>Each incoming lineage is extended across the outgoing edges committed by a
+deduction. Deferred <code>Goal[...]</code> leaves the child occurrence undeduced; eager
+<code>Goal(...)</code> demands it immediately. The suffix changes timing, not the reduction
+rule. Function parameters, map values, and literals remain lexically scoped and
+inherit the active lineage set as context.</p>
+<hr />
+<h2 id="node-identity-lineage-and-evaluation-are-different">Node Identity, Lineage, and Evaluation Are Different<a class="headerlink" href="#node-identity-lineage-and-evaluation-are-different" title="Permanent link">&para;</a></h2>
+<p>Before deduction, an unqualified Goal occurrence is a symbolic <code>Name/Arity</code>
+reference with stable occurrence identity but no selected Goal node. When it is
+demanded, Vessel asks Carousel to atomically resolve the current alias to an
+<code>ArtifactHash</code>, apply the reduction, and commit that choice and result. Vessel
+then associates the occurrence with the artifact's
+policy-erased <code>StructureHash</code> and arity. That pair is its <code>GoalNodeId</code>.</p>
+<p>A structural Goal node is therefore identified by resolved policy-erased
+structure and arity, not by its parent, occurrence, lineage, argument values, or
+human-readable alias. The definition node is structurally shared; deductions
+and evaluations remain occurrence- and argument-sensitive. Deferred <code>Goal[...]</code>
+and eager <code>Goal(...)</code> can resolve to the same node when they observe the same
+alias binding; the suffix changes demand timing, not identity after resolution.</p>
+<p>A lineage path is one route from the Root to that shared node. A node with
+multiple incoming edges therefore has multiple lineages:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>Root = [] -&gt; { B[1], C[2] }
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>B = [x] -&gt; D[x]
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>C = [x] -&gt; D[x]
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>D = (x) -&gt; x
+</code></pre></div>
+<p><code>D/1</code> is one structural node with two lineages:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>Root/0.B/1.D/1
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>Root/0.C/1.D/1
+</code></pre></div>
+<p>It has evaluation instances for the routed argument tuples <code>(1)</code> and <code>(2)</code>.
+Evaluation remains separate from the shared structure. Structural sharing does
+not require result caching or execution coalescing; those remain Scheduler
+policy. Each evaluation instance carries the active lineage or lineages that
+actually contributed its inputs; the structural node's lineage set is their
+union.</p>
+<p>Distinct source occurrences remain distinct even when they point to the same
+Goal node with the same arguments:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>{Goal1, Goal1}
+</code></pre></div>
+<p>This contains two sibling occurrences and two edges to one shared <code>Goal1/0</code>
+node. The structure is therefore technically a directed acyclic multigraph.
+Every occurrence/edge has stable identity so lineage and policy attachment can
+distinguish duplicates. Whether a Scheduler physically coalesces identical
+evaluation work is execution policy, not structural identity.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>Definition  → shared by GoalNodeId                  (Codebase)
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>Deduction   → committed per demanded occurrence     (Vessel through Carousel)
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>Lineage     → one or more Root-to-occurrence paths   (Vessel provenance)
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>Evaluation  → distinguished by routed arguments     (Scheduler)
+</code></pre></div>
+<p>This is the same expansion/evaluation split, seen from the naming side.</p>
+<hr />
+<h2 id="leaves">Leaves<a class="headerlink" href="#leaves" title="Permanent link">&para;</a></h2>
+<p>Successive deductions bottom out in exactly two kinds of leaf.</p>
+<ul>
+<li>an arrow-function leaf belonging to a named Goal</li>
+<li>a Host Anchor leaf</li>
+</ul>
+<p>Both are Host-provided concrete computation. The difference is representation:
+an arrow-function body is present in Subsea source and evaluated by the Host,
+while an Anchor is an opaque name whose implementation the Host must resolve.</p>
+<p>An Anchor, written <code>$identifier</code>, marks a leaf whose implementation the Host must
+resolve. Only an identifier may follow <code>$</code>; inline location strings are invalid.
+Any registry that maps this identifier to a function, service, LLM, person, or
+other implementation exists outside Subsea source.</p>
+<p>Subsea Cable has no native effects of its own. Anything that touches reality is
+behind a Host Anchor.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>$send
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>$send(message)
+</code></pre></div>
+<p>An Anchor is opaque and never structurally reduced. Subsea supplies its
+identifier, explicit arguments and arity, occurrence identity, and active Goal
+lineages. The Host owns resolution, signature compatibility, invocation, and
+result semantics.</p>
+<p>Anchoring policy uses <code>@</code>, independently of Host resolution:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>@retry Goal1
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>@retry @atLeastOnce $send(message)
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>@timeout("30s") {Goal1, Goal1}
+</code></pre></div>
+<p>Each <code>@policy</code> prefix attaches How metadata to exactly the following structural
+occurrence. It never changes dependency topology, <code>GoalNodeId</code>, argument routing,
+or result routing. Stacked policies attach to the same target in source order.</p>
+<p>Policy-specific meaning, argument schema, same-addressee composition, and
+execution belong to the policy's <strong>resolved addressee</strong>. The Runtime policy
+phase owns addressee resolution, cross-addressee collision detection,
+target-kind enforcement, and the forwarding allowlist; none of those decisions
+falls through to an addressee by default. A Scheduler-addressed policy is the
+Scheduler's to interpret. A Host-addressed policy — one that changes only what
+happens inside exactly one grounded leaf invocation — is the Host's to
+interpret, and the Scheduler must not interpret it. An identifier neither
+declaration claims is <code>UnknownPolicy</code>.</p>
+<p>Eligibility, the attempt lifecycle, and scope outcomes stay with the Scheduler
+whatever policies exist. Policy inheritance is not delegated to either
+addressee: a policy never copies to a descendant occurrence. Neither addressee
+may change topology.</p>
+<p>A policy on a Goal reference belongs to that occurrence/edge and its lineage,
+never to the shared Goal definition or node. Erasing every policy annotation
+therefore produces the same structural projection. <code>StructureHash</code> excludes
+policies; <code>ArtifactHash</code> identifies the complete authored term and includes its
+ordered policy projection.</p>
+<p>For example, the timeout below targets the parallel product as one occurrence;
+it does not serialize its children or copy a separate timeout onto each child:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>@timeout("30s") {Goal1, Goal1}
+</code></pre></div>
+<h3 id="who-a-policy-is-addressed-to">Who a policy is addressed to<a class="headerlink" href="#who-a-policy-is-addressed-to" title="Permanent link">&para;</a></h3>
+<p>A <code>@policy</code> is metadata addressed to somebody, and there are two addressees.</p>
+<ul>
+<li><strong>Scheduler-addressed</strong> policies change eligibility, the attempt lifecycle, or
+  a scope's outcome: retry, timeout, cancellation, completion criteria. The
+  Scheduler interprets them.</li>
+<li><strong>Host-addressed</strong> policies change what happens inside exactly one grounded
+  leaf invocation: run it in a separate process, use a resource class. The Host
+  interprets them; the Scheduler must not.</li>
+</ul>
+<p>The test is mechanical: if it changes eligibility, the attempt lifecycle, or a
+scope's outcome, it is Scheduler-addressed; if it changes only what happens
+inside exactly one grounded leaf invocation, it is Host-addressed. Batching or
+coalescing several leaves crosses more than one occurrence, so it is Scheduler
+work even though the Host ultimately executes the batch.</p>
+<p>A Runtime resolves each occurrence's ordered policies against the Scheduler
+policy registry and the Host capability declaration, both pinned when each
+input segment is admitted:</p>
+<table>
+<thead>
+<tr>
+<th>Claimed by</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scheduler only</td>
+<td>Scheduler-addressed; it never crosses to the Host</td>
+</tr>
+<tr>
+<td>Host only</td>
+<td>Host-addressed; it rides in the Host-facing request as <code>hostPolicies[]</code></td>
+</tr>
+<tr>
+<td>Both</td>
+<td><code>PolicyConflict</code> in the <code>policy</code> phase at disclosure</td>
+</tr>
+<tr>
+<td>Neither</td>
+<td><code>UnknownPolicy</code>, unchanged</td>
+</tr>
+</tbody>
+</table>
+<p>A Host-addressed policy may only be authored on a grounded leaf — a
+function-leaf or an Anchor occurrence. On any non-leaf occurrence it is
+<code>UnsupportedPolicyTarget</code>, and a composite's policy is never forwarded to a
+descendant leaf, because policies do not inherit. See
+<a href="../proposals/0011-policy-addressee-and-host-channel/">SCP-0011</a>.</p>
+<hr />
+<h2 id="names-codebase-references-and-anchors">Names, Codebase References, and Anchors<a class="headerlink" href="#names-codebase-references-and-anchors" title="Permanent link">&para;</a></h2>
+<p>There is only one naming law, and it is positional.</p>
+<p>The base identifier before <code>[...]</code> is read by case. A Goal may additionally be
+qualified by a codebase hash prefix.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>Something[...]          uppercase → a Goal
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>Something#7fa31c[...]   uppercase → a hash-qualified Goal
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>something[...]          lowercase → a map
+</code></pre></div>
+<p>A lowercase map access takes exactly one key. <code>something[]</code> and
+<code>something[first, second]</code> are invalid, and maps cannot carry hash qualifiers;
+Goals may take zero or more arguments.</p>
+<p>Leading underscores are ignored for this test. The first ASCII letter decides
+the case, so <code>_Build[...]</code> is a Goal and <code>_cache[...]</code> is a map access. An
+identifier containing no letter may not be followed by <code>[...]</code>.</p>
+<p>Inside serial or parallel Goal composition only, a bare uppercase identifier is
+also a Goal stage. This is the only bracket-omission shorthand; a bare lowercase
+identifier remains an ordinary value.</p>
+<p>The wildcard <code>_</code> is reserved for map keys. It is not a general expression and
+cannot be used as a standalone value, argument, or pipeline stage.</p>
+<p><code>_</code> is available only as the fallback key of an ordinary lookup map. A resolving
+map that exports parallel branch results must use concrete keys; wildcard <code>_</code>
+is invalid in that context because it cannot become a materialized result key.</p>
+<p>A map may contain at most one wildcard and may not repeat an explicit key. An
+exact explicit-key match always takes precedence, regardless of declaration
+order; <code>_</code> is used only when no explicit key matches.</p>
+<p>A bare identifier key is static shorthand for a string key with the same
+spelling. <code>success</code> and <code>"success"</code> are duplicates. Keys never perform scope
+lookup or expression evaluation. Numeric and string keys remain distinct, so
+<code>1</code> and <code>"1"</code> are different keys.</p>
+<p>Key equality uses normalized structural key forms rather than raw source
+spelling. Thus <code>1</code> and <code>1.0</code> are the same numeric key, as are <code>0</code> and <code>-0</code>;
+string escapes are decoded before comparison. String keys are case-sensitive.</p>
+<p>Source files are UTF-8, while Identifiers intentionally remain ASCII:
+<code>[A-Za-z_][A-Za-z0-9_]*</code>. This keeps the casing law and name lookup independent
+of Unicode versions, locale, normalization, and visually confusable characters.
+The same rule covers Goal and value names, parameters, bare Identifier map keys,
+<code>$</code> Anchor names, and <code>@</code> policy names. Hash qualifiers remain ASCII
+alphanumeric.</p>
+<p>Strings are sequences of Unicode scalar values. They are not Unicode-normalized:
+precomposed <code>é</code> and <code>e</code> followed by a combining accent are different values.
+Invalid UTF-8 is a source-decoding error. Literal non-ASCII scalar values may be
+written directly in the source. The supported escapes are <code>\"</code>, <code>\\</code>, <code>\n</code>,
+<code>\r</code>, <code>\t</code>, and <code>\u{...}</code>. A Unicode escape has one to six hexadecimal digits
+and must denote <code>0..10FFFF</code>, excluding the surrogate range <code>D800..DFFF</code>.</p>
+<p>Escape spelling is not part of String identity. Escapes are decoded first, and
+the resulting exact scalar sequence is used for String equality, String map-key
+comparison, and canonical hashing. Consequently <code>"é"</code> and <code>"\u{E9}"</code> are the
+same String, while <code>"é"</code> and <code>"e\u{301}"</code> are not. No locale-aware comparison,
+case folding, or normalization participates.</p>
+<p>Subsea has one <code>Number</code> syntax. A numeric literal is a grammar-validated decimal
+string, not a language-defined integer, float, decimal, or fixed-width value.
+Subsea assigns it no precision or range and does not prescribe conversion,
+overflow, rounding, division, modulo, or division-by-zero behavior. The Host
+primitive semantics owns those choices, their results, and their errors. Two
+Hosts may therefore use different numeric models while realizing the same Goal
+structure.</p>
+<p>Numeric map-key identity is deliberately narrower and structural. It is derived
+from the literal text without performing numeric evaluation: trailing fractional
+zeroes are removed, an empty decimal point is removed, and a minus sign on zero
+is discarded. Consequently <code>1</code>, <code>1.0</code>, and <code>1.00</code> are one map key, as are <code>0</code>,
+<code>0.0</code>, and <code>-0</code>. This rule exists only so duplicate detection and lookup are
+deterministic; it does not define runtime arithmetic or numeric equality.</p>
+<p>Primitive operators are intentional deduction-time conveniences. They may be
+used wherever a value expression is accepted, including routed Goal arguments:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>A = [x] -&gt; B[x + 1]
+</code></pre></div>
+<p>When B's argument is needed during deduction, the Carousel requests <code>x + 1</code> from
+the Host's primitive semantics. This creates no Goal node, leaf, or Scheduler
+work. Subsea defines operator syntax, precedence, associativity, and structural
+evaluation control such as left-to-right Boolean short-circuiting. The Host
+defines operand support and conversion, numeric representation, exact results,
+and errors. String <code>+</code>, mixed-type equality or ordering, overflow, rounding,
+division, modulo, and division by zero are therefore Host contracts. Primitive
+operator evaluation itself has no effect, and every successful result must
+return to deduction as a Subsea-representable value.</p>
+<p>A computed value can select an ordinary-map branch, so the unfolded structure is
+relative to three inputs:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>Subsea source + input values + Host primitive-semantics profile
+</code></pre></div>
+<p>Every deduction records its active Host primitive-semantics profile in
+provenance. A different profile may produce different future deductions, but it
+never rewrites deductions that already committed. Runtime <code>==</code> is provided by
+that Host and is deliberately distinct from the fixed structural equality used
+for map-key identity.</p>
+<p><code>true</code> and <code>false</code> are reserved Boolean literals. There is no truthiness:
+<code>!</code>, <code>&amp;&amp;</code>, and <code>||</code> accept only Boolean operands, while equality and comparison
+produce Boolean values. Boolean map keys are supported and remain distinct from
+strings, so <code>true</code> and <code>"true"</code> are different keys.</p>
+<p><code>&amp;&amp;</code> and <code>||</code> short-circuit from left to right. Outside a function-arrow leaf,
+their operands cannot contain Goal or Anchor calls because that would hide an
+evaluation dependency inside a value expression. Inside a function-arrow leaf,
+an Anchor call in an unselected right operand is not invoked. This is Boolean
+value selection, not failure handling; execution policy remains with the
+Scheduler.</p>
+<p>Ordinary lookup maps are selective routing structures. <code>map[key]</code> checks an
+exact normalized key first and then <code>_</code>; only the selected entry participates
+in the resulting dependency/value structure. Unselected entries do not. If no
+entry matches, lookup reports <code>KeyNotFound</code>—as a validation error when the miss
+is statically known, otherwise as a deduction error. Resolving maps are
+different: their concrete keyed entries declare independent branches and
+explicit key-to-result relationships.</p>
+<p>A lookup map whose entries are Goal structure is a <strong>structure-valued lookup
+map</strong>. It is a top-level binding whose right-hand side is a map literal, and it
+may be used only in a Goal-structure position; using it as a value is
+<code>InvalidStructuralContext</code>. Every entry must be Goal structure written with an
+explicit suffix: a deferred Goal reference <code>A[]</code>, an Anchor reference <code>$a</code>, or a
+serial or parallel composition of those. A bare identifier in an entry is a
+value name, not a Goal stage, so it is <code>InvalidStructuralContext</code>. An inline
+Goal arrow parses in that position but is rejected in validation with the same
+kind: an entry is selected by lookup, not routed into, so its parameters would
+have no caller. The selected entry receives no implicit upstream
+value; routing into it must be written explicitly.</p>
+<p>A named structure-valued map is not a conditional branch map. <code>[sel, Routes]</code> is
+a two-stage serial composition whose second stage is the Goal stage <code>Routes</code>;
+the conditional pipeline of
+<a href="../proposals/0005-guarded-conditional-recursion/">SCP-0005</a> requires an authored
+branch-map literal as its second element. Selecting from a named map is written
+as the lookup <code>Routes[key]</code>. See
+<a href="../proposals/0009-structure-valued-lookup-maps/">SCP-0009</a>.</p>
+<p>Nothing else in the language depends on case.</p>
+<p>Top-level bindings form one order-independent scope. A binding may refer to a
+name declared later in the file. Non-Goal names may be bound once; local Goal
+definitions of either implementation kind may share a base name only when their
+arities differ. A Goal and a non-Goal binding cannot share a base name. There is
+no reassignment, same-name/same-arity redefinition, or last-declaration-wins
+behavior.</p>
+<p>Direct and mutual Goal recursion is valid when it is structurally guarded by a
+conditional branch map. Every definition-level cycle must cross a recursive
+reference beneath a conditional selection, and that guarding map must contain
+at least one branch that exits the recursive component. Unconditional cycles
+and conditional cycles with no exit remain <code>CycleDetected</code>.</p>
+<p>Validation establishes only that an exit is structurally possible. It does not
+prove that a particular input selects it. Each selected recursive step creates
+a fresh occurrence with its own arguments, lineage, policies, and deduction
+record. Non-termination is therefore a voyage execution/resource condition,
+not a validation-time cycle error. See <a href="../Recursion/">Recursion.md</a> and
+<a href="../proposals/0005-guarded-conditional-recursion/">SCP-0005</a>.</p>
+<p>Every selected conditional-branch child is an explicit-demand boundary.
+Carousel may commit the selection and expose the symbolic child, but MUST NOT
+cross that branch edge during speculative Touchdown replenishment; Scheduler
+demand is required whether or not local analysis classifies the edge as
+recursive. This prevents both statically visible and late alias-assembled
+leafless recursion from bypassing the Touchdown window.</p>
+<p>For cycles that local validation cannot see, especially cycles introduced by a
+late unqualified alias, Carousel compares a resolved <code>GoalNodeId</code> with its
+ancestor chain. Re-entry with a committed conditional branch selection on the
+intervening path is guarded and creates another fresh occurrence. Re-entry with
+no such selection is <code>CycleDetected</code> when the occurrence was explicitly
+demanded; reached speculatively, the path is abandoned with no occurrence and
+no diagnostic, so the diagnostic does not depend on the prefetch target.</p>
+<p>Names must be unique within one Goal parameter list or destructuring pattern.
+Each arrow creates a lexical scope. A nested structural arrow may shadow a
+parameter or top-level binding from an enclosing scope.</p>
+<p>Goal references use a human-readable name, arity, and optional hash prefix.
+Goals may share a name when their arities differ, and <code>Goal[...]</code> or <code>Goal(...)</code>
+supplies arity solely by argument count. Values, types, patterns, and guards do
+not participate in overload selection. Default and variadic parameters are not
+supported.</p>
+<p>An unqualified reference is a lazy symbolic <code>Name/Arity</code> occurrence. A
+hash-qualified reference pins one stored term:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>Build[x]            // resolve the current Build/1 alias when this occurrence deduces
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>Build#7fa31c[x]     // pinned historical ArtifactHash; reduction can remain lazy
+</code></pre></div>
+<p>The hash prefix is authoring syntax and is expanded to one full hash when the
+containing artifact is stored. Unqualified references deliberately remain
+symbolic in stored terms. Their alias can move until each occurrence is demanded
+for deduction.</p>
+<p>Storing a source unit creates immutable artifacts and updates the current
+<code>(name, arity)</code> index. A local unqualified reference may be checked against the
+same source unit during validation, but it is still stored as <code>Name/Arity</code>; the
+local definition initializes the alias rather than permanently pinning every
+future occurrence to its hash.</p>
+<p>Name resolution is deterministic and follows the syntactic category selected
+before lookup:</p>
+<ol>
+<li>A value Identifier searches the innermost arrow scope outward, then the
+   top-level non-Goal bindings. Goal definitions never satisfy value lookup.</li>
+<li>During validation, an unqualified <code>Goal/arity</code> can be checked against an exact
+   local definition and the current codebase index. The stored reference remains
+   symbolic even when that check succeeds.</li>
+<li>When an occurrence is demanded, its unqualified <code>Name/Arity</code> is atomically
+   resolved through the then-current codebase index. The selected full
+   <code>ArtifactHash</code>, observed codebase revision, arguments, result structure, and
+   lineages are committed in a deduction record. That occurrence never resolves
+   again.</li>
+<li><code>Name#prefix/arity</code> bypasses current-name lookup. At artifact storage it must
+   match exactly one stored artifact and the required arity, and the full hash is
+   retained thereafter.</li>
+<li>Bare Identifier map keys are String shorthand and perform no lookup.</li>
+<li><code>$name</code> and <code>@policy</code> are deliberately not resolved by structural
+   validation. Their registries belong to the Host and Scheduler respectively.</li>
+</ol>
+<p>The ordinary value expressions supplied as Anchor or policy arguments still
+undergo normal structural validation; only the external name, signature,
+applicability, and behavior are deferred to their owning layer.</p>
+<p>When a statically checkable unqualified Goal lookup finds no exact arity but
+finds the same name at other arities, validation reports <code>ArityMismatch</code> with
+the available arities. If the name does not exist at all, validation reports
+<code>GoalNotFound</code>. The same kinds can arise during deduction if the mutable alias
+index no longer supplies the demanded <code>Name/Arity</code>. A qualified lookup reports
+<code>HashNotFound</code> or <code>AmbiguousHashPrefix</code> before checking arity. Argument types and
+values never affect overload selection.</p>
+<h3 id="error-ownership">Error ownership<a class="headerlink" href="#error-ownership" title="Permanent link">&para;</a></h3>
+<p>Errors have a stable machine-readable <code>kind</code> and <code>phase</code>. Messages are not part
+of the language contract. Every error carries a source span when one exists;
+after elaboration it also carries the relevant artifact and occurrence identity,
+and deduction-time errors carry active lineage information.</p>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Owner</th>
+<th>Representative kinds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source</td>
+<td>decoder/parser</td>
+<td><code>InvalidSourceEncoding</code>, <code>SyntaxError</code></td>
+</tr>
+<tr>
+<td>validation</td>
+<td>structural language</td>
+<td><code>DuplicateBinding</code>, <code>DuplicateParameter</code>, <code>InvalidRoot</code>, <code>InvalidStructuralContext</code>, <code>InvalidUnicodeEscape</code>, <code>UnboundName</code>, statically provable <code>GoalNotFound</code>, <code>ArityMismatch</code>, <code>HashNotFound</code>, <code>AmbiguousHashPrefix</code>, <code>NotCallable</code>, <code>DuplicateMapKey</code>, <code>CycleDetected</code>, <code>OutputMultiplicityCannotBeInferred</code>, statically provable <code>OutputMultiplicityMismatch</code></td>
+</tr>
+<tr>
+<td>deduction</td>
+<td>Carousel using Codebase and Host primitive semantics</td>
+<td>dynamic <code>GoalNotFound</code>, <code>ArityMismatch</code>, <code>CycleDetected</code>, <code>KeyNotFound</code>, <code>DestructureMismatch</code>, <code>PrimitiveError</code>, <code>NoOutputNotRoutable</code>, dynamic <code>OutputMultiplicityMismatch</code></td>
+</tr>
+<tr>
+<td>host</td>
+<td>Host</td>
+<td><code>AnchorNotFound</code>, <code>AnchorSignatureMismatch</code>, <code>NoOutputNotRoutable</code> inside a function-leaf body, <code>OutputMultiplicityMismatch(context = host-emission)</code>, <code>HostTerminalProtocolViolation</code> with kind <code>late-value</code>, <code>duplicate-terminal</code>, or <code>missing-terminal</code>, arrow-function or Anchor leaf implementation failures</td>
+</tr>
+<tr>
+<td>policy</td>
+<td>Scheduler/anchoring layer</td>
+<td><code>UnknownPolicy</code>, <code>InvalidPolicyArguments</code>, <code>UnsupportedPolicyTarget</code>, <code>PolicyConflict</code>, <code>PolicyDenied</code>, scheduling and upstream-failure outcomes</td>
+</tr>
+</tbody>
+</table>
+<p><code>KeyNotFound</code>, <code>DestructureMismatch</code>, and <code>OutputMultiplicityMismatch</code> for a
+declaration (<code>context = goal-declaration</code>) or resolving-map branch
+(<code>context = resolving-map-branch</code>) retain the same <code>kind</code> when statically
+provable, but their phase is <code>validation</code>; otherwise they arise during
+<code>deduction</code>, before Host dispatch. <code>OutputMultiplicityCannotBeInferred</code> is
+always a validation error. <code>NoOutputNotRoutable</code> is now confined to a scalar
+that a resolving-map binding or a function-leaf body explicitly requires: it is
+<code>deduction</code> when detected while a resolving-map result is bound and <code>host</code> when
+detected inside a function-leaf body evaluation
+(<a href="../proposals/0010-dynamic-nooutput-errors/">SCP-0010</a>, narrowed by
+<a href="../proposals/0014-laid-cable-channel-semantics/">SCP-0014</a>). A <code>/0</code> or empty
+<code>/N</code> routed edge is an empty segment, not an error, and a missing <code>/1</code> Value is
+<code>OutputMultiplicityMismatch(context = host-emission)</code>.</p>
+<p>In the host row, <code>OutputMultiplicityMismatch(context = host-emission)</code> and a
+<code>HostTerminalProtocolViolation</code> detected before the segment's outward
+<code>EndOfResult</code> fail that segment through the ordinary path. A <code>late-value</code> or
+<code>duplicate-terminal</code> arriving after the first <code>/N</code> Host terminal sealed the
+emission session is separately recorded fault evidence: it never enters the
+Value stream, changes the Host emission result that terminal determined, or
+creates a second <code>EndOfResult</code>. The segment outcome itself is determined only
+after the work caused by accepted Values has drained.
+<code>PolicyDenied</code> reports a Host-addressed policy that a Host advertises but the
+deployment's forwarding allowlist withholds; <code>UnknownPolicy</code> is wrong there
+because the Host knows the identifier, and <code>UnsupportedPolicyTarget</code> is wrong
+because the target is legal
+(<a href="../proposals/0011-policy-addressee-and-host-channel/">SCP-0011</a>). Late alias resolution can likewise move <code>GoalNotFound</code>,
+<code>ArityMismatch</code>, and <code>CycleDetected</code> to deduction without changing their kinds.
+<code>CycleDetected</code> applies to an unguarded definition cycle or an invalid attempt
+to introduce an occurrence back-edge; it does not apply merely because a
+guarded recursive branch selects the same Goal definition for a fresh child
+occurrence.
+<code>NotCallable</code> applies to a parsed call-shaped expression whose
+syntactic category cannot be called, such as <code>value(...)</code>. A Goal found under
+the wrong arity reports <code>ArityMismatch</code>, not <code>NotCallable</code>.</p>
+<p>Source or validation errors make the source unit invalid, so no artifacts from
+that unit are committed to the codebase and deduction does not begin. A
+deduction error is scoped to the failing occurrence: that occurrence does not
+commit a partial deduction. Every earlier committed deduction—including
+intermediate structure that has not yet reached Touchdown—remains unchanged.
+Recovery or termination is Scheduler policy. Host and policy failures never
+retroactively change committed Goal structure.</p>
+<p>A binding whose right-hand side is <code>[params] -&gt; goal-body</code> defines a composite
+Goal. A binding whose right-hand side is <code>(params) -&gt; body</code> defines a Goal with
+an arrow-function leaf implementation. A composite definition may use <code>-0&gt;</code>,
+<code>-1&gt;</code>, or <code>-N&gt;</code> in place of <code>-&gt;</code> to declare its output multiplicity; a
+function-leaf definition always uses <code>-&gt;</code> and is <code>/1</code>.
+Both names begin with uppercase after leading underscores are ignored, and both
+participate in the same local <code>Name/Arity</code> lookup space. Any other permitted
+right-hand side defines an immutable non-Goal value. A function arrow is never a
+value and cannot be transported or rebound. A string binding is always an
+ordinary value and has no package, import, or Anchor-resolution meaning. Host
+Anchors never resolve through string bindings. An Anchor itself cannot be bound
+directly: <code>name = $host</code> is invalid.</p>
+<p>There are exactly two value-producing call forms. <code>Goal(...)</code> eagerly evaluates
+a Subsea Goal; <code>$anchor(...)</code> invokes a Host-resolved Anchor. Lowercase values,
+maps, pipelines, groups, call results, and every other value are not callable.
+Calls cannot be chained. Outside a function-arrow leaf these calls are valid
+only as direct structural occurrences and cannot be nested in value
+expressions. Inside an arrow-function leaf implementation, Subsea Goal calls
+are forbidden and only the Host Anchor form may be used; nested Anchor calls
+there belong to the Host evaluation of that one grounded leaf.</p>
+<p>Because <code>$</code> marks a Host Anchor leaf, a name may never be bound directly to one.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>Add = [a, b] -1&gt; $plus(a, b)  a real goal that reduces to a leaf
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>Add = (a, b) -&gt; a + b         a named Goal with an arrow-function leaf
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>Add = $plus                   forbidden — a leaf disguised as a goal
+</code></pre></div>
+<p>An Anchor leaf must be reached through structural Goal reduction. The dedicated
+function-arrow binding is the sole form that gives a Goal a direct leaf
+implementation.</p>
+<p>Subsea has no import, export, package, module, or public/private construct. Every
+named Goal definition in a valid source unit is stored in an abstract
+content-addressed codebase, including Goals not reachable from the <code>root</code>
+target. That declaration only names the default laid target of this Voyage Plan.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>Content store:       full ArtifactHash → authored Goal term
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>Current name index:  (human name, arity) → ArtifactHash
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>History:             older hashes remain addressable
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>Deduction ledger:    occurrence → selected hash + committed reduction result
+</code></pre></div>
+<p>Names are mutable indexes, never identity. The codebase backend may be a
+filesystem, SQLite database, Git-like store, distributed service, or any other
+implementation of the same resolution contract. Deletion, garbage collection,
+access control, branches, and namespaces belong to that implementation.</p>
+<p>An unqualified reference stored inside an artifact retains <code>Name/Arity</code>. It is
+the demand-paged address of Goal space. When Vessel demands that occurrence,
+Carousel resolves it against the current name index as part of the atomic
+deduction. Alias rebinding
+can therefore change still-undeduced structure but can never rewrite a committed
+deduction. A hash-qualified reference stores a full pinned hash and bypasses the
+mutable name index.</p>
+<p>An <code>ArtifactHash</code> identifies the stored authored Goal term, including its policy
+projection. It also captures the <strong>transitive closure of the top-level value
+bindings the term references by name</strong>, in canonical order, so two units whose
+Goals read different values never share a hash and an unrelated value edit never
+changes one. Unqualified Goal references are not captured: they stay symbolic and
+resolve when their own occurrence is demanded. A structure-valued lookup map is
+captured by structure rather than by value — its keys and entry shapes are part
+of the hash while Goal references inside its entries stay symbolic. See
+<a href="../proposals/0008-artifact-hash-value-closure/">SCP-0008</a>.</p>
+<p>Its policy-erased <code>StructureHash</code> supplies <code>GoalNodeId</code> and structural
+sharing. This lets two artifacts with identical structure but different
+<code>@policy</code> metadata share structural nodes without becoming the same authored
+artifact. For an unqualified reference, that node identity becomes known only
+after the occurrence selects an artifact during deduction.</p>
+<p>A laid target's artifact or a source revision alone is not a replay record because future
+unqualified occurrences may observe later alias bindings. Exact replay requires
+the deduction ledger: occurrence identity, requested name and arity, selected
+full hash, arguments, committed result structure, active lineages, and observed
+codebase revision for every deduction.</p>
+<p>The executable grammar, preprocessing reference algorithm, and acceptance/error
+corpus are maintained in <a href="../conformance/">conformance</a>.</p>
+<p>The external-implementer guide for a conforming Runtime and evidence-driven
+policy discovery methodology is repository-only. The public
+<a href="../implementation/RUNTIME_CONTRACT/">Runtime Contract</a> defines the current
+portable boundary; concrete policy meanings require separately declared support.</p>
+<hr />
+<h2 id="bring-your-own-scheduler">Bring Your Own Scheduler<a class="headerlink" href="#bring-your-own-scheduler" title="Permanent link">&para;</a></h2>
+<p>Subsea Cable intentionally ships without an official scheduler.</p>
+<p>Host, Carousel, Scheduler, Vessel control-plane, Cable data-plane, and complete Runtime
+implementations are independent external projects. This repository neither vendors nor designates an official one.</p>
+<p>Every project is free to provide execution strategies that fit its own runtime.</p>
+<hr />
+<h2 id="philosophy">Philosophy<a class="headerlink" href="#philosophy" title="Permanent link">&para;</a></h2>
+<p>Functions implement grounded Goals. Schedulers decide their eligibility and
+outcomes. Subsea Cable represents Goals.</p>
+<p>Not by replacing existing languages—</p>
+<p>but by giving them a common representation of programs.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Subsea Cable is licensed under Apache-2.0. The website is a generated view of the canonical repository sources.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

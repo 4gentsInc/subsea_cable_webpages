@@ -1,0 +1,2 @@
+Add = (a, b) -1> a + b
+root Add/2

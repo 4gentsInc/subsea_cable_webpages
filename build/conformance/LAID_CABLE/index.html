@@ -1,0 +1,2911 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A language-agnostic representation of executable intent.">
+      
+      
+      
+        <link rel="canonical" href="https://4gentsInc.github.io/subsea_cable_webpages/conformance/LAID_CABLE/">
+      
+      
+        <link rel="prev" href="../POLICY/">
+      
+      
+        <link rel="next" href="../PRIMES_UP_TO/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Laid Cable - __C — Subsea Cable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#laid-cable-conformance-scenarios" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="__C — Subsea Cable" class="md-header__button md-logo" aria-label="__C — Subsea Cable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            __C — Subsea Cable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Laid Cable
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/4gentsInc/subsea_cable_webpages" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    4gentsInc/subsea_cable_webpages
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Start
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ADOPTION/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Adopt
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../LANGUAGE_REFERENCE/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="__C — Subsea Cable" class="md-nav__button md-logo" aria-label="__C — Subsea Cable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    __C — Subsea Cable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/4gentsInc/subsea_cable_webpages" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    4gentsInc/subsea_cable_webpages
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WHY_SUBSEA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Subsea Cable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FOR_AGENTS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    For Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../METAPHORS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Subsea Cable World
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Philosophy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Philosophy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MANIFESTO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manifesto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TheProblem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Problem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BRAND/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brand & Mascot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adopt
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Adopt
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ADOPTION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prepare a Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RUNTIME_STATUS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runtime Availability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ECOSYSTEM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LANGUAGE_REFERENCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Language Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Recursion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guarded Conditional Recursion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../implementation/RUNTIME_CONTRACT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runtime Contract
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conformance
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Conformance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DEDUCTION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../POLICY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Laid Cable
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Laid Cable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-host-result-multiplicity-1-2-3-4-60" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Host result multiplicity [1, 2, 3, 4, 60]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-n-host-terminals-5-61-62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. /N Host terminals [5, 61, 62]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-silence-is-not-termination-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Silence is not termination [6]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-one-active-input-segment-7-15-33-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. One active input segment [7, 15, 33, 35]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-immediate-intra-segment-flow-and-per-value-routing-8-39-40-41-45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Immediate intra-segment flow and per-Value routing [8, 39, 40, 41, 45]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-authored-sinks-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Authored sinks [9]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-decommission-and-endofstream-10-50-63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Decommission and EndOfStream [10, 50, 63]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-full-tuple-binding-and-routing-shorthand-11-16-46" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Full tuple binding and routing shorthand [11, 16, 46]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-multiplicity-and-identity-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Multiplicity and identity [12]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-emission-positions-13-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Emission positions [13, 14]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-adapter-surface-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Adapter surface [19]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-parallel-composite-terminal-20-43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Parallel composite terminal [20, 43]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-channel-capacity-21-22-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Channel capacity [21, 22, 23]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-admission-pins-24-25-26-27-28-29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Admission pins [24, 25, 26, 27, 28, 29]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-demand-time-alias-per-segment-30-31-32-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Demand-time alias per segment [30, 31, 32, 34]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-input-provenance-and-the-final-result-36-37-38-47-48-49" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Input provenance and the final result [36, 37, 38, 47, 48, 49]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-empty-routed-segments-17-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Empty routed segments [17, 18]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-resolving-map-branches-after-alias-resolution-53-54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. Resolving-map branches after alias resolution [53, 54]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-unresolved-external-references-56-57" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. Unresolved external references [56, 57]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-hash-qualified-root-target-58" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20. Hash-qualified Root target [58]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-lay-creates-the-voyagecable-pair-before-returning-scp-0015-item-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21. lay creates the voyage/Cable pair before returning [SCP-0015 item 15]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-segment-activation-reuses-cable-declaration-leases-scp-0015-item-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22. Segment activation reuses Cable declaration leases [SCP-0015 item 14]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-scheduler-and-host-projections-cross-cable-correctly-scp-0015-item-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        23. Scheduler and Host projections cross Cable correctly [SCP-0015 item 13]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-structural-closure-and-drainage-are-both-required-scp-0015-items-9-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24. Structural closure and drainage are both required [SCP-0015 items 9, 11]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-final-composition-cannot-bypass-a-plane-scp-0015-item-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25. Final composition cannot bypass a plane [SCP-0015 item 17]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coverage-from-source-fixtures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coverage from source fixtures
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PRIMES_UP_TO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Primes Up To
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../proposals/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accepted Design History
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Accepted Design History
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/0001-touchdown-consumption-and-window-counting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0001: Touchdown consumption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/0002-carousel-runtime-boundaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0002: Carousel boundaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/0003-explicit-value-producing-call-staging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0003: Explicit call staging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/0004-voyage-plans-and-touchdown-cable-artifacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0004: Voyage and Cable artifacts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/0005-guarded-conditional-recursion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0005: Guarded conditional recursion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/0006-live-vessel-host-cooperation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0006: Live Runtime–Host cooperation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/0007-inline-goal-arrow-stage-occurrence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0007: Inline Goal-arrow stages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/0008-artifact-hash-value-closure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0008: Values in artifact identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/0009-structure-valued-lookup-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0009: Structure-valued lookup maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/0010-dynamic-nooutput-errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0010: NoOutput errors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/0011-policy-addressee-and-host-channel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0011: Policy addressee and Host channel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/0014-laid-cable-channel-semantics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0014: Laid Cable channel semantics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/0015-vessel-control-cable-data-plane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SCP-0015: Runtime planes and replanning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GOVERNANCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CONTRIBUTING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-host-result-multiplicity-1-2-3-4-60" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Host result multiplicity [1, 2, 3, 4, 60]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-n-host-terminals-5-61-62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. /N Host terminals [5, 61, 62]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-silence-is-not-termination-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Silence is not termination [6]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-one-active-input-segment-7-15-33-35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. One active input segment [7, 15, 33, 35]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-immediate-intra-segment-flow-and-per-value-routing-8-39-40-41-45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Immediate intra-segment flow and per-Value routing [8, 39, 40, 41, 45]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-authored-sinks-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Authored sinks [9]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-decommission-and-endofstream-10-50-63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Decommission and EndOfStream [10, 50, 63]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-full-tuple-binding-and-routing-shorthand-11-16-46" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Full tuple binding and routing shorthand [11, 16, 46]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-multiplicity-and-identity-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Multiplicity and identity [12]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-emission-positions-13-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Emission positions [13, 14]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-adapter-surface-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Adapter surface [19]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-parallel-composite-terminal-20-43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Parallel composite terminal [20, 43]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-channel-capacity-21-22-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Channel capacity [21, 22, 23]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-admission-pins-24-25-26-27-28-29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Admission pins [24, 25, 26, 27, 28, 29]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-demand-time-alias-per-segment-30-31-32-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Demand-time alias per segment [30, 31, 32, 34]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-input-provenance-and-the-final-result-36-37-38-47-48-49" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Input provenance and the final result [36, 37, 38, 47, 48, 49]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-empty-routed-segments-17-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Empty routed segments [17, 18]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-resolving-map-branches-after-alias-resolution-53-54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. Resolving-map branches after alias resolution [53, 54]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-unresolved-external-references-56-57" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. Unresolved external references [56, 57]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-hash-qualified-root-target-58" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20. Hash-qualified Root target [58]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-lay-creates-the-voyagecable-pair-before-returning-scp-0015-item-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21. lay creates the voyage/Cable pair before returning [SCP-0015 item 15]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-segment-activation-reuses-cable-declaration-leases-scp-0015-item-14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22. Segment activation reuses Cable declaration leases [SCP-0015 item 14]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-scheduler-and-host-projections-cross-cable-correctly-scp-0015-item-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        23. Scheduler and Host projections cross Cable correctly [SCP-0015 item 13]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-structural-closure-and-drainage-are-both-required-scp-0015-items-9-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24. Structural closure and drainage are both required [SCP-0015 items 9, 11]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-final-composition-cannot-bypass-a-plane-scp-0015-item-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25. Final composition cannot bypass a plane [SCP-0015 item 17]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coverage-from-source-fixtures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coverage from source fixtures
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="laid-cable-conformance-scenarios">Laid-Cable Conformance Scenarios<a class="headerlink" href="#laid-cable-conformance-scenarios" title="Permanent link">&para;</a></h1>
+<p>These scenarios specify observable Subsea Cable Runtime behavior across the
+Vessel control plane and Cable data plane for laid Cables,
+per-input result segments, terminals, and Goal output multiplicity defined by
+<a href="../../proposals/0014-laid-cable-channel-semantics/">SCP-0014</a>. Plane ownership
+and the completion handshake additionally follow
+<a href="../../proposals/0015-vessel-control-cable-data-plane/">SCP-0015</a>. A single source
+fixture cannot express them. They need a live Cable, deterministic Host doubles,
+and a controllable Scheduler, and they are normative for an implementation
+claiming laid-Cable conformance.</p>
+<p>Every scenario uses the outward operations <code>lay(goalRef)</code>, <code>send(cable,
+input)</code>, and <code>decommision(cable)</code>. They are Runtime operations, not Voyage
+syntax, and <code>lay</code> always takes a named <code>Name/inputArity</code> reference: composite
+structure is laid through a named wrapper Goal, never as an anonymous arrow.
+Unless a scenario says otherwise, the Codebase holds this unit:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>P = [x] -N&gt; $p(x)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Q = [x] -1&gt; $q(x)
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Z = [x] -0&gt; $z(x)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>S = [v] -0&gt; $sink(v)
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>PThenQ = [x] -&gt; [P[x], Q]
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>PThenS = [x] -&gt; [P[x], S]
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>QThenS = [x] -&gt; [Q[x], S]
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>ZThenQ = [x] -&gt; [Z[x], Q]
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>Fan    = [x] -&gt; {Q[x], P[x]}
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>root PThenQ/1
+</code></pre></div>
+<p><code>$p</code>, <code>$q</code>, <code>$z</code>, and <code>$sink</code> are deterministic, recording Host doubles whose
+emissions, terminals, delays, and failures each scenario programs. The
+bracketed number after each heading lists the SCP-0014 §13 coverage items the
+scenario satisfies. Items satisfied by source fixtures are mapped in the final
+section.</p>
+<h2 id="1-host-result-multiplicity-1-2-3-4-60">1. Host result multiplicity  [1, 2, 3, 4, 60]<a class="headerlink" href="#1-host-result-multiplicity-1-2-3-4-60" title="Permanent link">&para;</a></h2>
+<p>Lay <code>Z/1</code>, <code>Q/1</code>, and <code>P/1</code> and send one input to each.</p>
+<ul>
+<li><code>Z</code> succeeds with no Value: the right end observes only
+  <code>EndOfResult(Succeeded)</code>.</li>
+<li><code>Q</code> emits one Value: the right end observes that Value and then
+  <code>EndOfResult(Succeeded)</code>.</li>
+<li><code>P</code> emits zero, one, and three Values in three separate segments; each is
+  followed by exactly one <code>EndOfResult(Succeeded)</code>.</li>
+</ul>
+<p>Then lay <code>QThenS/1</code> and <code>ZThenQ/1</code> so each violation has downstream work:</p>
+<ul>
+<li><code>$q</code> emits one Value and then a second. The second MUST be rejected before
+  routing. <code>S</code> MUST run exactly once, for the first Value, and that run and its
+  effects are not rolled back. Only after that <code>S</code> run terminates does the
+  segment emit exactly one <code>EndOfResult(Failed(OutputMultiplicityMismatch(
+  expected = /1, context = host-emission)))</code>.</li>
+<li><code>$q</code> completes successfully with zero Values: <code>S</code> runs zero times and the
+  segment emits exactly one failed <code>EndOfResult</code> with the same diagnostic.</li>
+<li><code>$z</code> emits a Value: it MUST be rejected before routing, <code>Q</code> runs zero times,
+  and the segment emits exactly one <code>EndOfResult(Failed(OutputMultiplicityMismatch(
+  expected = /0, context = host-emission)))</code>.</li>
+</ul>
+<h2 id="2-n-host-terminals-5-61-62">2. <code>/N</code> Host terminals  [5, 61, 62]<a class="headerlink" href="#2-n-host-terminals-5-61-62" title="Permanent link">&para;</a></h2>
+<p>Lay <code>PThenS/1</code> and program <code>$p</code>:</p>
+<ol>
+<li>Emit two Values, a successful Host terminal, then a third Value.</li>
+<li>Emit one Value and two successful terminals.</li>
+<li>As variant 1, but make the second <code>S</code> run fail.</li>
+<li>Emit one Value and return normally with no terminal.</li>
+</ol>
+<p>The first terminal seals the emission session. In variants 1–3 the late Value
+MUST be rejected before routing and recorded as
+<code>HostTerminalProtocolViolation(kind = late-value)</code>, and the second terminal
+MUST be recorded as <code>kind = duplicate-terminal</code>. Neither changes the successful
+Host emission result nor creates a second <code>EndOfResult</code>. <code>S</code> runs once per
+accepted Value, and the segment's single outward <code>EndOfResult</code> follows only
+after those runs drain: <code>Succeeded</code> in variants 1 and 2, <code>Failed</code> in variant 3,
+showing that the Host terminal did not fix the segment outcome. In variant 4
+<code>S</code> MUST run once for the accepted Value and finish, and then the segment emits
+exactly one <code>EndOfResult(Failed(HostTerminalProtocolViolation(kind =
+missing-terminal)))</code>.</p>
+<h2 id="3-silence-is-not-termination-6">3. Silence is not termination  [6]<a class="headerlink" href="#3-silence-is-not-termination-6" title="Permanent link">&para;</a></h2>
+<p>Lay <code>P/1</code>, send an input, and let the Host double stay connected without
+emitting. The segment MUST remain pending indefinitely; no <code>EndOfResult</code>,
+<code>NoOutput</code>, or success is inferred. With <code>@timeout</code> authored on the leaf, the
+Scheduler policy ends it with the corresponding non-success outcome.</p>
+<h2 id="4-one-active-input-segment-7-15-33-35">4. One active input segment  [7, 15, 33, 35]<a class="headerlink" href="#4-one-active-input-segment-7-15-33-35" title="Permanent link">&para;</a></h2>
+<p>Lay <code>PThenQ/1</code> and send two inputs before the first segment ends.</p>
+<ul>
+<li>No occurrence of the second segment is disclosed, deduced, prefetched,
+  alias-resolved, or dispatched until the first segment's <code>EndOfResult</code> has
+  propagated and its caused work has drained.</li>
+<li>No Value, attempt outcome, or routed binding from one segment satisfies an
+  occurrence, value barrier, or binding in the other.</li>
+<li>Cable-level state (queue, buffers, lifecycle) is inspectably separate from
+  each segment's Outcome &amp; Value Store and deduction namespace.</li>
+</ul>
+<h2 id="5-immediate-intra-segment-flow-and-per-value-routing-8-39-40-41-45">5. Immediate intra-segment flow and per-Value routing  [8, 39, 40, 41, 45]<a class="headerlink" href="#5-immediate-intra-segment-flow-and-per-value-routing-8-39-40-41-45" title="Permanent link">&para;</a></h2>
+<p>Lay <code>PThenQ/1</code> where <code>$p</code> emits <code>10</code>, <code>20</code>, <code>30</code> with a controllable delay
+between them. <code>Q</code> MUST be invoked for <code>10</code> before <code>P</code> emits <code>20</code>. Exactly
+three complete <code>Q/1</code> evaluations occur in FIFO order and the composite is <code>/N</code>.
+When <code>P</code> emits nothing, <code>Q</code> is invoked zero times and the segment succeeds. No
+first-Value selection, collection, or multiplicity failure occurs.</p>
+<h2 id="6-authored-sinks-9">6. Authored sinks  [9]<a class="headerlink" href="#6-authored-sinks-9" title="Permanent link">&para;</a></h2>
+<p>Store this unit and lay <code>PrintPrimes/1</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>PrintPrimes = [limit] -&gt; [Eratosthenes[limit], PrintPrime]
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>PrintPrime  = [prime] -0&gt; $PrintLn(prime)
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Eratosthenes = [limit] -N&gt; $eratosthenes(limit)
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>root PrintPrimes/1
+</code></pre></div>
+<p>Send <code>20</code>. One <code>PrintPrime/1</code> and one <code>$PrintLn</code> invocation MUST occur per
+prime, each visible as its own occurrence with its own outcome. The segment's
+<code>EndOfResult</code> MUST wait until all of them terminate. No <code>cable</code> Voyage variable
+exists and no terminal frame is passed as an Anchor argument.</p>
+<h2 id="7-decommission-and-endofstream-10-50-63">7. Decommission and <code>EndOfStream</code>  [10, 50, 63]<a class="headerlink" href="#7-decommission-and-endofstream-10-50-63" title="Permanent link">&para;</a></h2>
+<p>Lay the plan's default target <code>PThenQ/1</code>, send three inputs, make the second
+fail, then call <code>decommision</code>.</p>
+<ul>
+<li>A later send MUST return <code>AdmissionClosed</code> and consume no <code>Input(k)</code>.</li>
+<li>All three accepted segments drain, including the one after the failure.</li>
+<li><code>EndOfStream</code> is emitted once, after the final <code>EndOfResult</code>, and carries no
+  aggregate outcome.</li>
+<li>Race a send against <code>decommision</code> many times. Exactly the sends whose
+  admission commit wins receive contiguous ordinals; each loser releases any
+  pins it acquired and returns <code>AdmissionClosed</code>. A send blocked in a slow pin
+  attempt before admission MUST NOT delay <code>EndOfStream</code>.</li>
+</ul>
+<h2 id="8-full-tuple-binding-and-routing-shorthand-11-16-46">8. Full tuple binding and routing shorthand  [11, 16, 46]<a class="headerlink" href="#8-full-tuple-binding-and-routing-shorthand-11-16-46" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>[A, B]</code> with a unary <code>B</code> routes each A Value into <code>B</code>; no other arity has a
+  bare shorthand.</li>
+<li><code>[A, B[y]]</code>: A is still demanded and evaluated, its effects, Touchdowns,
+  outcome, and provenance remain observable, and only its routed Values are
+  discarded. <code>B</code> is invoked once with its written tuple, and the composite
+  takes <code>B</code>'s multiplicity even when A is <code>/N</code>.</li>
+<li>No written argument list is ever completed from an upstream Value.</li>
+</ul>
+<h2 id="9-multiplicity-and-identity-12">9. Multiplicity and identity  [12]<a class="headerlink" href="#9-multiplicity-and-identity-12" title="Permanent link">&para;</a></h2>
+<p>Store <code>F = [x] -1&gt; $f(x)</code> and a variant <code>F = [x] -N&gt; $f(x)</code> in successive
+codebase revisions. Their <code>StructureHash</code> values, and therefore <code>GoalNodeId</code>,
+MUST differ. Publishing both under <code>F/1</code> in one revision MUST be rejected: an
+alias key is <code>Name/inputArity</code> only, and multiplicity is never an overload
+axis. A memo key containing <code>GoalNodeId</code> distinguishes the two.</p>
+<h2 id="10-emission-positions-13-14">10. Emission positions  [13, 14]<a class="headerlink" href="#10-emission-positions-13-14" title="Permanent link">&para;</a></h2>
+<p>Let <code>P</code> emit three equal payloads. Their downstream occurrences MUST carry
+<code>Emission(0)</code>, <code>Emission(1)</code>, <code>Emission(2)</code> position segments. The payloads are
+unchanged and carry no ordinal. Repeat with the Host completing downstream work
+in reverse order; the Fully Touchdown Cable order MUST be identical, following
+tagged <code>Authored(k)</code> and <code>Emission(k)</code> positions (<code>Authored</code> before <code>Emission</code>
+at a common parent) rather than completion timing.</p>
+<h2 id="11-adapter-surface-19">11. Adapter surface  [19]<a class="headerlink" href="#11-adapter-surface-19" title="Permanent link">&para;</a></h2>
+<p>Every TUI, MCP, library, and service adapter MUST expose arbitrary-Goal
+debugging only as <code>lay(goalRef)</code> plus separate send and decommission operations.
+None may expose <code>evaluate(goal, arguments)</code> or an equivalent that combines
+<code>lay</code>, send, and an implicit <code>decommision</code>.</p>
+<h2 id="12-parallel-composite-terminal-20-43">12. Parallel composite terminal  [20, 43]<a class="headerlink" href="#12-parallel-composite-terminal-20-43" title="Permanent link">&para;</a></h2>
+<p>Lay <code>Fan/1</code>. The right end MUST observe no Value and exactly one
+<code>EndOfResult</code> carrying the Scheduler-determined scope outcome. Branch
+terminals remain internal regardless of their arrival order.</p>
+<h2 id="13-channel-capacity-21-22-23">13. Channel capacity  [21, 22, 23]<a class="headerlink" href="#13-channel-capacity-21-22-23" title="Permanent link">&para;</a></h2>
+<p>Run scenario 5 with capacity <code>0</code>, <code>1</code>, and the profile default. Values,
+terminals, outcomes, and the Fully Touchdown Cable MUST be identical; only
+blocking may differ. A Host send that blocks on a full channel remains one
+active attempt, never reclassified as undispatched. Touchdown prefetch and
+channel capacity each enforce their own bound: shrinking one does not relax the
+other.</p>
+<h2 id="14-admission-pins-24-25-26-27-28-29">14. Admission pins  [24, 25, 26, 27, 28, 29]<a class="headerlink" href="#14-admission-pins-24-25-26-27-28-29" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>lay</code> alone creates no segment and pins nothing.</li>
+<li>Each accepted send pins the Scheduler registry, Host capability profile, and
+  forwarding allowlist before any disclosure or deduction for its segment.</li>
+<li>A send whose pin fails returns <code>ProfileNegotiationFailed</code> and produces no
+  segment, occurrence, Cable member, or <code>EndOfResult</code>.</li>
+<li>Change a declaration between two sends: the segments record different
+  immutable pin sets.</li>
+<li>A queued admitted segment keeps its snapshots resolvable until its terminal
+  propagates, with no repinning when it activates. An attempt to evict a pinned
+  snapshot is reported as a Runtime contract violation. A Host endpoint outage
+  under a retained pin is an ordinary attempt failure.</li>
+</ul>
+<h2 id="15-demand-time-alias-per-segment-30-31-32-34">15. Demand-time alias per segment  [30, 31, 32, 34]<a class="headerlink" href="#15-demand-time-alias-per-segment-30-31-32-34" title="Permanent link">&para;</a></h2>
+<p>Lay unqualified <code>Root/1</code>, send an input, rebind <code>Root/1</code>, then send another.
+The later segment MUST select the artifact visible when its own Root occurrence
+is demanded. A queued segment observes no alias before it becomes active.
+Rebinding never changes an already deduced occurrence. A shared ledger backend
+keeps each segment's deduction namespace distinct.</p>
+<h2 id="16-input-provenance-and-the-final-result-36-37-38-47-48-49">16. Input provenance and the final result  [36, 37, 38, 47, 48, 49]<a class="headerlink" href="#16-input-provenance-and-the-final-result-36-37-38-47-48-49" title="Permanent link">&para;</a></h2>
+<p>Lay <code>PThenQ/1</code> and send four inputs where the second is rejected (arity) and
+the third fails.</p>
+<ul>
+<li>The admitted inputs receive <code>Input(0)</code>, <code>Input(1)</code>, <code>Input(2)</code>; the rejected
+  send has no ordinal.</li>
+<li>The same inner occurrence path in two segments stays distinct through its
+  <code>Input(k)</code> prefix.</li>
+<li>The Fully Touchdown Cable concatenates segment lists in increasing <code>Input(k)</code>
+  order. The ordinal appears in no control frame and no Touchdown content hash.</li>
+<li>The failed segment keeps its published Values, effects, deduction records,
+  and Touchdowns, and the following segment starts normally after the failed
+  terminal propagates and drains.</li>
+<li>The final result contains one <code>SegmentOutcome(Input(k), outcome)</code> per
+  admitted input, in ordinal order.</li>
+</ul>
+<h2 id="17-empty-routed-segments-17-18">17. Empty routed segments  [17, 18]<a class="headerlink" href="#17-empty-routed-segments-17-18" title="Permanent link">&para;</a></h2>
+<p>Lay <code>ZThenQ/1</code>, and lay <code>PThenQ/1</code> with <code>$p</code> emitting no Value before its
+terminal: in both, <code>Q</code> MUST be invoked zero times and the segment ends
+<code>EndOfResult(Succeeded)</code> with no <code>NoOutputNotRoutable</code>. Lay <code>QThenS/1</code> with
+<code>$q</code> succeeding with no Value: <code>S</code> runs zero times and the segment MUST fail
+with <code>OutputMultiplicityMismatch(context = host-emission)</code>, not
+<code>NoOutputNotRoutable</code>.</p>
+<h2 id="18-resolving-map-branches-after-alias-resolution-53-54">18. Resolving-map branches after alias resolution  [53, 54]<a class="headerlink" href="#18-resolving-map-branches-after-alias-resolution-53-54" title="Permanent link">&para;</a></h2>
+<p>Store <code>Both = [x] -&gt; {a: Q[x], b: R[x]}</code> while <code>R/1</code> is <code>/1</code>, then rebind <code>R/1</code>
+to a <code>/N</code> artifact before the branch is demanded. Demanding it MUST report
+deduction-phase <code>OutputMultiplicityMismatch(context = resolving-map-branch)</code>
+before Host dispatch. The rebound <code>/N</code> branch stays invalid even when the Host
+double would emit exactly one Value; no first Value is chosen and no key is
+omitted.</p>
+<h2 id="19-unresolved-external-references-56-57">19. Unresolved external references  [56, 57]<a class="headerlink" href="#19-unresolved-external-references-56-57" title="Permanent link">&para;</a></h2>
+<p>In a Codebase where <code>Ext/1</code> is stored by another unit:</p>
+<ul>
+<li><code>W = [x] -&gt; Ext[x]</code> in a new unit MUST report
+  <code>OutputMultiplicityCannotBeInferred(reason = external-symbolic-reference)</code>.
+  Inference MUST NOT consult the current <code>Ext/1</code> alias.</li>
+<li><code>W = [x] -1&gt; Ext[x]</code> is accepted without resolving <code>Ext/1</code>. If <code>Ext/1</code> later
+  resolves to a <code>/N</code> artifact, demanding the occurrence MUST report
+  deduction-phase <code>OutputMultiplicityMismatch(context = goal-declaration)</code>
+  before Host dispatch.</li>
+<li><code>W = [x] -&gt; [Ext[x], Z]</code> infers <code>/0</code> without resolving <code>Ext/1</code>.</li>
+</ul>
+<h2 id="20-hash-qualified-root-target-58">20. Hash-qualified Root target  [58]<a class="headerlink" href="#20-hash-qualified-root-target-58" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Store <code>Main = [x] -1&gt; $main(x)</code> as <code>Main/1</code> → <code>hash-m1</code>.</li>
+<li>Store a Voyage Plan whose Root is <code>root Main#&lt;prefix of hash-m1&gt;/1</code>. The
+   prefix MUST expand to the full <code>hash-m1</code> when the plan is stored, exactly as
+   for a hash-qualified Goal reference.</li>
+<li>Rebind the <code>Main/1</code> alias to a new artifact <code>hash-m2</code>.</li>
+<li>Lay the stored plan's default target, send <code>7</code>, and demand the Root
+   occurrence.</li>
+</ol>
+<p>The Root occurrence MUST select <code>hash-m1</code> without consulting the current
+<code>Main/1</code> alias, and the declaration itself MUST NOT have created any
+occurrence or deduction before the send. Repeat with an unqualified
+<code>root Main/1</code>: the Root occurrence then selects <code>hash-m2</code>, the artifact visible
+at its demand. A prefix that matches no stored artifact MUST fail validation
+with <code>HashNotFound</code>, and one that matches several with <code>AmbiguousHashPrefix</code>.</p>
+<h2 id="21-lay-creates-the-voyagecable-pair-before-returning-scp-0015-item-15">21. <code>lay</code> creates the voyage/Cable pair before returning  [SCP-0015 item 15]<a class="headerlink" href="#21-lay-creates-the-voyagecable-pair-before-returning-scp-0015-item-15" title="Permanent link">&para;</a></h2>
+<p>Call <code>lay(P/1)</code> and instrument both planes. The operation MUST return its opaque
+<code>CableHandle</code> only after Vessel's voyage and Cable's data-plane lifecycle both
+exist. At return there is still no admitted segment, pin/lease, occurrence,
+deduction, Host work, or alias observation. Failure to create either half
+returns no usable handle and leaves no half-live public Cable.</p>
+<h2 id="22-segment-activation-reuses-cable-declaration-leases-scp-0015-item-14">22. Segment activation reuses Cable declaration leases  [SCP-0015 item 14]<a class="headerlink" href="#22-segment-activation-reuses-cable-declaration-leases-scp-0015-item-14" title="Permanent link">&para;</a></h2>
+<p>Admit one input with pinned Scheduler registry, Host capability, and forwarding
+allowlist identities. When the segment becomes active, Cable supplies its input
+tuple and immutable lease references to Vessel. Vessel MUST create the Root
+occurrence from those leases and perform no second pin or registry negotiation.
+Replacing a registry after admission affects no active or queued segment whose
+lease was already accepted.</p>
+<h2 id="23-scheduler-and-host-projections-cross-cable-correctly-scp-0015-item-13">23. Scheduler and Host projections cross Cable correctly  [SCP-0015 item 13]<a class="headerlink" href="#23-scheduler-and-host-projections-cross-cable-correctly-scp-0015-item-13" title="Permanent link">&para;</a></h2>
+<p>Attach Scheduler-addressed scope policy and Host-addressed leaf policy in one
+segment. <code>BeforeAttempt</code>, <code>Hold</code>, <code>ChildScopeOutcome</code>, and equivalent scope
+events MUST reach Scheduler only. After Scheduler authorizes a leaf, Host MUST
+receive <code>hostPolicies[]</code> only and MUST never receive <code>directPolicies[]</code> or the
+Cable handle. Storing Scheduler-determined outcomes in Cable MUST NOT let Cable
+choose or reinterpret them.</p>
+<h2 id="24-structural-closure-and-drainage-are-both-required-scp-0015-items-9-11">24. Structural closure and drainage are both required  [SCP-0015 items 9, 11]<a class="headerlink" href="#24-structural-closure-and-drainage-are-both-required-scp-0015-items-9-11" title="Permanent link">&para;</a></h2>
+<p>Run four variants:</p>
+<ol>
+<li>Cable has drained installed work but one reachable undeduced occurrence is
+   ready and Scheduler withholds it.</li>
+<li>Vessel reports no reachable structural work but one installed Host emission
+   or downstream channel operation remains active.</li>
+<li>A conditional branch is unselected, or <code>/0</code>/empty <code>/N</code> creates no downstream
+   invocation.</li>
+<li>Both structural closure and Cable drainage are true.</li>
+</ol>
+<p>Variants 1 and 2 MUST emit no <code>EndOfResult</code>; silence is not completion. Variant
+1 remains pending until Scheduler demands the occurrence or makes an accepted
+terminal decision. Variant 3 creates no reachable frontier for the absent path.
+Variant 4 linearizes exactly one segment terminal. After <code>decommision</code>,
+<code>EndOfStream</code> additionally waits for Vessel to close topology publication and
+for Cable to propagate every segment terminal and drain every channel/attempt.</p>
+<h2 id="25-final-composition-cannot-bypass-a-plane-scp-0015-item-17">25. Final composition cannot bypass a plane  [SCP-0015 item 17]<a class="headerlink" href="#25-final-composition-cannot-bypass-a-plane-scp-0015-item-17" title="Permanent link">&para;</a></h2>
+<p>Complete the same multi-segment Cable with a same-process and split-process
+Runtime. Vessel supplies immutable deduction/position provenance; Cable
+supplies completed segment order and drainage evidence. The stateless Runtime
+composition layer MUST produce identical Fully Touchdown Cable membership,
+order, and ordered <code>SegmentOutcome</code> values in both profiles.</p>
+<p>An outward adapter that reads Vessel or Cable private storage directly instead
+of the two immutable result ports is non-conforming, even if its example output
+happens to match.</p>
+<h2 id="coverage-from-source-fixtures">Coverage from source fixtures<a class="headerlink" href="#coverage-from-source-fixtures" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>§13 item</th>
+<th>Fixture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>42</td>
+<td><code>invalid-semantic/NestedGoalCall.vyg</code>, <code>invalid-semantic/NestedAnchorCall.vyg</code></td>
+</tr>
+<tr>
+<td>44</td>
+<td><code>valid/output-multiplicity.vyg</code> (<code>ZeroZero</code> through <code>ManyMany</code>)</td>
+</tr>
+<tr>
+<td>51</td>
+<td><code>valid/output-multiplicity.vyg</code> (<code>Both</code>)</td>
+</tr>
+<tr>
+<td>52</td>
+<td><code>invalid-semantic/ResolvingMapBranchZero.vyg</code>, <code>invalid-semantic/ResolvingMapBranchMany.vyg</code></td>
+</tr>
+<tr>
+<td>55</td>
+<td><code>valid/output-multiplicity.vyg</code> (<code>Echo</code>, <code>FanOut</code>, <code>Both</code>)</td>
+</tr>
+<tr>
+<td>56</td>
+<td><code>invalid-semantic/OpaqueHostOutput.vyg</code>, <code>invalid-semantic/RecursiveSignatureCycle.vyg</code>, <code>invalid-semantic/UnknownConditionalBranch.vyg</code>; scenario 19</td>
+</tr>
+<tr>
+<td>57</td>
+<td><code>invalid-semantic/GoalDeclarationMismatch.vyg</code>; scenario 19</td>
+</tr>
+<tr>
+<td>58</td>
+<td>every <code>valid/*.vyg</code> and <code>valid/root-contextual-keyword.vyg</code> for the unqualified form; scenario 20 for the hash-qualified form</td>
+</tr>
+<tr>
+<td>59</td>
+<td><code>invalid-semantic/InvalidRootLegacyForm.vyg</code>, <code>invalid-syntax/root-with-arguments.vyg</code></td>
+</tr>
+<tr>
+<td>64</td>
+<td><code>valid/output-multiplicity.vyg</code> (<code>Mixed</code>)</td>
+</tr>
+<tr>
+<td>65</td>
+<td><code>valid/output-multiplicity.vyg</code> (<code>Absorb</code>); scenario 19</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Subsea Cable is licensed under Apache-2.0. The website is a generated view of the canonical repository sources.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

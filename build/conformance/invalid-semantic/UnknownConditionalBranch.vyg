@@ -1,0 +1,9 @@
+Known = [x] -1> $known(x)
+Pick = [key] -> [
+    key,
+    {
+        "known": Known[key],
+        _: $other(key),
+    },
+]
+root Pick/1

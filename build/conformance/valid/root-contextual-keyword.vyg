@@ -1,0 +1,6 @@
+root = 5
+threshold = (root)-1>0
+Add = (a, b) -> a + b
+Positive = (x) -> x-1>0
+Main = [x] -> [Add[x, root], Positive]
+root Main/1

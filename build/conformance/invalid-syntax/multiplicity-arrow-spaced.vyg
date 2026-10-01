@@ -1,0 +1,2 @@
+Read = [x] - 1 > $read(x)
+root Read/1

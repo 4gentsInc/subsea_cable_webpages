@@ -1,0 +1,2 @@
+Main = (x) -> x + 1
+start Main/1

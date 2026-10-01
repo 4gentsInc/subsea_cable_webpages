@@ -1,0 +1,12 @@
+A = [] -1> $a
+B = [] -1> $b
+
+Bad = [] -> [
+    $flag(),
+    {
+        true: A[],
+        false: B[],
+    },
+]
+
+root Bad/0
