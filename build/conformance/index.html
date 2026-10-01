@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#conformance" class="md-skip">
+        <a href="#subsea-cable-conformance-examples" class="md-skip">
           Skip to content
         </a>
       
@@ -1251,7 +1251,7 @@
   <span class="md-ellipsis">
     
   
-    Decision Log
+    Decision Index
   
 
     
@@ -1437,10 +1437,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reason-and-context-expectations" class="md-nav__link">
+  <a href="#what-the-examples-cover" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reason and context expectations
+        What the examples cover
       
     </span>
   </a>
@@ -1448,10 +1448,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#synchronization-rule" class="md-nav__link">
+  <a href="#evaluate-your-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Synchronization rule
+        Evaluate your workflow
       
     </span>
   </a>
@@ -1475,35 +1475,16 @@
 
 
 
-<h1 id="conformance">Conformance<a class="headerlink" href="#conformance" title="Permanent link">&para;</a></h1>
-<p><code>cases.tsv</code> is the language conformance manifest. Each case names its expected
-phase and outcome; a conforming implementation must parse every <code>valid</code> and
-<code>invalid-semantic</code> input, reject every <code>invalid-syntax</code> input, and then produce
-the listed validation kind for each <code>invalid-semantic</code> input.</p>
-<p><a href="DEDUCTION/"><code>DEDUCTION.md</code></a> contains the complementary Runtime scenarios for
-demand-time alias resolution, commit atomicity, recovery, occurrence kinds,
-artifact identity, and the Host boundary. They cannot be expressed by a single
-source fixture and are normative for a Runtime claiming deduction conformance.</p>
-<p><a href="POLICY/"><code>POLICY.md</code></a> contains the Runtime scenarios for <code>@policy</code> addressee
-resolution and the Host policy channel. They depend on an attached Scheduler
-registry and Host capability, so they are stated with test doubles and are
-normative for a Runtime claiming the policy profile.</p>
-<p><a href="LAID_CABLE/"><code>LAID_CABLE.md</code></a> contains the Runtime scenarios for laid Cables,
-including Vessel-control and Cable-data responsibilities, per-input result
-segments, Host terminals, and output multiplicity
-(<a href="../SCP/#scp-0014">SCP-0014</a> and
-<a href="../SCP/#scp-0015">SCP-0015</a>). They need a
-live channel and Host doubles and are normative for a complete Runtime claiming
-laid-Cable conformance.</p>
-<p><a href="PRIMES_UP_TO/"><code>PRIMES_UP_TO.md</code></a> fixes one reference Voyage Plan and its
-acceptance oracle for streamed candidate generation, guarded-recursive trial
-division, Runtime-plane separation, and laid-Cable terminals. The source is
-also a syntax-accepted fixture in <code>cases.tsv</code>; its end-to-end oracle requires a
-complete Runtime and the scenario-specific Host implementations described
-there. It is the acceptance gate for the runnable vertical slice tracked by
-the streamed-primes runnable demonstration,
-not an additional requirement for every Runtime that claims general laid-Cable
-conformance.</p>
+<h1 id="subsea-cable-conformance-examples">Subsea Cable conformance examples<a class="headerlink" href="#subsea-cable-conformance-examples" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Status:</strong> public source examples and diagnostic expectations, not a complete
+Runtime certification suite or execution implementation guide. The required
+lexical preprocessing section is the maintained syntax-level contract.</p>
+</blockquote>
+<p><a href="cases.tsv">cases.tsv</a> lists source cases by phase and diagnostic category.
+The <code>.vyg</code> files help authors and syntax-tool developers. A <code>validation</code> case
+can parse successfully while remaining an invalid program. Existing fixture
+expectations are unchanged.</p>
 <h2 id="required-lexical-preprocessing">Required lexical preprocessing<a class="headerlink" href="#required-lexical-preprocessing" title="Permanent link">&para;</a></h2>
 <p>The ANTLR lexer produces physical <code>TERMINATOR</code>, whitespace, and comment tokens.
 Before parsing, a token-source wrapper must perform this deterministic pass:</p>
@@ -1550,95 +1531,24 @@ Before parsing, a token-source wrapper must perform this deterministic pass:</p>
 </ol>
 <p>The “previous significant token” ignores whitespace and comments. A newline
 before an operator is not continuation; only a newline after a listed token is.</p>
-<h2 id="reason-and-context-expectations">Reason and context expectations<a class="headerlink" href="#reason-and-context-expectations" title="Permanent link">&para;</a></h2>
-<p><code>cases.tsv</code> records only the stable error <code>kind</code>. For the SCP-0014 output
-multiplicity fixtures a conforming validator must also report this reason or
-context:</p>
-<table>
-<thead>
-<tr>
-<th>Fixture</th>
-<th>Kind</th>
-<th>Reason or context</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>invalid-semantic/OpaqueHostOutput.vyg</code></td>
-<td><code>OutputMultiplicityCannotBeInferred</code></td>
-<td><code>opaque-host-output</code></td>
-</tr>
-<tr>
-<td><code>invalid-semantic/RecursiveSignatureCycle.vyg</code></td>
-<td><code>OutputMultiplicityCannotBeInferred</code></td>
-<td>kind only: <code>recursive-signature-cycle</code> and <code>unknown-conditional-branch</code> both apply</td>
-</tr>
-<tr>
-<td><code>invalid-semantic/UnknownConditionalBranch.vyg</code></td>
-<td><code>OutputMultiplicityCannotBeInferred</code></td>
-<td>kind only: <code>unknown-conditional-branch</code> and <code>opaque-host-output</code> both apply</td>
-</tr>
-<tr>
-<td><code>invalid-semantic/GoalDeclarationMismatch.vyg</code></td>
-<td><code>OutputMultiplicityMismatch</code></td>
-<td><code>goal-declaration</code>, expected <code>/0</code>, actual <code>/1</code></td>
-</tr>
-<tr>
-<td><code>invalid-semantic/ResolvingMapBranchZero.vyg</code></td>
-<td><code>OutputMultiplicityMismatch</code></td>
-<td><code>resolving-map-branch</code>, expected <code>/1</code>, actual <code>/0</code></td>
-</tr>
-<tr>
-<td><code>invalid-semantic/ResolvingMapBranchMany.vyg</code></td>
-<td><code>OutputMultiplicityMismatch</code></td>
-<td><code>resolving-map-branch</code>, expected <code>/1</code>, actual <code>/N</code></td>
-</tr>
-</tbody>
-</table>
-<p>Which reason a definition with several causes reports is not yet specified, so
-those two fixtures check only the kind. A guarded recursive branch always sits
-beneath a conditional, so no standalone fixture has <code>recursive-signature-cycle</code>
-as its only cause.</p>
-<p><code>external-symbolic-reference</code> needs an unqualified reference that a Codebase,
-not the source unit, could later satisfy; a standalone fixture would report
-<code>GoalNotFound</code> instead. It is covered with the other laid-Cable Runtime
-scenarios in <a href="LAID_CABLE/"><code>LAID_CABLE.md</code></a>.</p>
-<p><code>valid/output-multiplicity.vyg</code> exercises the inference rules that need no
-explicit arrow: a scalar function leaf (<code>/1</code>), an unkeyed parallel (<code>/0</code>), a
-resolving Map (<code>/1</code>), all nine cells of the routed serial composition table, an
-explicit tuple resetting the multiplicity, an absorbing <code>/0</code> after an opaque
-upstream, a routed successor of a parallel composite invoked zero times, and a
-known <code>/0</code>/<code>/1</code> conditional mix inferring <code>/N</code>. Explicit <code>-N&gt;</code> and <code>-0&gt;</code> arrows
-that agree with the inferred result are accepted. <code>valid/root-contextual-keyword.vyg</code> proves that <code>root</code> remains an
-ordinary Binding name and that <code>x-1&gt;0</code> and <code>(root)-1&gt;0</code> remain expressions.</p>
-<h2 id="synchronization-rule">Synchronization rule<a class="headerlink" href="#synchronization-rule" title="Permanent link">&para;</a></h2>
-<p>Any language change is incomplete until all applicable projections agree:</p>
+<h2 id="what-the-examples-cover">What the examples cover<a class="headerlink" href="#what-the-examples-cover" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>LANGUAGE_REFERENCE.md</code>: structural semantic contract</li>
-<li><code>README.md</code>: breadth-first public model and core value</li>
-<li><code>SubseaCable.ebnf</code>: implementation-neutral syntax and lexical contract</li>
-<li><code>SubseaCable.g4</code>: executable ANTLR4 grammar</li>
-<li><code>conformance/cases.tsv</code> and its source files: observable acceptance/rejection</li>
-<li><code>conformance/DEDUCTION.md</code>: observable demand-time deduction behavior</li>
-<li><code>conformance/POLICY.md</code>: observable policy addressee and Host-channel behavior</li>
-<li><code>conformance/LAID_CABLE.md</code>: observable laid-Cable channel, segment,
-  terminal, and multiplicity behavior</li>
+<li>Core source forms, continuation, Strings, and root declarations.</li>
+<li>Structural call placement, arity, and named results.</li>
+<li>Conditional recursion and output counts.</li>
+<li>Explicit diagnostic categories for invalid authoring.</li>
 </ul>
-<p>The ANTLR grammar must generate without warnings or errors, generated Java must
-compile against the matching ANTLR runtime, every syntax-valid case must reach
-EOF without lexer/parser errors after preprocessing, and every syntax-invalid
-case must produce at least one lexer/parser error. Semantic cases require the
-stable error <code>kind</code> listed in the manifest.</p>
-<p>The current grammar has been generation-checked with ANTLR 4.13.2. Generated
-artifacts are build output and are not committed.</p>
-<p>CI reproduces the syntax half of this check on every pull request with
-<code>.github/scripts/grammar/check_cases.py</code>: it generates the Python parser with
-<code>-Werror</code>, applies the reference preprocessor in
-<code>.github/scripts/grammar/preprocess.py</code>, and requires every <code>cases.tsv</code> row to
-parse or fail as listed. Run it locally with
-<code>python .github/scripts/grammar/check_cases.py --antlr-jar &lt;antlr-4.13.2-complete.jar&gt;</code>
-after <code>pip install antlr4-python3-runtime==4.13.2</code>. It does not check semantic
-kinds; those remain the implementer's conformance obligation.</p>
+<p><a href="../SubseaCable.g4">ANTLR</a> and <a href="../SubseaCable.ebnf">EBNF</a> describe syntax;
+they do not establish complete processing or Runtime compatibility. These
+examples do not certify execution, alias races, recovery, policies, or effects.
+Claims need a supported revision, profile, and corresponding verification basis.</p>
+<h2 id="evaluate-your-workflow">Evaluate your workflow<a class="headerlink" href="#evaluate-your-workflow" title="Permanent link">&para;</a></h2>
+<p><a href="DEDUCTION/">Deduction</a> explains revision guarantees; <a href="POLICY/">Policy</a>
+describes profile expectations; <a href="LAID_CABLE/">Laid Cable</a> describes inputs and
+terminals. <a href="PRIMES_UP_TO/">Primes Up To</a> is an observable demonstration scenario.
+See <a href="../GOVERNANCE/">Governance</a> and the
+<a href="../implementation/RUNTIME_CONTRACT/">Runtime Contract</a>. Report discrepancies
+through <a href="../CONTRIBUTING/">Contributing</a>.</p>
 
 
 

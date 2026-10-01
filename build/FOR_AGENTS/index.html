@@ -1359,7 +1359,7 @@
   <span class="md-ellipsis">
     
   
-    Decision Log
+    Decision Index
   
 
     
@@ -1662,21 +1662,13 @@ input, output, completion, and effect contract before connecting real tools.</p>
 Those judgments belong to the author and the leaf contracts. Source validation
 finds structural mistakes; it cannot inspect an opaque Anchor implementation.</p>
 <h2 id="revise-a-plan-without-erasing-evidence">Revise a plan without erasing evidence<a class="headerlink" href="#revise-a-plan-without-erasing-evidence" title="Permanent link">&para;</a></h2>
-<p>A conditional selector exposes one branch. The unselected branches create no
-occurrence and do not observe aliases. Each selected recursive step creates a
-fresh occurrence; a recursive definition does not make the realized Cable cyclic.</p>
-<p>When observed output invalidates an assumption, you remain the author of the
-change. Store a new immutable Goal artifact and rebind its <code>Name/Arity</code> alias.
-Only undeduced occurrences can observe the new definition. Vessel never invents
-a replacement plan from an outcome, and a committed deduction never retargets.</p>
-<p>If the part to change has already committed, author a new voyage. Structural
-reuse requires the implementation's declared support and never implies that a
-Host effect can be skipped or repeated. Published leaves include work that may
-not have run; use attempt and outcome evidence to judge effects.</p>
+<p>Only the selected branch contributes work. An authorized author may revise
+future Goal definitions; already committed selections remain fixed. If the work
+to change is already committed, author a new voyage. Supported structural reuse
+does not imply an effect can safely be skipped or repeated.</p>
 <p><a href="../WHY_SUBSEA/#2-what-this-makes-possible-replanning-after-an-unexpected-failure">Why Subsea Cable</a>
-describes walking backward through drained voyage-result provenance and choosing
-a bounded revision scope. Portable mid-voyage ancestry queries remain open;
-ledger records alone do not promise durable resume after a crash.</p>
+explains bounded replanning from completed result evidence. Live ancestry
+queries and durable recovery require explicit implementation support.</p>
 <h2 id="keep-your-integration-focused">Keep your integration focused<a class="headerlink" href="#keep-your-integration-focused" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1716,7 +1708,7 @@ its maintainers own the execution and conformance work. Start with the
 <p><span id="6-what-is-not-done-yet"></span></p>
 <h2 id="what-is-available-and-what-is-still-open">What is available and what is still open<a class="headerlink" href="#what-is-available-and-what-is-still-open" title="Permanent link">&para;</a></h2>
 <p>The structural semantics, guarded recursion, policy addressee rules, and
-Vessel/Cable ownership boundary are specified. Availability is narrower than the
+Runtime responsibilities are specified. Availability is narrower than the
 specification: same-process implementation evidence exists, but the clean-checkout
 prime-stream demo and the separate Agent-authored revision scenario are still
 being completed as of the evidence date in <a href="../RUNTIME_STATUS/">Runtime availability</a>.</p>
@@ -1748,7 +1740,7 @@ identified implementation capabilities.</p>
 <td><a href="../RUNTIME_STATUS/">Runtime availability</a></td>
 </tr>
 <tr>
-<td>Check exact syntax and semantics</td>
+<td>Check public authoring and syntax</td>
 <td><a href="../LANGUAGE_REFERENCE/">Language Reference</a>, <a href="../SubseaCable.g4">ANTLR</a>, and <a href="../SubseaCable.ebnf">EBNF</a></td>
 </tr>
 <tr>
@@ -1761,8 +1753,9 @@ identified implementation capabilities.</p>
 </tr>
 </tbody>
 </table>
-<p>Canonical meaning comes from the language sources and their declared status.
-Use the public contribution guide to submit findings and proposals.</p>
+<p>These pages are public usage and observable-behavior guides, not the complete
+Runtime conformance baseline. Check declared implementation support and use
+the public contribution guide to submit findings and proposals.</p>
 <p>You can begin by committing a small, reviewable Voyage Plan and inventorying the
 Host leaves it needs. Keep the workflow's intent in Goals and choose execution
 support by demonstrated guarantees.</p>

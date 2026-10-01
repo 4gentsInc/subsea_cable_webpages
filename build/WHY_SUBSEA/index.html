@@ -1531,7 +1531,7 @@
   <span class="md-ellipsis">
     
   
-    Decision Log
+    Decision Index
   
 
     
@@ -1964,9 +1964,8 @@
 <div class="admonition note">
 <p class="admonition-title">Status of this page</p>
 <p>This page explains why Subsea Cable exists and how it differs from other
-tools. It is an explanatory projection, not a semantic authority. On any
-difference, follow the sources listed in <a href="../GOVERNANCE/">GOVERNANCE.md</a>,
-especially the <a href="../LANGUAGE_REFERENCE/">Language Reference</a>. Where a pattern
+tools. It is an explanatory projection, not a semantic authority. Documentation status is described in <a href="../GOVERNANCE/">Governance</a>;
+<a href="../LANGUAGE_REFERENCE/">Language Reference</a> explains public authoring. Where a pattern
 below depends on something not yet decided, the page says so and links the
 open item.</p>
 </div>
@@ -2107,29 +2106,14 @@ Structurally this resembles Cable reuse. The purpose differs.</p>
 <li>The fact that "at that point, this Goal had this structure" is never lost.</li>
 </ul>
 <h3 id="12-deductions-and-lineage-context-on-every-step">1.2 Deductions and lineage: context on every step<a class="headerlink" href="#12-deductions-and-lineage-context-on-every-step" title="Permanent link">&para;</a></h3>
-<ul>
-<li>When a <strong>named Goal occurrence</strong> is demanded, its reference is resolved and
-  the selected full <code>ArtifactHash</code>, arguments, resulting structure, active
-  lineages, and (for an unqualified reference) the observed Codebase revision
-  are committed together in one deduction record.</li>
-<li>An <strong>inline Goal-arrow stage</strong> such as <code>[{code, logs}] -&gt; Diagnose[code, logs]</code>
-  is deduced too, but its record has <code>referenceKind = inline-arrow</code>, no requested
-  name, and no artifact hash: the enclosing artifact supplies its identity, and it
-  adds no lineage segment
-  (<a href="../implementation/RUNTIME_CONTRACT/#81-inline-goal-arrow-stages">Runtime Contract §8.1</a>).</li>
-<li>A deduction extends each incoming lineage across the edges it commits. Lineage
-  segments are <code>Name/Arity</code>, for example
-  <code>CreateOrder/1.RegisterOrder/1.ValidateStock/1</code>; the hash each segment's
-  occurrence selected lives in that occurrence's deduction record, not in the
-  segment itself.</li>
-<li>So <strong>even a leaf that has already reached Touchdown</strong> has a recorded chain of
-  deductions that produced it.</li>
-<li>When a laid Cable has been decommissioned and drained, a Runtime that claims the
-  <code>voyage-result</code> capability exposes the Fully Touchdown Cable, the ordered list
-  of published grounded leaf hashes, with a provenance index that maps each
-  position back to its deduction ancestry
-  (<a href="../implementation/RUNTIME_CONTRACT/#12-cable-result-and-incremental-reuse">Runtime Contract §12</a>).</li>
-</ul>
+<p>A committed selection preserves the definition and context behind that work.
+A later name change does not replace this history. This connection lets an
+author inspect which intent led to a concrete leaf, rather than reconstructing
+the plan from a transcript.</p>
+<p>After a voyage drains, an implementation supporting voyage results can expose
+the completed structural history and corresponding provenance. Structural
+records and evidence of actual attempts or effects remain distinct; check
+<a href="../implementation/RUNTIME_CONTRACT/">Runtime Contract</a> for user-visible support.</p>
 <h3 id="13-joined-one-record-answers-several-questions">1.3 Joined: one record answers several questions<a class="headerlink" href="#13-joined-one-record-answers-several-questions" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -2167,20 +2151,14 @@ why." Subsea Cable is designed so that this moment can become a procedure. The
 steps below are an <strong>authoring pattern</strong>, not a Runtime algorithm defined by the
 language, and Vessel never invents a plan change by itself; the agent authors it.</p>
 <div class="admonition info">
-<p class="admonition-title">What is portable today, and what needs more</p>
-<p>The portable outward Cable surface exposes <strong>right-end Values, segment
-outcomes, diagnostics, and terminals</strong>
-(<a href="../SCP/#scp-0015">SCP-0015</a>). It does not
-expose a failing leaf's own outcome or its deduction ancestry while the
-Cable is live. Deduction ancestry is composed into the voyage result only
-after decommission and drainage, and the normalized trace in
-<a href="../implementation/RUNTIME_CONTRACT/#11-trace-and-observation-contract">Runtime Contract §11</a>
-is an evidence and profile contract, not a portable live Agent query.</p>
-<p>So the walk-back below works <strong>after the fact</strong> against a drained voyage
-result from a Runtime that claims <code>voyage-result</code>, followed by a revised
-new voyage. Doing it <strong>mid-voyage</strong> requires a Runtime-profile extension or
-a future contract for live provenance queries; see
-<a href="#6-open-problems">Open problems</a>.</p>
+<p class="admonition-title">What is available today, and what needs more</p>
+<p>Inputs, outward Values, outcomes, diagnostics, and terminals have defined
+responsibilities. A drained voyage result can provide structural provenance
+when the implementation supports it. Portable live ancestry queries remain
+open; a trace alone does not establish such a query capability.</p>
+<p>The walk-back below is an authoring pattern against supported completed
+result evidence, followed by a revised voyage. Mid-voyage inspection needs
+explicitly supported capabilities; see <a href="#6-open-problems">Open problems</a>.</p>
 </div>
 <ol>
 <li><strong>Observe.</strong> Read the segment outcome, diagnostics, and terminal from the
@@ -2205,11 +2183,9 @@ a future contract for live provenance queries; see
    Structural reuse never by itself permits skipping Host effects.</li>
 <li><strong>Keep the abandoned attempt.</strong> Nothing is deleted: committed deductions and
    published Touchdowns stay as history. A <code>$</code> leaf in that history marks a
-   <strong>potential</strong> effect boundary, not evidence that an effect happened. Cable
-   membership includes leaves that were withheld, discarded, never dispatched,
-   failed, or cancelled, and Host effects are opaque and never rolled back.
-   Whether an attempt ran, and what it did, comes only from attempt and outcome
-   evidence, or from a separately authorized Outcome Journal.</li>
+   <strong>potential</strong> effect boundary, not evidence that an effect happened.
+   Use actual attempt and outcome evidence to judge effects; retaining structural
+   history does not undo an external effect.</li>
 <li><strong>Bound the loop.</strong> Preventing endless regression to the same point is a
    Scheduler concern expressed through <code>@policy</code>, not a structural one. Concrete
    policy semantics for this are not defined yet; see

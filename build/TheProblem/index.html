@@ -1256,7 +1256,7 @@
   <span class="md-ellipsis">
     
   
-    Decision Log
+    Decision Index
   
 
     
@@ -1437,6 +1437,10 @@
 
 
 <h1 id="the-problem">The Problem<a class="headerlink" href="#the-problem" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Status: public motivation overview; an explanatory projection of the maintained
+philosophy and boundary contract. See <a href="../GOVERNANCE/">Governance</a>.</p>
+</blockquote>
 <p>Modern programming languages ask functions to play two fundamentally different roles.</p>
 <p>A function is supposed to describe <strong>how</strong> a piece of computation is implemented.</p>
 <p>Yet, in practice, functions also become the primary mechanism for expressing <strong>the dependency structure of a program</strong>.</p>
@@ -1452,16 +1456,10 @@
 <hr />
 <p>However, these are fundamentally different things.</p>
 <p>A program first describes <strong>what goals exist</strong> and <strong>how those goals depend on one another</strong>.</p>
-<p>Only afterwards should the Runtime decide <strong>how</strong> those goals are realized,
-with Scheduler deciding eligibility and outcomes, Host giving grounded leaves
-concrete meaning, and Cable operating installed data flow.</p>
-<p>When separated, the authored program becomes a Voyage Plan whose structural
-Cable is realized through demand-driven deduction.</p>
-<p>Execution order, evaluation strategy, parallelism, batching, cancellation, and
-cross-occurrence resource ordering belong to Scheduler authority—not to the
-program. Scheduler controls eligibility, attempts, and scope outcomes;
-Host-addressed policy may change locality or resource use inside exactly one
-grounded leaf invocation.</p>
+<p>Only afterwards should an implementation realize that work with its supported
+execution profile and tool implementations. Dependency structure should remain
+understandable independently of a particular scheduling strategy. A Voyage Plan
+makes this separation explicit.</p>
 <hr />
 <p>Once this distinction is made, programming changes fundamentally.</p>
 <p>Instead of writing execution order, we describe goals.</p>
