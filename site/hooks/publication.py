@@ -7,6 +7,7 @@ from urllib.parse import urlsplit
 
 from mkdocs.exceptions import ConfigurationError
 from mkdocs.structure.files import File
+from mkdocs.theme import Theme
 
 BLOCKED_ROOTS = {"confidential", ".private", ".git", ".github"}
 
@@ -86,7 +87,28 @@ def on_files(files, config):
     return files
 
 
+def approved_output_paths(config):
+    documents, assets, globs = publication_selection(config)
+    output = config["site_dir"]
+    approved = {File(p, ".", output, config.get("use_directory_urls", True)).dest_uri
+                for p in documents}
+    approved.update(assets)
+    approved.update(source_path(p) for p in config.get("extra_css", []))
+    approved.update({"404.html", "search/search_index.json", "sitemap.xml", "sitemap.xml.gz"})
+    theme = config.get("theme")
+    if isinstance(theme, dict):
+        theme = Theme(name=theme["name"])
+    for directory in getattr(theme, "dirs", []):
+        root = Path(directory)
+        for path in (root / "assets").rglob("*"):
+            if path.is_file():
+                approved.add(path.relative_to(root).as_posix())
+    return approved, globs
+
+
 def on_post_build(config):
+    output = Path(config["site_dir"]).resolve()
+    approved, globs = approved_output_paths(config)
     for path in Path(config["site_dir"]).rglob("*"):
         if path.is_file() and path.suffix in {".html", ".json", ".xml"}:
             content = path.read_text(encoding="utf-8")
@@ -94,6 +116,13 @@ def on_post_build(config):
                 raise ConfigurationError("Private repository URL found in generated output: " + path.name)
             if "https://on-the-ground.github.io/subsea_cable_language" in content:
                 raise ConfigurationError("Retired site URL found in generated output: " + path.name)
+        if path.is_file():
+            name = path.relative_to(output).as_posix()
+            if path.is_symlink() or not path.resolve().is_relative_to(output):
+                raise ConfigurationError("Generated output escapes the output directory: " + name)
+            fixture = any(fnmatchcase(name, pattern) for pattern in globs)
+            if name not in approved and not fixture:
+                raise ConfigurationError("Unapproved file in generated output: " + name)
         parts = path.relative_to(config["site_dir"]).parts
         if any(part in BLOCKED_ROOTS for part in parts) or "AGENTS" in parts:
             raise ConfigurationError("Excluded source found in site output: "

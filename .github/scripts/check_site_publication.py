@@ -2,10 +2,16 @@
 
 import argparse
 import importlib.util
+from html import unescape
 from html.parser import HTMLParser
+import json
 from pathlib import Path
 import re
 from urllib.parse import unquote, urlsplit
+from urllib.error import HTTPError, URLError
+from urllib.request import Request, urlopen
+
+import yaml
 
 from mkdocs.config import load_config
 
@@ -33,18 +39,70 @@ class Page(HTMLParser):
             self.links.append(attrs["href"])
 
 
+def json_strings(value):
+    if isinstance(value, str):
+        return [value]
+    if isinstance(value, dict):
+        return [text for item in value.values() for text in json_strings(item)]
+    if isinstance(value, list):
+        return [text for item in value for text in json_strings(item)]
+    return []
+
+
+def repository_references(output):
+    """Read rendered pages, search text, and sitemap; return unique GitHub repos."""
+    repos = set()
+    pattern = r"(?:https?:)?//(?:www\.)?github\.com/([\w.-]+)/([\w.-]+)"
+    for path in output.rglob("*"):
+        if path.is_file() and path.suffix in {".html", ".json", ".xml"}:
+            text = path.read_text(encoding="utf-8")
+            if path.suffix == ".json":
+                text = "\n".join(json_strings(json.loads(text)))
+            text = unquote(unescape(text)).replace("\\/", "/")
+            for owner, repo in re.findall(pattern, text, flags=re.IGNORECASE):
+                repos.add(f"{owner}/{repo.removesuffix('.git')}".casefold())
+    return repos
+
+
+def public_repository_errors(repos):
+    """Verify anonymous access; never use a contributor's source-access token."""
+    errors = []
+    for repo in sorted(repos):
+        request = Request(f"https://api.github.com/repos/{repo}", headers={
+            "Accept": "application/vnd.github+json",
+            "User-Agent": "subsea-cable-public-link-check",
+        })
+        try:
+            with urlopen(request, timeout=20) as response:
+                metadata = json.load(response)
+            if metadata.get("private") is not False:
+                errors.append(f"GitHub repository is not publicly accessible: {repo}")
+        except HTTPError as error:
+            error.close()
+            if error.code == 404:
+                errors.append(f"GitHub repository is not publicly accessible: {repo} (HTTP 404)")
+            else:
+                errors.append(f"Could not verify public GitHub repository: {repo} (HTTP {error.code})")
+        except (URLError, OSError, ValueError) as error:
+            errors.append(f"Could not verify public GitHub repository: {repo} ({error})")
+    return errors
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--site-dir", type=Path, required=True)
     parser.add_argument("--output-only", action="store_true",
                         help="check the prebuilt site without requiring language/export")
+    parser.add_argument("--check-repositories", action="store_true",
+                        help="verify anonymous access to GitHub repositories linked in pages, search and sitemap")
     args = parser.parse_args()
     output = args.site_dir.resolve()
     if not (output / "index.html").is_file():
         raise SystemExit("Missing prebuilt index.html; run the local builder and commit build/.")
     errors = []
     if args.output_only:
-        config = {"site_dir": str(output)}
+        config = yaml.safe_load((ROOT / "site/mkdocs.yml").read_text(encoding="utf-8"))
+        config["site_dir"] = str(output)
     else:
         config = load_config(config_file=str(ROOT / "site/mkdocs.yml"), site_dir=str(output))
         approved = publication.nav_documents(config["nav"])
@@ -78,6 +136,11 @@ def main():
                 errors.append(f"Broken site link in {source.relative_to(output)}: {href}")
             elif url.fragment and target in pages and unquote(url.fragment) not in pages[target].ids:
                 errors.append(f"Missing site anchor in {source.relative_to(output)}: {href}")
+    if args.check_repositories:
+        repos = repository_references(output)
+        errors.extend(public_repository_errors(repos))
+        if not errors:
+            print(f"Anonymous access verified for {len(repos)} linked GitHub repositories.")
     if errors:
         raise SystemExit("\n".join(errors))
     print(f"Publication and local links passed for {len(pages)} HTML pages.")

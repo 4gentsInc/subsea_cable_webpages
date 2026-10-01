@@ -41,7 +41,7 @@ python scripts/build.py
 ```
 
 The command checks document selection, builds strictly, validates links and
-anchors, and writes only generated public files to `build/`. There is no second
+anchors, verifies anonymous access to linked GitHub repositories, and writes only generated public files to `build/`. There is no second
 editable Markdown copy in this repository.
 
 Review and commit the generated `build/` output alongside relevant builder
@@ -61,5 +61,14 @@ workflow checks the committed output and public intake tools without a
 `language/` directory. To run those output checks locally:
 
 ```sh
-python .github/scripts/check_site_publication.py --site-dir build --output-only
+python .github/scripts/check_site_publication.py --site-dir build --output-only --check-repositories
 ```
+
+Output checks enforce the approved page and supporting-file selection, including
+late plugin output. Repository links are extracted from HTML, search JSON, and
+the sitemap and checked without authentication; private or missing repositories
+fail validation. Network failures and rate limits also fail with a verification
+error rather than being treated as proof that a repository is private.
+
+Committed generated output and PR commits remain in public Git history. Removing
+a page from a later build does not retract those earlier versions or fetched copies.

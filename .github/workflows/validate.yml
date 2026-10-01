@@ -28,4 +28,4 @@ jobs:
           python .github/scripts/labels.py validate
           python .github/scripts/test_intake_scripts.py
       - name: Verify committed static output without document sources
-        run: python .github/scripts/check_site_publication.py --site-dir build --output-only
+        run: python .github/scripts/check_site_publication.py --site-dir build --output-only --check-repositories

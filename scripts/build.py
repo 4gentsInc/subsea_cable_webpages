@@ -18,7 +18,7 @@ def main():
                     "--config-file", str(ROOT / "site/mkdocs.yml"),
                     "--site-dir", str(output)], cwd=ROOT, check=True)
     subprocess.run([sys.executable, str(ROOT / ".github/scripts/check_site_publication.py"),
-                    "--site-dir", str(output)], cwd=ROOT, check=True)
+                    "--site-dir", str(output), "--check-repositories"], cwd=ROOT, check=True)
     print("Verified static website is ready in build/. Review and commit it for deployment.")
 
 
