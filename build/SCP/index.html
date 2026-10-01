@@ -27,7 +27,7 @@
     
     
       
-        <title>Decision Log - __C — Subsea Cable</title>
+        <title>Decision Index - __C — Subsea Cable</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#subsea-cable-decision-log" class="md-skip">
+        <a href="#subsea-cable-decision-index" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Decision Log
+              Decision Index
             
           </span>
         </div>
@@ -1258,7 +1258,7 @@
   <span class="md-ellipsis">
     
   
-    Decision Log
+    Decision Index
   
 
     
@@ -1276,7 +1276,7 @@
   <span class="md-ellipsis">
     
   
-    Decision Log
+    Decision Index
   
 
     
@@ -1775,404 +1775,90 @@
 
 
 
-<h1 id="subsea-cable-decision-log">Subsea Cable decision log<a class="headerlink" href="#subsea-cable-decision-log" title="Permanent link">&para;</a></h1>
-<p>This log records every accepted Subsea Cable Proposal (SCP) as its final
-accepted result. It is <strong>append-only</strong>: each activation adds one entry at the
-end, and existing entries are never edited, reordered, or removed.</p>
-<p>An entry states only the decision that took effect: its number and title,
-status, effective language revision, the accepted rule and its scope, and the
-earlier decisions it supersedes. It omits the process that produced the
-decision. Proposals under discussion are not listed; a proposal appears here
-only after its activation makes it Accepted.</p>
-<p>A later decision never rewrites an earlier entry. Supersession and correction
-are recorded by a new entry that names what it replaces, so the current rule
-for a topic is found by reading from the end. Within its stated scope, a later
-entry replaces every conflicting earlier rule.</p>
-<p>The log records which decisions took effect. The canonical rules themselves
-are maintained in the <a href="../LANGUAGE_REFERENCE/">Language Reference</a>, the
-<a href="../SubseaCable.g4">ANTLR</a> and <a href="../SubseaCable.ebnf">EBNF</a> grammars, the
-<a href="../implementation/RUNTIME_CONTRACT/">Runtime Contract</a>, and the
-<a href="../conformance/">conformance corpus</a>. When an entry and a canonical
-source appear to disagree, report the conflict; do not choose one silently.</p>
-<p>Numbers 0012 and 0013 were allocated but never accepted. They remain unused.</p>
-<hr />
+<h1 id="subsea-cable-decision-index">Subsea Cable decision index<a class="headerlink" href="#subsea-cable-decision-index" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Status: informative index of Accepted identifiers and effective revisions,
+not the append-only decision record or a semantic contract.</p>
+</blockquote>
+<p>Accepted decisions retain their effect. See <a href="../GOVERNANCE/">Governance</a>.
+Numbers 0012 and 0013 were allocated but not accepted.</p>
 <p><a id="scp-0001"></a></p>
 <h2 id="scp-0001-touchdown-consumption-and-window-counting">SCP-0001 — Touchdown consumption and window counting<a class="headerlink" href="#scp-0001-touchdown-consumption-and-window-counting" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Status: Accepted</li>
 <li>Effective language revision: <code>eabb5052b674901e107aed385cbf5d61a122d618</code></li>
-<li>Supersedes: —</li>
 </ul>
-<p>Decision:</p>
-<ul>
-<li>A published Touchdown leaves the Touchdown window through exactly one applied
-  acknowledgement: a consume acknowledgement at the first dispatch of its
-  evaluation instance, applied before the Host is invoked, or a discard
-  acknowledgement when it will never be attempted.</li>
-<li>The window counts every published grounded leaf without an applied
-  acknowledgement.</li>
-<li>Window backpressure limits only speculative prefetch. Explicit Scheduler
-  demand is always deduced.</li>
-</ul>
-<hr />
 <p><a id="scp-0002"></a></p>
 <h2 id="scp-0002-carousel-vessel-and-runtime-value-ownership">SCP-0002 — Carousel, Vessel, and Runtime value ownership<a class="headerlink" href="#scp-0002-carousel-vessel-and-runtime-value-ownership" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Status: Accepted</li>
 <li>Effective language revision: <code>79debc4fe1106ccdee96278811b74609468e7dd6</code></li>
-<li>Supersedes: the use of <strong>Vessel</strong> as the name of the deduction component</li>
 </ul>
-<p>Decision:</p>
-<ul>
-<li>The <strong>Carousel</strong> is the demand-driven deduction engine. <strong>Vessel</strong> names the
-  complete Consumer Runtime; it is not a second deduction component.</li>
-<li>The still-unexposed region is the <strong>Folded Cable</strong>. The <strong>undeduced
-  frontier</strong> contains occurrences that already exist but have not committed a
-  deduction.</li>
-<li>The Runtime owns the Outcome &amp; Value Store. The Scheduler delivers evaluation
-  outcomes to it, and the Carousel reads resolved routed values through a
-  narrow read-only port.</li>
-<li>The Codebase stores artifacts, aliases, revisions, and deduction records,
-  never live evaluation outcomes or routed runtime values.</li>
-</ul>
-<hr />
 <p><a id="scp-0003"></a></p>
 <h2 id="scp-0003-explicit-staging-of-value-producing-calls">SCP-0003 — Explicit staging of value-producing calls<a class="headerlink" href="#scp-0003-explicit-staging-of-value-producing-calls" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Status: Accepted</li>
 <li>Effective language revision: <code>79debc4fe1106ccdee96278811b74609468e7dd6</code></li>
-<li>Supersedes: argument-position staging of value-producing calls</li>
 </ul>
-<p>Decision:</p>
-<ul>
-<li>Outside an arrow-function leaf body, an eager Goal call <code>Goal(...)</code> or Anchor
-  call <code>$anchor(...)</code> must occupy a direct structural occurrence position. It
-  may not be nested inside another Goal or Anchor argument, a policy argument,
-  a lookup key, an operator operand, or an ordinary value container. A hidden
-  evaluation dependency is <code>InvalidStructuralContext</code>.</li>
-<li>Primitive expressions such as <code>B[x + 1]</code> remain valid deduction-time value
-  expressions because they create no occurrence, Scheduler work, or effect.</li>
-<li>Inside an arrow-function leaf body, nested <code>$anchor(...)</code> calls remain valid
-  and are evaluated by the Host as part of that one leaf. Subsea Goal calls
-  remain forbidden there.</li>
-</ul>
-<hr />
 <p><a id="scp-0004"></a></p>
 <h2 id="scp-0004-voyage-plans-and-fully-touchdown-cable-artifacts">SCP-0004 — Voyage Plans and Fully Touchdown Cable artifacts<a class="headerlink" href="#scp-0004-voyage-plans-and-fully-touchdown-cable-artifacts" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Status: Accepted</li>
 <li>Effective language revision: <code>003b1e2404e01ad3e33eee8781ec2f408055091c</code></li>
-<li>Supersedes: the source-level equation "Program = Cable" and the <code>.subc</code>
-  source extension</li>
 </ul>
-<p>Decision:</p>
-<ul>
-<li>A Subsea Cable source file is a <strong>Voyage Plan</strong> with the <code>.vyg</code> extension. A
-  Vessel accepts the plan and carries the Frontend, Codebase, Carousel, Outcome
-  &amp; Value Store, Scheduler, and Host ports needed to realize it. The Carousel
-  remains the only deduction engine.</li>
-<li>A terminated voyage produces a <strong>Fully Touchdown Cable</strong>, a canonical ordered
-  list of grounded-leaf content hashes, and the Root outcome.</li>
-<li>Cable order compares each leaf's root-to-leaf vector of child ordinals
-  lexicographically, with ordinals assigned from authored result order.
-  Deduction, completion, and dispatch timing never reorder the list, and
-  structural sharing never collapses distinct evaluation instances.</li>
-<li>A Touchdown hash identifies grounded structural content only. Run and
-  occurrence identifiers, list positions, lineages, timestamps, attempts,
-  outcomes, and ordered policies are excluded. Equal hashes do not prove equal
-  Host effects or results.</li>
-<li>Provenance, lineages, dependency observations, and reverse lookup live in a
-  sidecar index that supports both deduction-to-cable-range and
-  cable-position-to-deduction-ancestry lookup.</li>
-<li>A later voyage may reuse an earlier immutable segment only when the
-  policy-erased structural identity, canonical arguments, applicable profiles,
-  alias observations at stable reference slots, and required value
-  observations all match. Reuse commits new records that refer to the earlier
-  segment with <code>reusedFrom</code>; it never edits an earlier record. Structural reuse
-  never implies reuse of a Host outcome or effect.</li>
-</ul>
-<hr />
 <p><a id="scp-0005"></a></p>
 <h2 id="scp-0005-guarded-conditional-recursion">SCP-0005 — Guarded conditional recursion<a class="headerlink" href="#scp-0005-guarded-conditional-recursion" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Status: Accepted</li>
 <li>Effective language revision: <code>6110c1713ec246848ab4421894ae27835f30c580</code></li>
-<li>Supersedes: the rule that every recursive Goal-definition cycle is
-  <code>CycleDetected</code></li>
 </ul>
-<p>Decision:</p>
-<ul>
-<li>A pure selector expression followed by a keyed conditional branch map forms
-  one structural pipeline, for example
-  <code>[n == 0, {true: Done[], false: CountDown[n - 1]}]</code>.</li>
-<li>The selector is evaluated through Host primitive semantics, and exactly the
-  selected branch is exposed. Unselected branches create no occurrences and
-  perform no alias or value observations. A selected recursive branch creates a
-  fresh child occurrence, never a back-edge to an earlier occurrence.</li>
-<li>A recursive definition component is valid when every definition-level cycle
-  is guarded by such a conditional selection and the guarding map has at least
-  one branch that exits the component. An unconditional cycle, or a conditional
-  cycle with no exit branch, remains <code>CycleDetected</code>.</li>
-<li>Crossing any selected conditional branch edge is an explicit-demand
-  boundary. Speculative replenishment never demands or deduces the selected
-  child.</li>
-</ul>
-<hr />
 <p><a id="scp-0006"></a></p>
 <h2 id="scp-0006-live-vesselhost-cooperation">SCP-0006 — Live Vessel–Host cooperation<a class="headerlink" href="#scp-0006-live-vesselhost-cooperation" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Status: Accepted</li>
 <li>Effective language revision: <code>6110c1713ec246848ab4421894ae27835f30c580</code></li>
-<li>Supersedes: any interpretation of Vessel as a compiler that hands a completed
-  Cable to a detached Host</li>
 </ul>
-<p>Decision:</p>
-<ul>
-<li>A general-purpose Vessel remains a logical participant throughout a voyage.
-  Deduction reaches grounded leaves, the Scheduler offers eligible evaluation
-  instances to the Host, Host outcomes and values return, and those values may
-  unblock or select later deduction until the voyage terminates.</li>
-<li>This is a semantic lifecycle requirement, not a deployment requirement. The
-  participants may communicate across processes or run in one process.</li>
-<li>Validation, normalization, artifact caching, and binding generation are not
-  deduction. They leave every unqualified Goal occurrence symbolic until that
-  exact occurrence is demanded in a voyage. A producer that emits code or a
-  prospective leaf manifest and then relinquishes the voyage is not by itself a
-  conforming Runtime; generated code conforms when it embeds or links the same
-  live feedback loop.</li>
-</ul>
-<hr />
 <p><a id="scp-0007"></a></p>
 <h2 id="scp-0007-occurrence-kind-for-inline-goal-arrow-stages">SCP-0007 — Occurrence kind for inline Goal-arrow stages<a class="headerlink" href="#scp-0007-occurrence-kind-for-inline-goal-arrow-stages" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Status: Accepted</li>
 <li>Effective language revision: <code>6110c1713ec246848ab4421894ae27835f30c580</code></li>
-<li>Supersedes: —</li>
 </ul>
-<p>Decision:</p>
-<ul>
-<li>An inline Goal-arrow stage such as <code>[{code, logs}] -&gt; Diagnose[code, logs]</code>
-  is an occurrence of kind <code>goal-arrow-stage</code>.</li>
-<li>It stays undeduced until it is demanded and its routed input resolves. Its
-  deduction binds the input to its parameters (a mismatch is a deduction-phase
-  <code>DestructureMismatch</code>), reduces its body, and commits a record with
-  <code>referenceKind = inline-arrow</code>, the parameter arity, no requested name, and no
-  artifact hash.</li>
-<li>It adds no lineage segment, and its children inherit the enclosing Goal
-  lineage. It does take one child-ordinal segment in every descendant leaf's
-  ordering vector.</li>
-<li>A Scheduler-addressed policy may target it. As a composite, <code>Reattempt</code> on it
-  is <code>UnsupportedPolicyTarget</code>. A Host-addressed policy may not target it.</li>
-</ul>
-<hr />
 <p><a id="scp-0008"></a></p>
 <h2 id="scp-0008-top-level-values-in-artifact-identity">SCP-0008 — Top-level values in artifact identity<a class="headerlink" href="#scp-0008-top-level-values-in-artifact-identity" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Status: Accepted</li>
 <li>Effective language revision: <code>6110c1713ec246848ab4421894ae27835f30c580</code></li>
-<li>Supersedes: —</li>
 </ul>
-<p>Decision:</p>
-<ul>
-<li>A stored Goal artifact captures, in canonical order, the transitive closure
-  of top-level value bindings its term references by name.</li>
-<li>Captured values are part of both the authored and the structural projection;
-  policies inside them are erased only in the structural projection.</li>
-<li>Goal references are not captured. An unqualified reference stays symbolic and
-  resolves when its own occurrence is demanded.</li>
-<li>A structure-valued lookup map is captured by structure: its keys and entry
-  shapes enter the capturing artifact's hash, unqualified Goal references in its
-  entries stay symbolic, and hash-qualified references keep their pinned hash.</li>
-<li>Captured values are authored identity. They are unrelated to the runtime
-  value observations recorded for reuse.</li>
-</ul>
-<hr />
 <p><a id="scp-0009"></a></p>
 <h2 id="scp-0009-structure-valued-ordinary-lookup-maps">SCP-0009 — Structure-valued ordinary lookup maps<a class="headerlink" href="#scp-0009-structure-valued-ordinary-lookup-maps" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Status: Accepted</li>
 <li>Effective language revision: <code>6110c1713ec246848ab4421894ae27835f30c580</code></li>
-<li>Supersedes: —</li>
 </ul>
-<p>Decision:</p>
-<ul>
-<li>A structure-valued lookup map is a top-level non-Goal binding whose
-  right-hand side is a map literal whose entry values are Goal structure.</li>
-<li>Each entry must be written with an explicit suffix: a deferred Goal reference
-  <code>A[]</code>, an Anchor reference <code>$a</code>, or a serial or parallel composition of those.
-  A bare identifier entry, an inline Goal-arrow entry, or use of the map as a
-  value is <code>InvalidStructuralContext</code>.</li>
-<li>A brace literal inside an entry is an ordinary map, not a resolving map.</li>
-<li>The map may be used only in a Goal-structure position, selected by lookup such
-  as <code>Routes[key]</code>. The selected entry receives no implicit upstream value;
-  routing must be explicit in the entry.</li>
-<li>A named structure-valued map is not a conditional branch map: <code>[sel, Routes]</code>
-  is a two-stage serial composition.</li>
-</ul>
-<hr />
 <p><a id="scp-0010"></a></p>
 <h2 id="scp-0010-errors-for-nooutput-where-a-value-is-required-at-runtime">SCP-0010 — Errors for NoOutput where a value is required at runtime<a class="headerlink" href="#scp-0010-errors-for-nooutput-where-a-value-is-required-at-runtime" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Status: Accepted</li>
 <li>Effective language revision: <code>6110c1713ec246848ab4421894ae27835f30c580</code></li>
-<li>Supersedes: —</li>
 </ul>
-<p>Decision:</p>
-<ul>
-<li>A Host leaf that returns <code>NoOutput</code> where a value is required produces the
-  single error kind <code>NoOutputNotRoutable</code>.</li>
-<li>Its phase is <code>deduction</code> when detected while routing into a deduction (a
-  routed input or a resolving-map result being bound), and <code>host</code> when detected
-  inside a function-leaf body.</li>
-<li>The error is scoped to the failing occurrence. Earlier committed deductions
-  are unaffected, and recovery remains Scheduler policy.</li>
-</ul>
-<hr />
 <p><a id="scp-0011"></a></p>
 <h2 id="scp-0011-policy-addressee-and-the-host-policy-channel">SCP-0011 — Policy addressee and the Host policy channel<a class="headerlink" href="#scp-0011-policy-addressee-and-the-host-policy-channel" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Status: Accepted</li>
 <li>Effective language revision: <code>6110c1713ec246848ab4421894ae27835f30c580</code></li>
-<li>Supersedes: the assumption that every <code>@policy</code> is addressed to the Scheduler</li>
 </ul>
-<p>Decision:</p>
-<ul>
-<li>A policy that changes eligibility, the attempt lifecycle, or a scope's
-  outcome is <strong>Scheduler-addressed</strong>. A policy that changes only what happens
-  inside exactly one grounded leaf invocation is <strong>Host-addressed</strong>. Batching or
-  coalescing several leaves is Scheduler-addressed.</li>
-<li>A Host declares the policy identifiers it accepts in its capability
-  description. An identifier claimed by both the Scheduler registry and the Host
-  is <code>PolicyConflict</code>; one claimed by neither is <code>UnknownPolicy</code>. Both are
-  <code>policy</code>-phase errors.</li>
-<li>The Scheduler registry, the Host capability, and the forwarding allowlist are
-  pinned at run start, and every occurrence's policies resolve against those
-  pinned identities.</li>
-<li>A Host-addressed policy may target only a grounded function leaf or Anchor. A
-  composite's policy is never forwarded to its descendant leaves.</li>
-<li>The Host-facing evaluation request carries only <code>hostPolicies[]</code>, the
-  source-order Host-addressed subsequence of <code>directPolicies[]</code>, and never
-  <code>directPolicies[]</code> itself. A Host-addressed policy has no authority over the
-  attempt lifecycle, and cancellation stays cooperative.</li>
-</ul>
-<hr />
 <p><a id="scp-0014"></a></p>
 <h2 id="scp-0014-laid-cable-channel-semantics-and-goal-output-multiplicity">SCP-0014 — Laid Cable channel semantics and Goal output multiplicity<a class="headerlink" href="#scp-0014-laid-cable-channel-semantics-and-goal-output-multiplicity" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Status: Accepted</li>
 <li>Effective language revision: <code>e4dfaf2271cfb98b05c34783bd461303c9dcc4fa</code></li>
-<li>Supersedes, in part:</li>
-<li>SCP-0003: the input-bearing Root and Anchor-bodied Goal in its example; the
-    staging rules are unchanged.</li>
-<li>SCP-0004: one Root outcome per voyage, and untagged child-ordinal ordering.</li>
-<li>SCP-0006: the lifecycle from Root demand to one Root outcome.</li>
-<li>SCP-0010: <code>NoOutputNotRoutable</code> for absence on a routed Goal-to-Goal or
-    Cable edge.</li>
-<li>SCP-0011: pinning once at run start.</li>
-<li>The input-bearing Root form, the single-result Goal assumption, the
-    <code>NoOutput</code>-exporting unkeyed parallel rule, and the resolving-map "exports a
-    value" rule.</li>
 </ul>
-<p>Decision:</p>
-<ul>
-<li>A Goal is not a synchronous function. An authorized outward caller lays a Goal
-  target as a live Cable with <code>lay(goalRef)</code>, sends each input with
-  <code>send(cable, tuple)</code>, and ends admission with <code>decommision(cable)</code>. There is no
-  input-bearing one-shot evaluation. A Voyage Plan names its default target with
-  <code>root Name/inputArity</code>.</li>
-<li>Every authored Goal connection behaves as an implicit FIFO channel-equivalent
-  edge. Unconsumed right-end Values are observed by the outward caller.</li>
-<li>Each admitted input is one result segment ending in exactly one
-  <code>EndOfResult(outcome)</code>, which carries no identifier. Only one segment is
-  active; the next input begins only after the active segment's terminal has
-  propagated. A failed or cancelled segment terminates only that segment and
-  keeps what it already published.</li>
-<li><code>EndOfStream</code> is produced only after <code>decommision</code> and complete drainage. It
-  aggregates no outcome. The final result is the Fully Touchdown Cable plus one
-  ordered outcome per admitted <code>Input(k)</code>.</li>
-<li>A Goal signature is <code>Name/inputArity/outputMultiplicity</code>, with multiplicity
-  exactly <code>0</code>, <code>1</code>, or <code>N</code>. Plain <code>-&gt;</code> asks the frontend to infer it; <code>-0&gt;</code>,
-  <code>-1&gt;</code>, and <code>-N&gt;</code> declare it on a named Goal when it cannot be inferred without
-  observing a mutable alias or runtime state. Function leaves are always <code>/1</code>.
-  Multiplicity is part of structural identity but never an alias or overload
-  key.</li>
-<li>A routed downstream Goal runs once per upstream Value. <code>/0</code> and an empty <code>/N</code>
-  invoke it zero times and are not errors. A missing <code>/1</code> Value is
-  <code>OutputMultiplicityMismatch</code>. A Goal never picks a first Value, collects
-  Values implicitly, or is partially applied.</li>
-<li>Cable order is <code>Input(k)</code> followed by tagged positions: <code>Authored(k)</code> from
-  authored reduction order and <code>Emission(k)</code> from the zero-based FIFO position
-  of a <code>/N</code> Value. Positions are provenance, never part of a Touchdown hash.</li>
-<li>The Scheduler registry, Host capability, and forwarding allowlist are pinned
-  when each input is admitted. A pin failure rejects that send with
-  <code>ProfileNegotiationFailed</code>.</li>
-<li>Not part of this decision: result-scope objects, channel-of-channels models,
-  <code>yield</code>, lazy-list or stream values, partial application, Anchors receiving a
-  Cable, concurrent processing of separate inputs, and cross-input merge
-  operators.</li>
-</ul>
-<hr />
 <p><a id="scp-0015"></a></p>
 <h2 id="scp-0015-vessel-control-plane-cable-data-plane-and-agent-authored-replanning">SCP-0015 — Vessel control plane, Cable data plane, and Agent-authored replanning<a class="headerlink" href="#scp-0015-vessel-control-plane-cable-data-plane-and-agent-authored-replanning" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Status: Accepted</li>
 <li>Effective language revision: <code>73d58594dd4152c1bcfd806a88b9ba845213d66f</code></li>
-<li>Supersedes, in part:</li>
-<li>SCP-0001: the Carousel as owner of speculative replenishment and receiver
-    of consumption acknowledgements. The consumption point, counting rule,
-    explicit-demand exemption, and overshoot diagnostics are unchanged.</li>
-<li>SCP-0002: Vessel as the whole-Runtime name, Carousel ownership beyond one
-    atomic deduction, and undifferentiated Runtime ownership of the Outcome &amp;
-    Value Store.</li>
-<li>SCP-0004: Vessel as the complete Runtime and outward product boundary, and
-    ownership of final result assembly.</li>
-<li>SCP-0006: one undifferentiated Vessel owning the whole live loop. The
-    compiler-only prohibition and deployment neutrality are unchanged.</li>
-<li>SCP-0011: policy interpretation described as occurring inside a
-    whole-Runtime Vessel. The addressee rules are unchanged.</li>
-<li>SCP-0014: Vessel ownership of laid-Cable channel execution and data-plane
-    termination.</li>
-</ul>
-<p>Decision:</p>
-<ul>
-<li>The <strong>Subsea Cable Runtime</strong> is the deployment-neutral whole. It contains the
-  Vessel control plane, the Cable data plane, the Codebase and append-only
-  deduction ledger, the Scheduler and Host ports, and a stateless outward
-  composition layer.</li>
-<li>The <strong>Vessel</strong> control plane owns the voyage, the occurrence set, the
-  undeduced frontier, coordination of explicit and speculative structural
-  demand, Touchdown-window accounting, publication of committed structure, and
-  the determination that no structural work remains. It carries no channel
-  frames and owns no Outcome &amp; Value Store.</li>
-<li><strong>Carousel</strong> performs one atomic deduction requested by Vessel: it resolves
-  the occurrence's current alias when applicable, applies its reduction rule
-  with supplied arguments and values, and commits one complete deduction record
-  or none. It does not choose demand, own the frontier, or evaluate leaves.</li>
-<li>The <strong>Cable</strong> data plane owns installed topology, input admission and
-  declaration leases, channels and backpressure, routed Values, the Outcome &amp;
-  Value Store, Host emission sessions, multiplicity enforcement, drainage, and
-  terminal propagation. It never reads a mutable alias or creates a deduction
-  record. The Scheduler keeps outcome authority, and the Host keeps
-  primitive, leaf, Anchor, and Host-addressed policy semantics.</li>
-<li>Vessel publishes each committed result to Cable as one idempotently
-  identified <code>TopologyInstall</code>. Cable exposes none of it as executable until it
-  acknowledges <code>TopologyInstalled</code>; a stale, malformed, or identity-conflicting
-  installation is <code>TopologyInstallRejected</code> and publishes nothing. Until
-  acknowledgement, each newly grounded leaf occupies one pending-install window
-  reservation.</li>
-<li>A segment's <code>EndOfResult</code> requires both Vessel structural closure and Cable
-  drainage of all installed caused work. <code>EndOfStream</code> additionally requires
-  decommission, closed structural publication, every segment terminal, and full
-  drainage.</li>
-<li>The final result is assembled by the stateless composition layer from
-  immutable Vessel provenance and Cable completion evidence. Outward adapters
-  attach to that layer, never to plane-private storage.</li>
-<li>An Agent or operator, never Vessel, authors replanning. After observing
-  authorized Cable output, it may store a new immutable artifact and atomically
-  rebind <code>Name/Arity</code>. Only later-demanded undeduced occurrences observe the new
-  binding; committed deductions and installed topology never change.</li>
-<li>Process placement never changes alias-observation time, deduction identity,
-  Value order, or terminal semantics.</li>
 </ul>
 
 

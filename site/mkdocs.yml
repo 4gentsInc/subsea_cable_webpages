@@ -60,7 +60,7 @@ nav:
           - Policy: conformance/POLICY.md
           - Laid Cable: conformance/LAID_CABLE.md
           - Primes Up To: conformance/PRIMES_UP_TO.md
-      - Decision Log: SCP.md
+      - Decision Index: SCP.md
       - Project:
           - Governance: GOVERNANCE.md
           - Contributing: CONTRIBUTING.md

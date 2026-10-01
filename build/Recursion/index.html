@@ -991,24 +991,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Guarded Conditional Recursion
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1025,115 +1007,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#status" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Status
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conditional-deduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Conditional deduction
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#definition-recursion-is-not-an-occurrence-cycle" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Definition recursion is not an occurrence cycle
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#guard-validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Guard validation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#non-termination" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Non-termination
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identity-aliases-and-replay" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Identity, aliases, and replay
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tail-recursion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tail recursion
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conformance-requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Conformance requirements
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1388,7 +1261,7 @@
   <span class="md-ellipsis">
     
   
-    Decision Log
+    Decision Index
   
 
     
@@ -1556,102 +1429,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#status" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Status
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conditional-deduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Conditional deduction
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#definition-recursion-is-not-an-occurrence-cycle" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Definition recursion is not an occurrence cycle
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#guard-validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Guard validation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#non-termination" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Non-termination
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identity-aliases-and-replay" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Identity, aliases, and replay
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tail-recursion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tail recursion
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conformance-requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Conformance requirements
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1668,134 +1445,24 @@
 
 
 <h1 id="guarded-conditional-recursion">Guarded Conditional Recursion<a class="headerlink" href="#guarded-conditional-recursion" title="Permanent link">&para;</a></h1>
-<h2 id="status">Status<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
-<p>Guarded direct and mutual Goal recursion is accepted, contract and all, under
-<a href="../SCP/#scp-0005">SCP-0005</a>. Unconditional
-definition cycles, and recursive conditional components with no structural exit
-branch, remain <code>CycleDetected</code>.</p>
-<p>This document is an explanatory projection of the accepted rules in SCP-0005,
-the canonical structural semantics, grammar, and conformance corpus. It does not
-introduce independent semantics. Any disagreement is a repository defect rather
-than a choice for an implementation.</p>
-<p>The governing distinction is:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>recursive definition graph  may contain a guarded cycle
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>realized occurrence Cable   remains a DAG
+<blockquote>
+<p><strong>Status:</strong> public authoring explanation; no independent language authority.</p>
+</blockquote>
+<p>Some workflows discover the next step only after inspecting a Value. An
+effect-free selector chooses one structural branch, which can request another
+step of the same Goal.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>root CountDown/1
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>CountDown = [n] -&gt; [n &lt;= 0, {true: Finish[n], false: CountDown[n - 1]}]
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Finish = (n) -&gt; n
 </code></pre></div>
-<h2 id="conditional-deduction">Conditional deduction<a class="headerlink" href="#conditional-deduction" title="Permanent link">&para;</a></h2>
-<p>A pure selector expression and a keyed branch map form one conditional
-structural pipeline:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>CountDown = [n] -1&gt; [
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    n == 0,
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    {
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        true: Done[],
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        false: CountDown[n - 1],
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    },
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>]
-</code></pre></div>
-<p>The explicit <code>-1&gt;</code> is required: a recursive definition component needs enough
-explicit output-multiplicity contracts to make its signature unique, otherwise
-validation reports <code>OutputMultiplicityCannotBeInferred(reason =
-recursive-signature-cycle)</code>
-(<a href="../SCP/#scp-0014">SCP-0014</a>).</p>
-<p>Carousel asks the Host primitive-semantics profile to evaluate <code>n == 0</code>, then
-selects exactly one branch using ordinary normalized map-key rules. Only the
-selected branch creates occurrences or performs demand-time observations. The
-other branch remains authored structure and does not enter this voyage's
-realized Cable.</p>
-<p>The selector must be effect-free. Goal and Anchor occurrences or calls are
-invalid inside it. If branching depends on an evaluated leaf result, an
-enclosing Goal arrow first binds that explicit routed value and then uses it in
-the conditional selector.</p>
-<p>The conditional pipeline contains exactly the selector and branch map. A
-following serial stage must wrap it: <code>[[selector, {true: A[], false: B[]}],
-Next]</code>. If a required routed selector value is unresolved, the conservative
-value barrier leaves the deduction uncommitted and selects no branch.</p>
-<h2 id="definition-recursion-is-not-an-occurrence-cycle">Definition recursion is not an occurrence cycle<a class="headerlink" href="#definition-recursion-is-not-an-occurrence-cycle" title="Permanent link">&para;</a></h2>
-<p>For input <code>2</code>, the example realizes:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>CountDown[2]
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    -&gt; CountDown[1]
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>        -&gt; CountDown[0]
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>            -&gt; Done[]
-</code></pre></div>
-<p>The occurrences may resolve to one shared <code>CountDown/1</code> <code>GoalNodeId</code>, but each
-has its own occurrence identity, arguments, lineage, policies, alias observation,
-and deduction record. A recursive reduction creates a fresh child occurrence;
-it never points an edge back to the parent or another ancestor occurrence.</p>
-<p>This preserves the directed acyclic occurrence graph while allowing the
-definition reference graph to be recursive.</p>
-<h2 id="guard-validation">Guard validation<a class="headerlink" href="#guard-validation" title="Permanent link">&para;</a></h2>
-<p>Validation computes strongly connected components over local Goal-definition
-references. A recursive component is accepted only when:</p>
-<ol>
-<li>every cycle crosses a recursive reference located beneath a conditional
-   branch map; and</li>
-<li>that guarding map has at least one branch that leaves the recursive component
-   without re-entering it.</li>
-</ol>
-<p>The analysis proves the presence of a possible structural exit, not termination
-for every input. These remain invalid:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>A = [] -&gt; A[]                 // unconditional direct cycle
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>A = [] -&gt; B[]
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>B = [] -&gt; A[]                 // unconditional mutual cycle
-</code></pre></div>
-<p>A conditional whose every branch returns to the same recursive component is
-also <code>CycleDetected</code> because it provides no exit.</p>
-<p>Late alias selection can reveal a cycle absent from the local definition graph.
-If an occurrence resolves to a <code>GoalNodeId</code> already on its ancestor chain,
-Carousel examines the intervening path. With at least one committed conditional
-selection on that path, the re-entry is guarded and a fresh occurrence is
-permitted. With no such selection, an explicitly demanded occurrence reports
-<code>CycleDetected</code> before committing, while a speculative pass abandons the path
-without committing or diagnosing it and leaves the classification to the later
-explicit demand.</p>
-<h2 id="non-termination">Non-termination<a class="headerlink" href="#non-termination" title="Permanent link">&para;</a></h2>
-<p>A valid guarded recursive voyage may still fail to select its exit. That is
-ordinary non-termination, not a source or validation error. Every selected
-conditional child is an explicit-demand boundary: speculative Touchdown
-replenishment may expose it but MUST NOT deduce it, regardless of whether local
-analysis recognizes the edge as recursive. Only successive Scheduler demands
-can continue an unbounded recursive path. Scheduler cancellation or a declared
-deduction-work budget may stop that sequence. Neither layer may fabricate a
-branch or rewrite a committed deduction.</p>
-<p>Subsea Cable does not require static termination proofs.</p>
-<h2 id="identity-aliases-and-replay">Identity, aliases, and replay<a class="headerlink" href="#identity-aliases-and-replay" title="Permanent link">&para;</a></h2>
-<p>Every recursive child follows the ordinary demand-time alias law. An unqualified
-<code>Name/Arity</code> remains symbolic until that child occurrence is demanded. Two steps
-of one recursion may therefore select different <code>ArtifactHash</code> values across an
-alias update. Each selection and codebase revision is committed independently.</p>
-<p>Replay uses those immutable deduction records. Incremental reuse under SCP-0004
-also requires stable-slot alias and value observations for recursive segments.
-The selector result has its own stable value slot, canonical digest, selected
-normalized key, and primitive profile. A selected segment is reusable only when
-that digest and the other dependency fingerprints match; reuse never edits an
-earlier voyage.</p>
-<h2 id="tail-recursion">Tail recursion<a class="headerlink" href="#tail-recursion" title="Permanent link">&para;</a></h2>
-<p>A Carousel may reuse physical frames or storage for a tail-recursive reduction,
-but the optimization is invisible to language semantics. Logical occurrences,
-lineages, deduction records, selected hashes, and Fully Touchdown Cable
-provenance must remain equivalent to an unoptimized unfolding.</p>
-<p>No tail-call optimization is required by the language.</p>
-<h2 id="conformance-requirements">Conformance requirements<a class="headerlink" href="#conformance-requirements" title="Permanent link">&para;</a></h2>
-<p>A conforming implementation covers at least:</p>
-<ul>
-<li>direct guarded recursion with an exit;</li>
-<li>guarded mutual recursion;</li>
-<li>exact-key and wildcard branch selection;</li>
-<li><code>KeyNotFound</code> when neither an exact key nor <code>_</code> exists;</li>
-<li>an unresolved routed selector value stopping before branch selection;</li>
-<li>unselected branches creating no occurrence or alias observation;</li>
-<li>fresh occurrence identity for every selected recursive step;</li>
-<li>explicit Scheduler demand at every selected conditional branch edge;</li>
-<li>an unconditional direct or mutual cycle remaining <code>CycleDetected</code>;</li>
-<li>a conditional recursive component with no exit remaining <code>CycleDetected</code>;</li>
-<li>an apparent exit that re-enters the component remaining <code>CycleDetected</code>;</li>
-<li>a late alias re-entry without an intervening conditional selection remaining
-  <code>CycleDetected</code>;</li>
-<li>non-termination remaining observable and interruptible by Runtime budget or
-  Scheduler action;</li>
-<li>demand-time alias changes across recursive steps; and</li>
-<li>replay, selector fingerprints, and provenance of the selected branch sequence.</li>
-</ul>
+<p>Unselected work does not run. Recursion needs a guarded exit; selected steps are
+fresh work, so recursive definitions do not imply a cyclic realized Cable.
+A valid recursive definition may still not terminate for a particular input.
+Use a supported resource or cancellation profile when bounded completion matters.
+Syntax does not promise tail-call optimization or unlimited execution. See
+<a href="../LANGUAGE_REFERENCE/">Language Reference</a>,
+<a href="../implementation/RUNTIME_CONTRACT/">Runtime Contract</a>, and
+<a href="../RUNTIME_STATUS/">Runtime availability</a>.</p>
 
 
 

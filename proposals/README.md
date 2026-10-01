@@ -9,37 +9,25 @@ Discussion proposal does not activate language semantics. The canonical
 activation must synchronize the Accepted decision, specification, grammar,
 and conformance in the language source repository.
 
-After an effective decision is published, link its decision-log entry and
+After an effective decision is published, link its decision-index entry and
 effective language revision from the discussion record. Use the **Language finding** form for observations that
 do not yet have proposal-level analysis.
 
-## Published decisions: one append-only log
+## Published decisions: the decision index
 
-The documentation publishes Accepted decisions only through a single decision
-log, `SCP.md`. The log is append-only: each activation adds one entry at the
-end, and existing entries are never edited, reordered, or removed.
+The documentation lists Accepted decisions in a single decision index,
+`SCP.md`. Each index entry gives only the SCP number and title, its status
+(`Accepted`), and its effective language revision, in number order. Every
+activation adds the activated SCP to the index.
 
-Each entry records only the final accepted result:
-
-- SCP number and title;
-- status (`Accepted`) and the effective language revision;
-- the accepted decision, stated as the resulting rule and its scope;
-- the earlier decisions or clauses it supersedes, if any.
-
-An entry omits the process that led to the decision: motivation narrative,
-alternatives considered, review discussion, evidence, experiments,
-implementation references, and drafting history. Maintainers' full working
-records are not published.
-
-A later change never rewrites an earlier entry. Supersession, correction, or
-withdrawal of an accepted rule is recorded as a new entry that names the entry
-it affects. To find the current rule for a topic, read the log from the end.
+The index is informative. It identifies which decisions took effect and when;
+it is not a semantic contract, and it does not publish decision records, the
+proposal process, or review history. The append-only decision record and the
+canonical language contracts are maintained in the language source repository.
+Public pages explain authoring and observable behavior; when a page and the
+maintained contracts appear to disagree, report it rather than choosing one.
 
 Proposals stay proposals. An SCP issue or Draft record here is discussion and
-is not added to the log. Only a proposal that becomes Accepted through
-activation appears in the log, in its compact final form. Rejected, withdrawn,
-or superseded-before-acceptance proposals produce no log entry.
-
-The log records which decisions took effect. The canonical rules themselves
-remain in the Language Reference, grammar, Runtime Contract, and conformance
-documents; a log entry is not a second normative copy of them.
+does not enter the index. Only a proposal that becomes Accepted through
+activation is listed. Rejected, withdrawn, or superseded-before-acceptance
+proposals produce no entry.

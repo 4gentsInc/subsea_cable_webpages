@@ -43,11 +43,10 @@ This is the public discussion and intake record. Maintain the issue or Draft rec
 review. Opening or closing an SCP issue does not accept or activate it. Maintainers reference it when preparing the canonical decision and
 activation in the language source repository; public PR merge alone does not
 make the proposed behavior effective. Final status should link the published
-decision-log entry and identify the effective language revision.
+decision-index entry and identify the effective language revision.
 
-Accepted decisions are published only as compact entries in the append-only
-decision log `SCP.md`, which records the final accepted result without the
-proposal process. See [Published decisions](proposals/README.md#published-decisions-one-append-only-log).
+Accepted decisions are listed in the decision index `SCP.md` by number, title,
+status, and effective revision. See [Published decisions](proposals/README.md#published-decisions-the-decision-index).
 
 ## Website changes
 

@@ -1217,24 +1217,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Primes Up To
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1251,71 +1233,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#scenario-fixture-contract" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scenario fixture contract
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#acceptance-oracle" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Acceptance oracle
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#structural-and-trace-assertions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Structural and trace assertions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execution-availability" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Execution availability
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1344,7 +1261,7 @@
   <span class="md-ellipsis">
     
   
-    Decision Log
+    Decision Index
   
 
     
@@ -1512,58 +1429,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#scenario-fixture-contract" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scenario fixture contract
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#acceptance-oracle" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Acceptance oracle
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#structural-and-trace-assertions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Structural and trace assertions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execution-availability" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Execution availability
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1581,124 +1446,40 @@
 
 <h1 id="primes-up-to-by-trial-division">Primes Up To by Trial Division<a class="headerlink" href="#primes-up-to-by-trial-division" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Status:</strong> reference scenario and acceptance oracle for the streamed-primes
-runnable demonstration.
-Passing this scenario is required for that runnable vertical slice, not for
-every Runtime that claims laid-Cable conformance. It combines already-effective
-guarded-recursion, output-multiplicity, laid-Cable, and Runtime-plane rules;
-it does not introduce new language semantics.</p>
+<p><strong>Status:</strong> public demonstration scenario and observable results. A runnable
+command remains in progress. This is not a complete internal acceptance or
+trace specification.</p>
 </blockquote>
-<p>The checked-in Voyage Plan is
-<a href="../valid/primes-up-to-by-trial-division.vyg"><code>valid/primes-up-to-by-trial-division.vyg</code></a>.
-It is the language-side fixture for the first clean-checkout runnable vertical
-slice tracked by
-the streamed-primes demonstration.</p>
-<p>The scenario enumerates primes up to one input limit by <strong>streamed candidate
-generation plus recursive trial division</strong>. It is not a Sieve of Eratosthenes.
-Candidate generation is a Host leaf; divisor recursion and branch selection
-remain visible Voyage Plan structure.</p>
-<h2 id="scenario-fixture-contract">Scenario fixture contract<a class="headerlink" href="#scenario-fixture-contract" title="Permanent link">&para;</a></h2>
-<p>The Runtime lays <code>PrimesUpTo/1</code>, sends one integer input, and uses these
-scenario-specific Host implementations:</p>
+<p>The <a href="../valid/primes-up-to-by-trial-division.vyg">Voyage Plan</a> generates candidates
+and selects primes through conditional recursion. Candidate generation is a
+Host leaf; recursive choices stay explicit Goal structure.</p>
 <table>
 <thead>
 <tr>
-<th>Leaf</th>
-<th style="text-align: right;">Goal multiplicity</th>
-<th>Fixture behavior</th>
+<th>Input</th>
+<th>Prime Values, presented in ascending order</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>$candidates(limit)</code></td>
-<td style="text-align: right;"><code>Candidates/1/N</code></td>
-<td>Emit every integer from <code>2</code> through <code>limit</code>, in ascending order, then return. Emit no Value when <code>limit &lt; 2</code>. Each send follows Cable's FIFO channel semantics: a send to a full edge waits, and capacity <code>0</code> is a rendezvous.</td>
-</tr>
-<tr>
-<td><code>$drop(n)</code></td>
-<td style="text-align: right;"><code>Drop/1/0</code></td>
-<td>Return successfully without emitting a Value.</td>
-</tr>
-<tr>
-<td><code>Keep = (n) -&gt; n</code></td>
-<td style="text-align: right;"><code>Keep/1/1</code></td>
-<td>The Host evaluates the function leaf and returns <code>n</code> as its one Value.</td>
-</tr>
-</tbody>
-</table>
-<p>The Host reports Value emissions and invocation return or trap only. It never
-emits <code>EndOfResult</code> or <code>EndOfStream</code>; those terminals remain Cable-owned.</p>
-<h2 id="acceptance-oracle">Acceptance oracle<a class="headerlink" href="#acceptance-oracle" title="Permanent link">&para;</a></h2>
-<p>Each row is one fresh laid Cable with one admitted input segment. Prime Values
-are listed by the <code>Emission(k)</code> provenance position of the candidate that
-caused their downstream occurrence, not by live arrival time.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: right;">Input</th>
-<th>Prime Values in source <code>Emission(k)</code> order</th>
-<th>Segment terminal</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;"><code>1</code></td>
+<td><code>1</code></td>
 <td>none</td>
-<td>exactly one <code>EndOfResult(Succeeded)</code></td>
 </tr>
 <tr>
-<td style="text-align: right;"><code>2</code></td>
 <td><code>2</code></td>
-<td>exactly one <code>EndOfResult(Succeeded)</code></td>
+<td><code>2</code></td>
 </tr>
 <tr>
-<td style="text-align: right;"><code>30</code></td>
+<td><code>30</code></td>
 <td><code>2, 3, 5, 7, 11, 13, 17, 19, 23, 29</code></td>
-<td>exactly one <code>EndOfResult(Succeeded)</code></td>
 </tr>
 </tbody>
 </table>
-<p>The portable oracle does not constrain the live arrival order of those prime
-Values. Independent downstream <code>Prime</code> evaluations may complete
-asynchronously. A demo that presents them in ascending order may serialize
-downstream dispatch or reorder them by provenance as an explicit Runtime
-profile choice; that presentation choice is not language semantics. The Fully
-Touchdown Cable remains ordered by its canonical tagged position vectors,
-including <code>Emission(k)</code>, independently of completion timing.</p>
-<p>After the caller invokes <code>decommision</code>, the Cable emits exactly one
-<code>EndOfStream</code> only after admission is closed, structural publication is closed,
-every admitted segment has terminalized, and the Cable is fully drained. The
-completed <code>CableResult</code> contains the Fully Touchdown Cable and the ordered
-<code>SegmentOutcome</code> for the input segment.</p>
-<p>An empty <code>/N</code> candidate segment is successful. For input <code>1</code>, the routed inline
-Goal-arrow stage is invoked zero times, so no <code>Prime</code> occurrence is created and
-no missing-Value error occurs.</p>
-<h2 id="structural-and-trace-assertions">Structural and trace assertions<a class="headerlink" href="#structural-and-trace-assertions" title="Permanent link">&para;</a></h2>
-<p>A conforming normalized trace for this scenario demonstrates all of the
-following:</p>
-<ul>
-<li>each selected recursive branch creates a fresh <code>CheckPrime</code> or
-  <code>CheckDivisibility</code> occurrence with its own arguments and deduction record;</li>
-<li>a fresh recursive occurrence may share a <code>GoalNodeId</code> with an ancestor, but
-  no committed edge points back to the ancestor, so the realized Cable remains
-  a DAG;</li>
-<li>every committed reduction slice is published by Vessel as one idempotently
-  identified <code>TopologyInstall</code>, and none of the slice becomes executable before
-  Cable's atomic <code>TopologyInstalled</code> acknowledgement;</li>
-<li><code>$candidates</code> emissions preserve ascending order, while a send waits when its
-  FIFO edge is full and capacity <code>0</code> has rendezvous behavior;</li>
-<li>Vessel owns demand, deduction, topology publication, and structural closure,
-  while Cable owns installed topology, routed Values, multiplicity,
-  backpressure, drainage, and terminals; and</li>
-<li>primality recursion is not implemented by an Anchor or hidden inside one Host
-  leaf, and the outward API has no input-bearing
-  <code>evaluate(goal, arguments)</code> path.</li>
-</ul>
-<h2 id="execution-availability">Execution availability<a class="headerlink" href="#execution-availability" title="Permanent link">&para;</a></h2>
-<p>This reference defines the Voyage Plan and acceptance oracle, not an available
-Runtime or Host package. See <a href="../../RUNTIME_STATUS/">Runtime availability</a> for the
-demonstration's current status. A runnable command and public trace will be
-provided when the implementation is available.</p>
+<p>Each accepted input has one successful <code>EndOfResult</code>, including input <code>1</code> with
+no Value. Live arrival order is not prescribed. After closing admission and
+drainage, the Cable has one <code>EndOfStream</code>. This illustrates authoring and
+observable results, not full Runtime conformance or an available Runtime.
+<a href="../../RUNTIME_STATUS/">Runtime availability</a> reports current support.</p>
 
 
 
