@@ -1,0 +1,4 @@
+Echo = (x) -> x
+Sieve = [limit] -N> $sieve(limit)
+Both = [x] -> {primes: Sieve[x], limit: Echo[x]}
+root Both/1

@@ -1,0 +1,2 @@
+Root = [] -1> $emit("\u{D800}")
+root Root/0

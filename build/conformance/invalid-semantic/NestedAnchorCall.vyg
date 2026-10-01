@@ -1,0 +1,3 @@
+D = [y] -1> $d(y)
+Root = [x] -> D[$f(x)]
+root Root/1

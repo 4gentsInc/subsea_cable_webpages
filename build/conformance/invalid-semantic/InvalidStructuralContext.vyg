@@ -1,0 +1,3 @@
+Other = (x) -> x
+Bad = (x) -> Other(x)
+root Bad/1

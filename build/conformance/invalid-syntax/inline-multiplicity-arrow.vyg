@@ -1,0 +1,3 @@
+Read = [x] -1> $read(x)
+Main = [x] -> [Read[x], [y] -1> Read[y]]
+root Main/1

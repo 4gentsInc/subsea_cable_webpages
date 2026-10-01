@@ -1,0 +1,12 @@
+Left = [] -1> $left
+Right = [] -1> $right
+
+Choose = [] -> [
+    "missing",
+    {
+        "left": Left[],
+        "right": Right[],
+    },
+]
+
+root Choose/0

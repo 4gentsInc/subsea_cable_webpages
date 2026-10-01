@@ -1,0 +1,7 @@
+A = [] -1> $a
+C = (x) -> x + 1
+B = [x] -> [A[], C(x)]
+D = [x] -1> $d(x)
+Primitive = [x] -> D[x + 1]
+Root = [] -> @timeout("30s") {A, A}
+root Root/0

@@ -1,0 +1,4 @@
+values = {x: 1}
+Leaf = ({x, y}) -> x
+Root = [] -> Leaf(values)
+root Root/0

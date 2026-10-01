@@ -1,0 +1,131 @@
+name: Language finding
+description: Report an ambiguity, gap, conflict, or ergonomics problem found while using or implementing
+  Subsea Cable.
+title: '[finding] '
+labels:
+- finding
+body:
+- type: markdown
+  attributes:
+    value: 'Use this form when the **language specification** is ambiguous, silent, self-contradictory,
+      or hard to use correctly.
+
+      A Runtime bug or a Runtime-profile choice belongs in the implementation''s repository (for example
+      `subsea_cable_vessel`), not here.
+
+      If you are unsure, file it here; triage moves it.
+
+
+      A finding is an intake record, not a decision. It never changes the language by itself.
+
+      Developers can report directly in the language repository; external contributors use this public
+      community repository. Both use the same form and review process.
+
+      '
+- type: dropdown
+  id: kind
+  attributes:
+    label: Kind
+    description: The closest match. Triage adds the matching `finding:*` label.
+    options:
+    - ambiguity — the specification admits more than one reading
+    - gap — the specification does not say
+    - conflict — two normative sources disagree
+    - ergonomics — the rule is clear but hard to use correctly
+  validations:
+    required: true
+- type: dropdown
+  id: area
+  attributes:
+    label: Area
+    description: Select every area involved. Triage adds the matching `area:*` labels.
+    multiple: true
+    options:
+    - grammar and syntax
+    - output multiplicity
+    - laid Cable lifecycle and terminals
+    - Runtime planes (Vessel / Cable / Carousel boundary)
+    - deduction and aliases
+    - policy and Scheduler/Host channel
+    - Codebase / artifacts / hashing
+    - conformance corpus
+    - documentation only
+  validations:
+    required: true
+- type: input
+  id: revision
+  attributes:
+    label: Language revision
+    description: Use the language commit hash if known. Otherwise identify the published documentation
+      URL and the date read (YYYY-MM-DD).
+    placeholder: 73d5859, or https://4gentsinc.github.io/subsea_cable_webpages/LANGUAGE_REFERENCE/ 2026-10-01
+  validations:
+    required: true
+- type: textarea
+  id: clauses
+  attributes:
+    label: Normative sources involved
+    description: Document pages and sections, or source paths such as export/conformance/LAID_CABLE.md.
+      Quote only the sentences that matter.
+  validations:
+    required: true
+- type: textarea
+  id: reproduction
+  attributes:
+    label: Smallest reproduction
+    description: A minimal Voyage Plan, conformance scenario, or step-by-step Runtime interaction that
+      shows the problem.
+    render: text
+  validations:
+    required: true
+- type: textarea
+  id: behavior
+  attributes:
+    label: Expected versus observed or possible readings
+    description: What you expected, what happened or what else the text allows, and why the difference
+      matters.
+  validations:
+    required: true
+- type: textarea
+  id: impact
+  attributes:
+    label: Impact and current handling
+    description: What is blocked, and what you did meanwhile. Say explicitly if you froze the affected
+      path instead of choosing a reading.
+  validations:
+    required: false
+- type: textarea
+  id: evidence
+  attributes:
+    label: Evidence links
+    description: External ADR, failing test, trace, pull request, or related findings.
+  validations:
+    required: false
+- type: dropdown
+  id: reporter
+  attributes:
+    label: Reported by
+    options:
+    - human
+    - agent
+  validations:
+    required: true
+- type: input
+  id: agent
+  attributes:
+    label: Agent or tool (if reported by an agent)
+    placeholder: e.g. Claude, Codex, a CI job name
+  validations:
+    required: false
+- type: checkboxes
+  id: checks
+  attributes:
+    label: Checks
+    options:
+    - label: I searched open and closed issues labeled `finding` and this is not a duplicate.
+      required: true
+    - label: This concerns language semantics or its documentation, not only one Runtime's bug or profile
+        choice.
+      required: true
+    - label: I did not ship a private semantic workaround and present it as Subsea Cable behavior.
+      required: true

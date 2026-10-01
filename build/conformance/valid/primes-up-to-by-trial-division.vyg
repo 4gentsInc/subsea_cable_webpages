@@ -1,0 +1,29 @@
+Candidates = [limit] -N> $candidates(limit)
+
+Keep = (n) -> n
+Drop = [n] -0> $drop(n)
+
+CheckPrime = [n, divisor] -N> [
+    divisor * divisor > n,
+    {
+        true: Keep[n],
+        false: CheckDivisibility[n, divisor],
+    },
+]
+
+CheckDivisibility = [n, divisor] -N> [
+    n % divisor == 0,
+    {
+        true: Drop[n],
+        false: CheckPrime[n, divisor + 1],
+    },
+]
+
+Prime = [n] -N> CheckPrime[n, 2]
+
+PrimesUpTo = [limit] -N> [
+    Candidates[limit],
+    [candidate] -> Prime[candidate],
+]
+
+root PrimesUpTo/1

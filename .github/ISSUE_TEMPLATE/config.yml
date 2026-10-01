@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+- name: Contribution guide
+  url: https://github.com/4gentsInc/subsea_cable_webpages/blob/main/CONTRIBUTING.md
+  about: Choose the finding or direct SCP proposal lane and read the review process.
+- name: Runtime availability and implementation support
+  url: https://4gentsinc.github.io/subsea_cable_webpages/RUNTIME_STATUS/
+  about: Check execution support; implementation-specific problems belong with their Runtime maintainers.

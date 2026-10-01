@@ -1,0 +1,9 @@
+Done = [] -1> $done
+CountDown = [n] -> [
+    n == 0,
+    {
+        true: Done[],
+        false: CountDown[n - 1],
+    },
+]
+root CountDown/1

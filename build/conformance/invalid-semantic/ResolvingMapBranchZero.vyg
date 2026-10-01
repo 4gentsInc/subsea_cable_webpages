@@ -1,0 +1,4 @@
+Echo = (x) -> x
+Print = [x] -0> $print(x)
+Both = [x] -> {left: Print[x], right: Echo[x]}
+root Both/1

@@ -1,0 +1,4 @@
+Main = (x) -> x + 1
+Other = (x) -> x - 1
+root Main/1
+root Other/1

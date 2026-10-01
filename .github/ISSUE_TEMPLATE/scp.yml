@@ -1,0 +1,107 @@
+name: Subsea Cable Proposal (SCP)
+description: Propose an evidence-backed language change for discussion and owner review.
+title: '[SCP] '
+labels:
+- proposal:scp
+body:
+- type: markdown
+  attributes:
+    value: 'Use this form for a worked-out language proposal. Use Language finding for an observation
+      that does not yet have proposal-level analysis. An SCP issue is Draft intake: neither opening nor
+      closing it accepts or activates language behavior. Maintainers allocate proposal numbers during
+      review; activation still synchronizes all affected canonical sources and conformance.'
+- type: input
+  id: revision
+  attributes:
+    label: Language revision or documentation baseline
+    description: Use a language commit hash, or the published documentation URL and the date read (YYYY-MM-DD).
+  validations:
+    required: true
+- type: textarea
+  id: problem
+  attributes:
+    label: Problem and expected behavior
+    description: Explain the language problem and the behavior an adopter needs.
+  validations:
+    required: true
+- type: textarea
+  id: sources
+  attributes:
+    label: Normative sources involved
+    description: Cite exact pages or source paths and sections. Distinguish the effective language from
+      your proposal.
+  validations:
+    required: true
+- type: textarea
+  id: reproduction
+  attributes:
+    label: Smallest reproduction
+    description: Give a minimal Voyage Plan, conformance scenario, or interaction that exposes the problem.
+    render: text
+  validations:
+    required: true
+- type: textarea
+  id: invariants
+  attributes:
+    label: Affected invariants and scope
+    description: Identify affected syntax, semantics, identity, diagnostics, ownership, or portable contracts.
+      Explain why this needs a language decision rather than a Runtime profile.
+  validations:
+    required: true
+- type: textarea
+  id: alternatives
+  attributes:
+    label: Alternatives, including no language change
+    description: Describe viable options and their costs; include keeping the current language.
+  validations:
+    required: true
+- type: textarea
+  id: recommendation
+  attributes:
+    label: Recommendation and owner decision needed
+    description: Describe the proposed contract and the exact question for the owner. Do not describe
+      it as already effective.
+  validations:
+    required: true
+- type: textarea
+  id: compatibility
+  attributes:
+    label: Compatibility and conformance impact
+    description: List affected valid/invalid sources, artifacts and hashes, diagnostics, profiles, migration
+      needs, and proposed conformance cases.
+  validations:
+    required: true
+- type: textarea
+  id: evidence
+  attributes:
+    label: Evidence and related findings
+    description: Link supporting findings, ADRs, tests, traces, or existing draft proposal documents.
+  validations:
+    required: false
+- type: dropdown
+  id: reporter
+  attributes:
+    label: Reported by
+    options:
+    - human
+    - agent
+  validations:
+    required: true
+- type: input
+  id: agent
+  attributes:
+    label: Agent or tool (if reported by an agent)
+    description: Name the agent or tool, if applicable.
+  validations:
+    required: false
+- type: checkboxes
+  id: checks
+  attributes:
+    label: Checks
+    options:
+    - label: I searched existing findings and proposals and linked related records.
+      required: true
+    - label: I distinguish proposed behavior from the currently effective language.
+      required: true
+    - label: I understand that this issue does not accept or activate the proposal.
+      required: true

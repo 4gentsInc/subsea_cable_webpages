@@ -1,0 +1,11 @@
+Loop = [n] -1> [
+    n == 0,
+    {
+        true: ApparentExit[],
+        false: Loop[n - 1],
+    },
+]
+
+ApparentExit = [] -> Loop[0]
+
+root Loop/1

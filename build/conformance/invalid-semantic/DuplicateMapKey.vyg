@@ -1,0 +1,3 @@
+values = {a: 1, "a": 2}
+Root = [] -1> $emit(values)
+root Root/0
