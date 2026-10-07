@@ -1765,18 +1765,25 @@ implementation's language revision and profile. See <a href="../GOVERNANCE/">Gov
 computation; a Runtime realizes the work. Start with <a href="../ADOPTION/">Adoption</a>
 and check <a href="../RUNTIME_STATUS/">Runtime availability</a>.</p>
 <h2 id="source-and-names">Source and names<a class="headerlink" href="#source-and-names" title="Permanent link">&para;</a></h2>
-<p>Source is UTF-8. Goal names begin with an uppercase ASCII letter; value and Map
-names with a lowercase letter. Leading underscores do not decide case. Names
-use ASCII letters, digits, and underscores and are case-sensitive. String values
-may contain Unicode. Statements use meaningful newlines rather than semicolons.
-Composition can span lines inside delimiters. Comments use <code>//</code> and <code>/* ... */</code>.</p>
+<p>Source is UTF-8. Names use ASCII letters, digits, and underscores and are
+case-sensitive. Leading underscores are ignored; the first ASCII letter decides
+the role, so <code>Build</code> and <code>_Build</code> name Goals while <code>cache</code> and <code>_cache</code> name
+values or Maps. A name containing no letter cannot be followed by <code>[...]</code>.
+String values may contain Unicode. Statements use meaningful newlines rather
+than semicolons. Composition can span lines inside delimiters. Comments use
+<code>//</code> and <code>/* ... */</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>threshold = 10
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>root Report/1
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Report = [request] -1&gt; $report(request, threshold)
 </code></pre></div>
-<p>Each source unit has one <code>root Name/inputArity</code>, naming its default target with
-no input Values. The caller sends inputs to the live Cable. <code>Name#hashPrefix</code>
-pins an artifact under the implementation's declared identity profile.</p>
+<p>Each source unit has exactly one <code>root Name/inputArity</code>, naming its default
+target. The declaration carries no input Values; <code>/inputArity</code> states only how
+many inputs the target accepts. The caller sends inputs to the live Cable.
+<code>Name#hashPrefix</code> pins an artifact under the implementation's declared identity
+profile.</p>
+<p>Later examples are fragments unless they show a <code>root</code> declaration. A
+self-contained example defines every Goal it references; a Voyage Plan may also
+reference Goals that another source unit already stored in the Codebase.</p>
 <h2 id="goal-arrows-and-function-arrows">Goal arrows and function arrows<a class="headerlink" href="#goal-arrows-and-function-arrows" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Fetch = [request] -1&gt; $fetch(request)
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Normalize = (source) -&gt; $normalize(source)
@@ -1795,27 +1802,33 @@ rule. Both forms remain direct structural work, not ordinary synchronous scalar
 calls. They may be a complete structural body, serial or parallel stage, or
 keyed result branch; do not hide either form in another argument or expression.</p>
 <h2 id="serial-routing">Serial routing<a class="headerlink" href="#serial-routing" title="Permanent link">&para;</a></h2>
-<p><code>[Read[input], Normalize, Save]</code> routes Values through stages. A bare Goal in
-this position receives routed input; <code>Goal[arguments]</code> supplies arguments
-explicitly. A Goal describes structural work, not a synchronous scalar function.</p>
+<p><code>[Read[input], Normalize, Save]</code> routes Values through stages. A bare
+downstream Goal, such as <code>Normalize</code> or <code>Save</code>, receives each upstream Value as
+its sole argument. A bare first stage receives no argument. Written arguments
+are never extended with an upstream Value: in <code>[A[x], B[y]]</code>, <code>B</code> runs after
+<code>A</code> with only <code>y</code>, and <code>A</code>'s result is discarded. Forward it explicitly with a
+Goal-arrow stage:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Forward = [x, y] -&gt; [A[x], [result] -&gt; B[result, y]]
+</code></pre></div>
+<p>A Goal describes structural work, not a synchronous scalar function.</p>
 <h2 id="independent-work-and-named-results">Independent work and named results<a class="headerlink" href="#independent-work-and-named-results" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Inspect = [issue] -&gt; {ReadCode[issue], ReadLogs[issue]}
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Evidence = [issue] -&gt; {code: ReadCode[issue], logs: ReadLogs[issue]}
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>ReadCode = [issue] -1&gt; $readCode(issue)
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>ReadLogs = [issue] -1&gt; $readLogs(issue)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Inspect = [issue] -&gt; {ReadCode[issue], ReadLogs[issue]}
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Evidence = [issue] -&gt; {code: ReadCode[issue], logs: ReadLogs[issue]}
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>ReadCode = [issue] -1&gt; $readCode(issue)
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>ReadLogs = [issue] -1&gt; $readLogs(issue)
 </code></pre></div>
 <p>Unkeyed braces describe independent work with no outward Value. A keyed result
 joins one Value per branch into a Map. A zero-output or streaming branch cannot
 silently be collected as one Value. A routed Map can be destructured explicitly:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Review = [issue] -&gt; [
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    [] -&gt; {code: ReadCode[issue], logs: ReadLogs[issue]},
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    [{code, logs}] -&gt; Diagnose[code, logs],
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>]
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Diagnose = [code, logs] -1&gt; $diagnose(code, logs)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Review = [issue] -&gt; [
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    [] -&gt; {code: ReadCode[issue], logs: ReadLogs[issue]},
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    [{code, logs}] -&gt; Diagnose[code, logs],
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>]
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Diagnose = [code, logs] -1&gt; $diagnose(code, logs)
 </code></pre></div>
 <h2 id="conditional-structure-and-recursion">Conditional structure and recursion<a class="headerlink" href="#conditional-structure-and-recursion" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>CountDown = [n] -&gt; [n &lt;= 0, {true: Finish[n], false: CountDown[n - 1]}]
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Finish = (n) -&gt; n
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>CountDown = [n] -1&gt; [n &lt;= 0, {true: Finish[n], false: CountDown[n - 1]}]
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Finish = (n) -&gt; n
 </code></pre></div>
 <p>An effect-free selector chooses one structural branch. Unselected work does not
 run. A selected recursive step is fresh work; recursive source definitions do
@@ -1826,8 +1839,8 @@ See <a href="../Recursion/">Guarded Conditional Recursion</a>.</p>
 follow the Host profile. Unicode String contents are exact; tools must not
 silently normalize them. Lowercase <code>map[key]</code> is lookup; uppercase
 <code>Goal[arguments]</code> is structural work.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>labels = {true: &quot;ready&quot;, false: &quot;waiting&quot;}
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Pick = (flag) -&gt; labels[flag]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>labels = {true: &quot;ready&quot;, false: &quot;waiting&quot;}
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Pick = (flag) -&gt; labels[flag]
 </code></pre></div>
 <p>Maps can also select structures whose Goal references remain revisable until
 needed. Check supported source validation in the chosen implementation.</p>

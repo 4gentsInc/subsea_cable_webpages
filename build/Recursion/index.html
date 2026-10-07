@@ -1452,7 +1452,7 @@
 effect-free selector chooses one structural branch, which can request another
 step of the same Goal.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>root CountDown/1
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>CountDown = [n] -&gt; [n &lt;= 0, {true: Finish[n], false: CountDown[n - 1]}]
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>CountDown = [n] -1&gt; [n &lt;= 0, {true: Finish[n], false: CountDown[n - 1]}]
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Finish = (n) -&gt; n
 </code></pre></div>
 <p>Unselected work does not run. Recursion needs a guarded exit; selected steps are
