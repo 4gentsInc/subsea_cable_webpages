@@ -48,6 +48,7 @@ nav:
   - Adopt:
       - Prepare a Workflow: ADOPTION.md
       - Runtime Availability: RUNTIME_STATUS.md
+      - Roadmap: ROADMAP.md
       - Ecosystem: ECOSYSTEM.md
   - Reference:
       - Language:
