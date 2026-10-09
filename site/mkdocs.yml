@@ -74,6 +74,7 @@ extra:
     - SubseaCable.ebnf
     - conformance/cases.tsv
     - assets/subsea-cable-concept.jpg
+    - assets/cable-touchdown.svg
     - assets/branding/subsea-cable-footballfish-mascot-transparent.png
     - assets/branding/subsea-cable-footballfish-scene.png
   publication_asset_globs:
