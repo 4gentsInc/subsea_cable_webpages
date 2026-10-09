@@ -1674,6 +1674,12 @@ a decommissioned, drained Cable. Neither terminal is an ordinary Value.</p>
 <p>Successful completion requires the relevant structural work to be complete
 and its caused execution drained. A temporarily empty queue is insufficient.
 Verify rejection, failure, and cancellation behavior before attaching effectful tools.</p>
+<p>An authorized operator who loses a Cable handle can list the retained Cables it
+controls and describe one: the original handle, the laid target name,
+<code>Live</code>, <code>Draining</code>, or <code>Ended</code>, the accepted-input count, and whether the final
+result is still available. Listing and describing never send input or change
+results. A handle the caller cannot access gets the same answer whether or not
+the Cable exists. Retention periods are implementation profile choices.</p>
 <h2 id="identity-and-provenance-support">Identity and provenance support<a class="headerlink" href="#identity-and-provenance-support" title="Permanent link">&para;</a></h2>
 <p>A name, immutable artifact, structural occurrence, and execution attempt answer
 different questions. Current names must not replace committed history.

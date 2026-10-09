@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 860" width="1000" height="860" role="img" aria-labelledby="title desc">
+<title id="title">The Cable sinks as Goal occurrences are deduced</title>
+<desc id="desc">A Goal tree three levels deep under one Root occurrence, with Anchors on the seafloor. Six numbered Cable lines follow one input through successive stages: only that input's Root occurrence exposed; A and B exposed; A1, A2 and B exposed; the first Anchor touched down; three Anchors touched down while B1 remains; and, after decommission and drainage, every leaf the segment reached listed in authored order as the Fully Touchdown Cable.</desc>
+<defs><linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6f1f7"/><stop offset="1" stop-color="#bdd8e8"/></linearGradient><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#34495e"/></marker></defs>
+<rect width="1000" height="860" fill="#ffffff"/>
+<rect width="1000" height="86" fill="#f6f3ec"/>
+<rect y="86" width="1000" height="384" fill="url(#sea)"/>
+<line x1="0" y1="86" x2="1000" y2="86" stroke="#6f9bb8" stroke-width="1.5"/>
+<rect y="470" width="1000" height="78" fill="#eadcb8"/>
+<line x1="0" y1="470" x2="1000" y2="470" stroke="#b99c5f" stroke-width="2"/>
+<text x="24" y="30" font-size="20" font-weight="700" fill="#1d2b3a" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">How a Cable reaches Touchdown</text>
+<text x="24" y="52" font-size="13.5" fill="#566676" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">Each numbered line is the Cable for one input at one moment.</text>
+<text x="24" y="70" font-size="13.5" fill="#566676" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">Each deduction commits one demanded occurrence and exposes its children.</text>
+<text x="982" y="106" text-anchor="end" font-size="12" fill="#566676" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">Sea · Goal space</text>
+<text x="982" y="492" text-anchor="end" font-size="12" fill="#7a6438" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">Seafloor · Host</text>
+<line x1="407.0" y1="139.8" x2="239.8" y2="211.4" stroke="#34495e" stroke-width="1.6" marker-end="url(#arrow)" opacity="0.75"/>
+<line x1="453.1" y1="139.6" x2="625.1" y2="211.6" stroke="#34495e" stroke-width="1.6" marker-end="url(#arrow)" opacity="0.75"/>
+<line x1="195.5" y1="237.6" x2="121.1" y2="297.1" stroke="#34495e" stroke-width="1.6" marker-end="url(#arrow)" opacity="0.75"/>
+<line x1="234.5" y1="237.6" x2="308.9" y2="297.1" stroke="#34495e" stroke-width="1.6" marker-end="url(#arrow)" opacity="0.75"/>
+<line x1="650.0" y1="247.0" x2="650.0" y2="287.0" stroke="#34495e" stroke-width="1.6" marker-end="url(#arrow)" opacity="0.75"/>
+<line x1="100.0" y1="339.0" x2="100.0" y2="475.0" stroke="#34495e" stroke-width="1.6" marker-end="url(#arrow)" opacity="0.75"/>
+<line x1="320.4" y1="337.1" x2="262.9" y2="475.0" stroke="#34495e" stroke-width="1.6" marker-end="url(#arrow)" opacity="0.75"/>
+<line x1="339.6" y1="337.1" x2="397.1" y2="475.0" stroke="#34495e" stroke-width="1.6" marker-end="url(#arrow)" opacity="0.75"/>
+<line x1="640.4" y1="337.1" x2="582.9" y2="475.0" stroke="#34495e" stroke-width="1.6" marker-end="url(#arrow)" opacity="0.75"/>
+<line x1="659.6" y1="337.1" x2="717.1" y2="475.0" stroke="#34495e" stroke-width="1.6" marker-end="url(#arrow)" opacity="0.75"/>
+<path d="M 380.0 119.5 C 389.0 119.5, 354.4 122.2, 430.0 119.5 C 505.6 116.8, 722.4 109.6, 800.0 104.2 C 877.6 98.9, 850.0 92.6, 861.0 90.0" fill="none" stroke="#f0a3ab" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 165.0 215.7 C 174.0 215.7, 127.7 215.7, 215.0 215.7 C 302.3 215.7, 544.7 226.3, 650.0 215.7 C 755.3 205.1, 762.0 179.2, 800.0 156.5 C 838.0 133.9, 850.0 102.0, 861.0 90.0" fill="none" stroke="#e6808d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 50.0 311.9 C 59.0 311.9, 49.6 311.9, 100.0 311.9 C 150.4 311.9, 231.0 328.5, 330.0 311.9 C 429.0 295.3, 565.4 246.7, 650.0 219.9 C 734.6 193.1, 762.0 186.2, 800.0 162.8 C 838.0 139.5, 850.0 103.1, 861.0 90.0" fill="none" stroke="#d95f71" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 50.0 485.0 C 59.0 485.0, 49.6 485.0, 100.0 485.0 C 150.4 485.0, 231.0 363.1, 330.0 316.1 C 429.0 269.1, 565.4 250.6, 650.0 224.1 C 734.6 197.6, 762.0 193.3, 800.0 169.2 C 838.0 145.0, 850.0 104.2, 861.0 90.0" fill="none" stroke="#c33f57" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 50.0 494.0 C 59.0 494.0, 63.1 494.0, 100.0 494.0 C 136.9 494.0, 200.1 494.0, 255.0 494.0 C 309.9 494.0, 333.9 494.0, 405.0 494.0 C 476.1 494.0, 578.9 369.4, 650.0 320.3 C 721.1 271.2, 762.0 262.9, 800.0 221.5 C 838.0 180.0, 850.0 113.7, 861.0 90.0" fill="none" stroke="#a12745" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 50.0 503.0 C 59.0 503.0, 63.1 503.0, 100.0 503.0 C 136.9 503.0, 200.1 503.0, 255.0 503.0 C 309.9 503.0, 347.4 503.0, 405.0 503.0 C 462.6 503.0, 517.4 503.0, 575.0 503.0 C 632.6 503.0, 682.7 503.0, 725.0 503.0 C 767.3 503.0, 785.5 391.3, 810.0 317.0 C 834.5 242.7, 851.8 130.9, 861.0 90.0" fill="none" stroke="#741434" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="430" cy="130" r="25" fill="#ffffff" stroke="#1f3b5b" stroke-width="2.5"/><text x="430" y="136" text-anchor="middle" font-size="16" font-weight="600" fill="#1f3b5b" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">Root</text>
+<circle cx="215" cy="222" r="25" fill="#ffffff" stroke="#1f3b5b" stroke-width="2.5"/><text x="215" y="228" text-anchor="middle" font-size="16" font-weight="600" fill="#1f3b5b" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">A</text>
+<circle cx="650" cy="222" r="25" fill="#ffffff" stroke="#1f3b5b" stroke-width="2.5"/><text x="650" y="228" text-anchor="middle" font-size="16" font-weight="600" fill="#1f3b5b" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">B</text>
+<circle cx="100" cy="314" r="25" fill="#ffffff" stroke="#1f3b5b" stroke-width="2.5"/><text x="100" y="320" text-anchor="middle" font-size="16" font-weight="600" fill="#1f3b5b" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">A1</text>
+<circle cx="330" cy="314" r="25" fill="#ffffff" stroke="#1f3b5b" stroke-width="2.5"/><text x="330" y="320" text-anchor="middle" font-size="16" font-weight="600" fill="#1f3b5b" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">A2</text>
+<circle cx="650" cy="314" r="25" fill="#ffffff" stroke="#1f3b5b" stroke-width="2.5"/><text x="650" y="320" text-anchor="middle" font-size="16" font-weight="600" fill="#1f3b5b" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">B1</text>
+<rect x="73" y="477" width="54" height="34" rx="7" fill="#f2b049" stroke="#9a5b12" stroke-width="2"/><text x="100" y="500" text-anchor="middle" font-size="16" font-weight="600" fill="#1d2b3a" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">$a</text>
+<rect x="228" y="477" width="54" height="34" rx="7" fill="#f2b049" stroke="#9a5b12" stroke-width="2"/><text x="255" y="500" text-anchor="middle" font-size="16" font-weight="600" fill="#1d2b3a" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">$b</text>
+<rect x="378" y="477" width="54" height="34" rx="7" fill="#f2b049" stroke="#9a5b12" stroke-width="2"/><text x="405" y="500" text-anchor="middle" font-size="16" font-weight="600" fill="#1d2b3a" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">$c</text>
+<rect x="548" y="477" width="54" height="34" rx="7" fill="#f2b049" stroke="#9a5b12" stroke-width="2"/><text x="575" y="500" text-anchor="middle" font-size="16" font-weight="600" fill="#1d2b3a" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">$d</text>
+<rect x="698" y="477" width="54" height="34" rx="7" fill="#f2b049" stroke="#9a5b12" stroke-width="2"/><text x="725" y="500" text-anchor="middle" font-size="16" font-weight="600" fill="#1d2b3a" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">$e</text>
+<text x="396" y="108" text-anchor="end" font-size="12.5" font-style="italic" fill="#566676" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">Root occurrence</text>
+<path d="M 845 70 L 945 70 L 931 92 L 857 92 Z" fill="#1f3b5b"/><rect x="903" y="52" width="26" height="18" rx="2" fill="#1f3b5b"/><text x="895" y="44" text-anchor="middle" font-size="12" fill="#566676" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">Vessel</text>
+<circle cx="615.0" cy="111.9" r="12" fill="#f0a3ab" stroke="#ffffff" stroke-width="2"/><text x="615.0" y="116.9" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">1</text>
+<circle cx="725.0" cy="186.1" r="12" fill="#e6808d" stroke="#ffffff" stroke-width="2"/><text x="725.0" y="191.1" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">2</text>
+<circle cx="215.0" cy="311.9" r="12" fill="#d95f71" stroke="#ffffff" stroke-width="2"/><text x="215.0" y="316.9" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">3</text>
+<circle cx="215.0" cy="400.6" r="12" fill="#c33f57" stroke="#ffffff" stroke-width="2"/><text x="215.0" y="405.6" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">4</text>
+<circle cx="725.0" cy="270.9" r="12" fill="#a12745" stroke="#ffffff" stroke-width="2"/><text x="725.0" y="275.9" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">5</text>
+<circle cx="835.5" cy="203.5" r="12" fill="#741434" stroke="#ffffff" stroke-width="2"/><text x="835.5" y="208.5" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">6</text>
+<text x="412.5" y="534" text-anchor="middle" font-size="14" font-weight="600" fill="#1d2b3a" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">Fully Touchdown Cable = [ $a, $b, $c, $d, $e ]<tspan font-weight="400" fill="#566676" font-size="12.5"> (schematic)</tspan></text>
+<circle cx="30.0" cy="581.0" r="12" fill="#f0a3ab" stroke="#ffffff" stroke-width="2"/><text x="30.0" y="586.0" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">1</text>
+<text x="52" y="586" font-size="15" font-weight="700" fill="#1d2b3a" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">Laid, one input admitted</text>
+<text x="52" y="605" font-size="13.5" fill="#566676" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">That input's Root occurrence is exposed; everything beyond</text>
+<text x="52" y="622" font-size="13.5" fill="#566676" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">it stays folded.</text>
+<circle cx="30.0" cy="653.0" r="12" fill="#e6808d" stroke="#ffffff" stroke-width="2"/><text x="30.0" y="658.0" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">2</text>
+<text x="52" y="658" font-size="15" font-weight="700" fill="#1d2b3a" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">Root deduced</text>
+<text x="52" y="677" font-size="13.5" fill="#566676" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">A and B are exposed; which definition each selects</text>
+<text x="52" y="694" font-size="13.5" fill="#566676" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">can still change.</text>
+<circle cx="30.0" cy="725.0" r="12" fill="#d95f71" stroke="#ffffff" stroke-width="2"/><text x="30.0" y="730.0" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">3</text>
+<text x="52" y="730" font-size="15" font-weight="700" fill="#1d2b3a" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">A deduced</text>
+<text x="52" y="749" font-size="13.5" fill="#566676" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">A1 and A2 are exposed; each Goal occurrence is deduced</text>
+<text x="52" y="766" font-size="13.5" fill="#566676" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">only when it is demanded.</text>
+<circle cx="520.0" cy="581.0" r="12" fill="#c33f57" stroke="#ffffff" stroke-width="2"/><text x="520.0" y="586.0" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">4</text>
+<text x="542" y="586" font-size="15" font-weight="700" fill="#1d2b3a" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">First Touchdown</text>
+<text x="542" y="605" font-size="13.5" fill="#566676" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">$a is available to the Scheduler, not yet run;</text>
+<text x="542" y="622" font-size="13.5" fill="#566676" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">A2 and B are still undeduced.</text>
+<circle cx="520.0" cy="653.0" r="12" fill="#a12745" stroke="#ffffff" stroke-width="2"/><text x="520.0" y="658.0" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">5</text>
+<text x="542" y="658" font-size="15" font-weight="700" fill="#1d2b3a" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">A2 and B deduced</text>
+<text x="542" y="677" font-size="13.5" fill="#566676" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">$b and $c touch down; B1 is exposed but undeduced.</text>
+<circle cx="520.0" cy="725.0" r="12" fill="#741434" stroke="#ffffff" stroke-width="2"/><text x="520.0" y="730.0" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">6</text>
+<text x="542" y="730" font-size="15" font-weight="700" fill="#1d2b3a" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">Fully Touchdown Cable</text>
+<text x="542" y="749" font-size="13.5" fill="#566676" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">After decommission and drainage, every leaf the segment</text>
+<text x="542" y="766" font-size="13.5" fill="#566676" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">reached is listed in authored order.</text>
+<line x1="18" y1="782" x2="982" y2="782" stroke="#e2e6ea" stroke-width="1"/>
+<text x="30" y="808" font-size="13" fill="#1d2b3a" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif"><tspan font-weight="700">States</tspan>  1 Folded · 2–5 Partially unfolded · 6 Result: Fully Touchdown Cable</text>
+<line x1="520" y1="804" x2="552" y2="804" stroke="#34495e" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="562" y="808" font-size="13" fill="#1d2b3a" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">Deducing an occurrence exposes this child</text>
+</svg>

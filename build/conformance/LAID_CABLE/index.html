@@ -1484,6 +1484,10 @@ has a result segment, including when it produces no Value.</p>
 <p><code>/0</code> produces no Value; <code>/1</code> exactly one; <code>/N</code> zero or more. An empty stream can
 succeed and causes no downstream invocation. Terminals are separate from user
 Values and are not emitted by Host leaves.</p>
+<p>An authorized operator can list retained Cables and describe one to recover its
+original handle and see its lifecycle state, accepted-input count, and whether
+its final result is still available. Inspection does not affect inputs,
+Values, terminals, or the final result.</p>
 <p>Verify declared FIFO and flow control, input isolation, output enforcement,
 failure, and cancellation. Successful completion requires relevant structural
 and caused execution work to be complete, not merely a temporary absence of

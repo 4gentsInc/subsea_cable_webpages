@@ -1558,6 +1558,18 @@ Value, but successful work still has an explicit completion result.</p>
 accepted input has a result segment and <code>EndOfResult</code>; closing admission and
 draining the Cable leads to <code>EndOfStream</code>. Check concrete APIs and capabilities
 in the chosen implementation.</p>
+<figure>
+<p><img alt="A Goal tree three levels deep with Anchors on the seafloor. Six numbered Cable lines sink from the Vessel as Goal occurrences are deduced, ending as the Fully Touchdown Cable." src="assets/cable-touchdown.svg" /></p>
+<figcaption>One input's Cable sinking toward Touchdown.</figcaption>
+</figure>
+<p>The figure follows one input. Each deduction commits one demanded Goal
+occurrence and exposes its children. Before any deduction the Cable is
+<strong>Folded</strong>; while some deductions are committed and newly exposed occurrences
+remain undeduced, it is <strong>Partially unfolded</strong>. Work reaches <strong>Touchdown</strong> at a
+concrete Host leaf, which makes it available to the Scheduler; it does not mean
+the leaf has run. After the Cable is decommissioned and drained, the leaves each
+input reached form the Fully Touchdown Cable: inputs in admission order, each
+listed by structural position rather than completion time.</p>
 <p>Correct streaming, completion, and immutable history matter when failures and
 revisions interact. The <a href="implementation/RUNTIME_CONTRACT/">Runtime Contract</a>
 explains the user-visible obligations to verify.</p>
