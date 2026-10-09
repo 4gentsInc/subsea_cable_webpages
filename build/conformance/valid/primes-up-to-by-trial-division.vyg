@@ -1,29 +1,61 @@
-Candidates = [limit] -N> $candidates(limit)
+// One finite /1 Value: {head: {prime: n} or {}, rest: ...}, ending in {}.
+// Each candidate has a node. Empty heads represent composites, not missing Values.
+// Candidate and divisor progression are Goal structure; leaves compute and return.
+Keep = (n) -> {prime: n}
+Empty = () -> {}
+Next = (n) -> n + 1
+BeyondLimit = (limit, candidate) -> candidate > limit
+PastSquareRoot = (n, divisor) -> divisor * divisor > n
+Divides = (n, divisor) -> n % divisor == 0
 
-Keep = (n) -> n
-Drop = [n] -0> $drop(n)
-
-CheckPrime = [n, divisor] -N> [
-    divisor * divisor > n,
-    {
-        true: Keep[n],
-        false: CheckDivisibility[n, divisor],
-    },
+CheckPrime = [n, divisor] -1> [
+    PastSquareRoot[n, divisor],
+    [finished] -> [
+        finished,
+        {
+            true: Keep[n],
+            false: CheckDivisibility[n, divisor],
+        },
+    ],
 ]
 
-CheckDivisibility = [n, divisor] -N> [
-    n % divisor == 0,
-    {
-        true: Drop[n],
-        false: CheckPrime[n, divisor + 1],
-    },
+CheckDivisibility = [n, divisor] -1> [
+    Divides[n, divisor],
+    [divides] -> [
+        divides,
+        {
+            true: Empty[],
+            false: NextDivisor[n, divisor],
+        },
+    ],
 ]
 
-Prime = [n] -N> CheckPrime[n, 2]
-
-PrimesUpTo = [limit] -N> [
-    Candidates[limit],
-    [candidate] -> Prime[candidate],
+NextDivisor = [n, divisor] -1> [
+    Next[divisor],
+    [next] -> CheckPrime[n, next],
 ]
+
+Candidates = [limit, candidate] -1> [
+    BeyondLimit[limit, candidate],
+    [finished] -> [
+        finished,
+        {
+            true: Empty[],
+            false: Gather[limit, candidate],
+        },
+    ],
+]
+
+Gather = [limit, candidate] -1> {
+    head: CheckPrime[candidate, 2],
+    rest: NextCandidate[limit, candidate],
+}
+
+NextCandidate = [limit, candidate] -1> [
+    Next[candidate],
+    [next] -> Candidates[limit, next],
+]
+
+PrimesUpTo = [limit] -1> Candidates[limit, 2]
 
 root PrimesUpTo/1

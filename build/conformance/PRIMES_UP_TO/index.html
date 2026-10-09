@@ -1247,6 +1247,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Primes Up To
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1263,6 +1281,38 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-complete-finite-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A complete finite result
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1459,6 +1509,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-complete-finite-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A complete finite result
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1476,40 +1545,65 @@
 
 <h1 id="primes-up-to-by-trial-division">Primes Up To by Trial Division<a class="headerlink" href="#primes-up-to-by-trial-division" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Status:</strong> historical reference scenario and observable results. A revised
-runnable scenario and its acceptance oracle are pending; the source and results
-below describe the earlier example. This is not a complete internal acceptance
-or trace specification.</p>
+<p><strong>Status:</strong> finite reference scenario and observable results. The Voyage Plan
+and expected aggregate result are specified; a public runnable command remains
+in progress. This is an authoring example, not a full Runtime acceptance suite.</p>
 </blockquote>
-<p>The <a href="../valid/primes-up-to-by-trial-division.vyg">Voyage Plan</a> generates candidates
-and selects primes through conditional recursion. Candidate generation is a
-Host leaf; recursive choices stay explicit Goal structure.</p>
+<p>The <a href="../valid/primes-up-to-by-trial-division.vyg">Voyage Plan</a> puts both candidate
+progression and divisor recursion in conditional Goals. Each selected recursive
+step creates fresh work. Ordinary leaves compute a scalar or map and return.</p>
+<h2 id="a-complete-finite-result">A complete finite result<a class="headerlink" href="#a-complete-finite-result" title="Permanent link">&para;</a></h2>
+<p>The root produces <strong>one <code>/1</code> Runtime Value</strong>. Its recursive map has this shape:</p>
+<ul>
+<li>Each candidate node has <code>head</code> and <code>rest</code>.</li>
+<li>A prime's <code>head</code> is <code>{prime: n}</code>; a composite's <code>head</code> is <code>{}</code>.</li>
+<li><code>rest</code> contains the next candidate node. The final remainder is <code>{}</code>.</li>
+<li>If there are no candidates, the entire result is <code>{}</code>.</li>
+</ul>
+<p>Both resolving-map children produce one Value, including an empty map. The map
+resolves after those children complete. The recursive remainder is a finite
+dependency, not a lazy tail or live generator.</p>
 <table>
 <thead>
 <tr>
 <th>Input</th>
-<th>Prime Values, presented by source provenance</th>
+<th style="text-align: right;">Runtime Value count</th>
+<th>Aggregate result</th>
+<th>Displayed prime numbers</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>1</code></td>
+<td style="text-align: right;">1</td>
+<td><code>{}</code></td>
 <td>none</td>
 </tr>
 <tr>
 <td><code>2</code></td>
+<td style="text-align: right;">1</td>
+<td><code>{head: {prime: 2}, rest: {}}</code></td>
 <td><code>2</code></td>
 </tr>
 <tr>
 <td><code>30</code></td>
+<td style="text-align: right;">1</td>
+<td>Completed map with 29 candidate nodes</td>
 <td><code>2, 3, 5, 7, 11, 13, 17, 19, 23, 29</code></td>
 </tr>
 </tbody>
 </table>
+<p>To display primes, walk the completed result: read the current <code>head</code>, display
+its <code>prime</code> when present, then visit <code>rest</code>; stop at <code>{}</code>. This order follows the
+authored candidate progression. It does not turn the displayed numbers into
+additional Runtime Values.</p>
 <p>Each accepted input has one successful <code>EndOfResult</code>, including input <code>1</code> with
-no Value. Live arrival order is not prescribed. After closing admission and
-drainage, the Cable has one <code>EndOfStream</code>. This illustrates authoring and
-observable results, not full Runtime conformance or an available Runtime.
+its empty-map Value. After closing admission and complete drainage, the Cable
+has one <code>EndOfStream</code> and its completed Cable result. The example does not need
+a Host candidate generator or continuation support; generic multi-Value
+behavior remains available where a supported Runtime provides it.</p>
+<p>This replaces the earlier streamed-candidate reference example. It describes
+expected behavior without claiming an available Runtime.
 <a href="../../RUNTIME_STATUS/">Runtime availability</a> reports current support.</p>
 
 
