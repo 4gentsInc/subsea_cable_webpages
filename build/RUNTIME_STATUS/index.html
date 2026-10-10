@@ -1664,8 +1664,9 @@ package or public runnable demo command is available.</p>
 <h2 id="finite-reference-execution-scenario">Finite reference execution scenario<a class="headerlink" href="#finite-reference-execution-scenario" title="Permanent link">&para;</a></h2>
 <p><a href="../conformance/PRIMES_UP_TO/">Primes Up To by Trial Division</a> supplies the revised
 Voyage Plan and expected finite aggregate. Candidate progression and divisor
-recursion remain Goal structure. Ordinary leaves return values; resolving maps
-retain each candidate's head and the recursive remainder.</p>
+recursion remain Goal structure. Ordinary leaves return values; a
+<a href="../LANGUAGE_REFERENCE/#independent-work-and-named-results">keyed result map</a> joins
+one Value per branch, retaining each candidate's head and the recursive remainder.</p>
 <table>
 <thead>
 <tr>
@@ -1697,7 +1698,7 @@ retain each candidate's head and the recursive remainder.</p>
 </tbody>
 </table>
 <p>The displayed numbers come from walking the completed map, not separate Runtime
-Values. Resolving maps wait for their children; the remainder is not a lazy tail
+Values. These keyed result maps wait for their children; the remainder is not a lazy tail
 or live generator. After decommission and complete drainage, the scenario
 requires one <code>EndOfStream</code> and the completed Cable result.</p>
 <p>The source and expected results are specified. Runtime execution, ordinary Host

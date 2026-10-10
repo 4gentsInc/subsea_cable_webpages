@@ -1560,9 +1560,10 @@ step creates fresh work. Ordinary leaves compute a scalar or map and return.</p>
 <li><code>rest</code> contains the next candidate node. The final remainder is <code>{}</code>.</li>
 <li>If there are no candidates, the entire result is <code>{}</code>.</li>
 </ul>
-<p>Both resolving-map children produce one Value, including an empty map. The map
-resolves after those children complete. The recursive remainder is a finite
-dependency, not a lazy tail or live generator.</p>
+<p>A <a href="../../LANGUAGE_REFERENCE/#independent-work-and-named-results">keyed result map</a>
+joins one Value per branch into a Map. Here both <code>head</code> and <code>rest</code> produce one
+Value, including an empty map, and the map completes after those children. The
+recursive remainder is a finite dependency, not a lazy tail or live generator.</p>
 <table>
 <thead>
 <tr>
