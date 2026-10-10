@@ -848,10 +848,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#historical-reference-execution-scenario" class="md-nav__link">
+  <a href="#finite-reference-execution-scenario" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Historical reference execution scenario
+        Finite reference execution scenario
       
     </span>
   </a>
@@ -1558,10 +1558,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#historical-reference-execution-scenario" class="md-nav__link">
+  <a href="#finite-reference-execution-scenario" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Historical reference execution scenario
+        Finite reference execution scenario
       
     </span>
   </a>
@@ -1661,43 +1661,50 @@ have completed work records and controlled prototype evidence. Real Host
 integration and its executable demo remain open; live inspection and the actual
 Agent revision demonstration are not yet established. No supported public
 package or public runnable demo command is available.</p>
-<h2 id="historical-reference-execution-scenario">Historical reference execution scenario<a class="headerlink" href="#historical-reference-execution-scenario" title="Permanent link">&para;</a></h2>
-<p>The published scenario below is the earlier Host-generator reference. The next
-execution demo is being revised to a finite result using Goal recursion. Its
-replacement source and acceptance oracle are still pending; this table does not
-specify the revised demo. The existing reference is preserved until that update.</p>
-<p><a href="../conformance/PRIMES_UP_TO/">Primes Up To by Trial Division</a> supplies a Voyage
-Plan and observable acceptance oracle for streamed candidate generation,
-conditional recursion, and per-input completion.</p>
+<h2 id="finite-reference-execution-scenario">Finite reference execution scenario<a class="headerlink" href="#finite-reference-execution-scenario" title="Permanent link">&para;</a></h2>
+<p><a href="../conformance/PRIMES_UP_TO/">Primes Up To by Trial Division</a> supplies the revised
+Voyage Plan and expected finite aggregate. Candidate progression and divisor
+recursion remain Goal structure. Ordinary leaves return values; a
+<a href="../LANGUAGE_REFERENCE/#independent-work-and-named-results">keyed result map</a> joins
+one Value per branch, retaining each candidate's head and the recursive remainder.</p>
 <table>
 <thead>
 <tr>
 <th>Input</th>
-<th>Expected prime Values, presented by source provenance</th>
+<th>Runtime result</th>
+<th>Displayed prime numbers</th>
 <th>Completion</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>1</code></td>
+<td>one Value: <code>{}</code></td>
 <td>none</td>
 <td>one successful <code>EndOfResult</code></td>
 </tr>
 <tr>
 <td><code>2</code></td>
+<td>one Value: <code>{head: {prime: 2}, rest: {}}</code></td>
 <td><code>2</code></td>
 <td>one successful <code>EndOfResult</code></td>
 </tr>
 <tr>
 <td><code>30</code></td>
+<td>one complete map with 29 candidate nodes</td>
 <td><code>2, 3, 5, 7, 11, 13, 17, 19, 23, 29</code></td>
 <td>one successful <code>EndOfResult</code></td>
 </tr>
 </tbody>
 </table>
-<p>Live Values may arrive in another order. After decommission and complete
-drainage, the scenario requires one <code>EndOfStream</code> and the composed Cable result.
-The revised runnable demonstration remains in progress.</p>
+<p>The displayed numbers come from walking the completed map, not separate Runtime
+Values. These keyed result maps wait for their children; the remainder is not a lazy tail
+or live generator. After decommission and complete drainage, the scenario
+requires one <code>EndOfStream</code> and the completed Cable result.</p>
+<p>The source and expected results are specified. Runtime execution, ordinary Host
+integration, and the clean-checkout demonstration remain in progress; there is
+no public runnable command yet. This specification milestone does not establish
+those implementation gates.</p>
 <h2 id="prepare-for-adoption">Prepare for adoption<a class="headerlink" href="#prepare-for-adoption" title="Permanent link">&para;</a></h2>
 <p>Use the <a href="../ADOPTION/">adoption guide</a> to describe one workflow and its genuine
 Host leaves. Record expected Values, effect boundaries, and failure cases. Check
