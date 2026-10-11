@@ -38,6 +38,7 @@ theme:
 nav:
   - Start:
       - Overview: README.md
+      - Get Started: GET_STARTED.md
       - Why Subsea Cable: WHY_SUBSEA.md
       - For Agents: FOR_AGENTS.md
       - The Subsea Cable World: METAPHORS.md

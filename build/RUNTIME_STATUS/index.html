@@ -367,6 +367,8 @@
       
         
       
+        
+      
     
     
     
@@ -419,6 +421,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GET_STARTED/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -531,10 +561,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
         
           
-          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
             
   
   
@@ -552,8 +582,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1598,13 +1628,16 @@
 
 <h1 id="runtime-availability">Runtime availability<a class="headerlink" href="#runtime-availability" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Last checked:</strong> 2026-10-09 (Asia/Seoul).
+<p><strong>Last checked:</strong> 2026-10-11 (Asia/Seoul).
 This is a dated availability report, not language authority or a release promise.</p>
 </blockquote>
 <p>Subsea Cable is an evolving pre-1.0 specification. There is no designated
 official Runtime or publicly available production release. An implementation
 prototype is being tested; its progress does not establish a supported package
 that an adopter can install today.</p>
+<p>You can run one reference example through an Agent today. A public demo image
+contains the prototype and a WebAssembly Host. <a href="../GET_STARTED/">Get Started</a>
+connects it in a few steps.</p>
 <h2 id="capabilities-and-availability">Capabilities and availability<a class="headerlink" href="#capabilities-and-availability" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1627,8 +1660,8 @@ that an adopter can install today.</p>
 </tr>
 <tr>
 <td>A reproducible end-to-end execution demo</td>
-<td>In progress</td>
-<td>A reference scenario is specified; no public runnable command yet</td>
+<td>Available as a demo</td>
+<td>The <a href="../conformance/PRIMES_UP_TO/">primes example</a> runs through an Agent with the public image; see <a href="../GET_STARTED/">Get Started</a>. Only that example, with limits 1–100</td>
 </tr>
 <tr>
 <td>Agent-authored revision and replanning demonstration</td>
@@ -1638,7 +1671,7 @@ that an adopter can install today.</p>
 <tr>
 <td>Installable Runtime and supported Host integrations</td>
 <td>Not available</td>
-<td>No public package or installation procedure is offered here</td>
+<td>The demo image runs only its bundled example and Host; it is not a Runtime package</td>
 </tr>
 <tr>
 <td>Durable recovery, exact replay, and complete incremental reuse</td>
@@ -1652,15 +1685,16 @@ that an adopter can install today.</p>
 </tr>
 </tbody>
 </table>
-<p>No release date is promised. Public commands, traces, supported versions, and
-reproducible evidence will be linked when those artifacts are available.</p>
+<p>No release date is promised. Further public commands, traces, supported
+versions, and reproducible evidence will be linked when those artifacts are
+available.</p>
 <h2 id="next-user-capabilities">Next user capabilities<a class="headerlink" href="#next-user-capabilities" title="Permanent link">&para;</a></h2>
 <p>The <a href="../ROADMAP/">Roadmap</a> describes the runnable execution, tool integration,
 Agent investigation and future-plan revision milestones. Runtime foundations
-have completed work records and controlled prototype evidence. Real Host
-integration and its executable demo remain open; live inspection and the actual
-Agent revision demonstration are not yet established. No supported public
-package or public runnable demo command is available.</p>
+have completed work records and controlled prototype evidence. The execution
+demo now runs with a real WebAssembly Host through an Agent. Live inspection
+and the actual Agent revision demonstration are not yet established. No
+supported public Runtime package is available.</p>
 <h2 id="finite-reference-execution-scenario">Finite reference execution scenario<a class="headerlink" href="#finite-reference-execution-scenario" title="Permanent link">&para;</a></h2>
 <p><a href="../conformance/PRIMES_UP_TO/">Primes Up To by Trial Division</a> supplies the revised
 Voyage Plan and expected finite aggregate. Candidate progression and divisor
@@ -1701,10 +1735,9 @@ one Value per branch, retaining each candidate's head and the recursive remainde
 Values. These keyed result maps wait for their children; the remainder is not a lazy tail
 or live generator. After decommission and complete drainage, the scenario
 requires one <code>EndOfStream</code> and the completed Cable result.</p>
-<p>The source and expected results are specified. Runtime execution, ordinary Host
-integration, and the clean-checkout demonstration remain in progress; there is
-no public runnable command yet. This specification milestone does not establish
-those implementation gates.</p>
+<p>The public demo image produces these results through an Agent; see
+<a href="../GET_STARTED/">Get Started</a>. It runs this example only and does not
+establish general Host integration or a supported Runtime.</p>
 <h2 id="prepare-for-adoption">Prepare for adoption<a class="headerlink" href="#prepare-for-adoption" title="Permanent link">&para;</a></h2>
 <p>Use the <a href="../ADOPTION/">adoption guide</a> to describe one workflow and its genuine
 Host leaves. Record expected Values, effect boundaries, and failure cases. Check
