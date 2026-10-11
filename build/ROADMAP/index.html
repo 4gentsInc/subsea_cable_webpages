@@ -367,6 +367,8 @@
       
         
       
+        
+      
     
     
     
@@ -419,6 +421,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GET_STARTED/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -531,10 +561,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
         
           
-          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
             
   
   
@@ -552,8 +582,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1698,7 +1728,7 @@
 
 <h1 id="roadmap-from-a-written-plan-to-an-adaptive-workflow">Roadmap: from a written plan to an adaptive workflow<a class="headerlink" href="#roadmap-from-a-written-plan-to-an-adaptive-workflow" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Updated:</strong> 2026-10-09 (Asia/Seoul).
+<p><strong>Updated:</strong> 2026-10-11 (Asia/Seoul).
 This is a development roadmap, not a release schedule or language specification.</p>
 </blockquote>
 <p><strong>Write the work once. Run it with your tools. Change what comes next when the
@@ -1711,11 +1741,12 @@ preserving the history of decisions already committed.</p>
 <h2 id="where-we-are">Where we are<a class="headerlink" href="#where-we-are" title="Permanent link">&para;</a></h2>
 <p>You can write and review Voyage Plans today. Runtime foundations have been
 implemented and exercised in controlled prototype tests, including result
-routing, completion, and revision behavior. The next delivery goal is a
-reproducible execution demo with a real Host, followed by a separate demonstration
-of an Agent investigating results and changing its strategy.</p>
-<p>There is <strong>no supported public Runtime package or public runnable demo command
-yet</strong>. Prototype evidence and an accepted language contract are distinct from a
+routing, completion, and revision behavior. You can also run one reference
+example with a real Host through your Agent: <a href="../GET_STARTED/">Get Started</a>.
+The next delivery goal is a demonstration of an Agent investigating results
+and changing its strategy.</p>
+<p>There is <strong>no supported public Runtime package yet</strong>; the demo image runs only
+its bundled example. Prototype evidence and an accepted language contract are distinct from a
 feature you can install. <a href="../RUNTIME_STATUS/">Runtime availability</a> records the
 current support boundary.</p>
 <h2 id="what-each-step-makes-possible">What each step makes possible<a class="headerlink" href="#what-each-step-makes-possible" title="Permanent link">&para;</a></h2>
@@ -1738,13 +1769,13 @@ current support boundary.</p>
 <tr>
 <td>Run a complete example</td>
 <td>Send input to a real execution path and inspect its result and completion</td>
-<td>Finite recursive example and expected aggregate specified; Runtime foundations tested; executable demo in development</td>
-<td>A documented command, prerequisites, pinned versions, and reproducible results</td>
+<td>Demo available: the primes example runs through an Agent with a public image (<a href="../GET_STARTED/">Get Started</a>)</td>
+<td>Reached for that example: documented connection, prerequisites, versioned image tags, and the specified results</td>
 </tr>
 <tr>
 <td>Connect your existing tools</td>
 <td>Keep computation in a Host while the Voyage Plan owns the workflow</td>
-<td>Initial WebAssembly integration under review; Host interoperability work open</td>
+<td>A WebAssembly Host runs the demo example's leaves; general Host interoperability work open</td>
 <td>A documented, verified integration and explicit supported capabilities</td>
 </tr>
 <tr>
@@ -1767,8 +1798,8 @@ current support boundary.</p>
 </tr>
 </tbody>
 </table>
-<p>The execution demo comes first. The Agent revision demonstration follows it and
-also requires a supported live evidence surface. Host interoperability is a
+<p>The execution demo came first and is available. The Agent revision
+demonstration follows it and also requires a supported live evidence surface. Host interoperability is a
 related development track; a protocol definition alone does not deliver a
 working integration. These stages have no promised release dates.</p>
 <h2 id="the-point-where-you-might-want-to-try-it">The point where you might want to try it<a class="headerlink" href="#the-point-where-you-might-want-to-try-it" title="Permanent link">&para;</a></h2>
