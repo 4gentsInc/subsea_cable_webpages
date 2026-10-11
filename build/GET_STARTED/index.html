@@ -1819,7 +1819,9 @@ start more slowly.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>ghcr.io/on-the-ground/subsea-cable-mcp:latest
 </code></pre></div>
 <p>Downloading first keeps the Agent's first start short. Otherwise the download
-happens while the Agent waits for the server, and it can run out of time.</p>
+happens while the Agent waits for the server, and it can run out of time. If
+you downloaded the image before, run the same command again to get the current
+version.</p>
 <h2 id="2-connect-your-agent">2. Connect your Agent<a class="headerlink" href="#2-connect-your-agent" title="Permanent link">&para;</a></h2>
 <p>The server needs a few seconds to start its bundled Host. The settings below
 allow up to two minutes.</p>
@@ -1905,7 +1907,8 @@ the bundled Host evaluates.</p>
 and sends your limit as an input. It reads the result, and the input's
 completion signal tells it that the input is finished. The Cable stays open for
 more inputs until you ask the Agent to close it. Accepted inputs still finish
-after closing.</p>
+after closing. Ending the Agent session instead also closes the Cable, but an
+input still running at that moment may not finish.</p>
 <p>The result is one completed map, not a stream of separate numbers. Each
 candidate has a <code>head</code>, either <code>{prime: n}</code> or <code>{}</code>, and a <code>rest</code> holding the
 next candidate. The Agent reads the primes by walking that map.
