@@ -1626,15 +1626,18 @@ is <code>__C</code>; the language name remains Subsea Cable.</p>
 <h2 id="from-a-goal-to-execution">From a goal to execution<a class="headerlink" href="#from-a-goal-to-execution" title="Permanent link">&para;</a></h2>
 <figure>
 <p><img alt="User and Agent exchange natural-language goals and explanations. The Agent publishes and revises a .vyg Voyage Plan through MCP. The Runtime connects to Host leaves over gRPC and Protobuf, and returns results and supported execution evidence to the Agent for replanning." src="assets/subsea-cable-architecture-en.png" /></p>
-<figcaption>A bird's-eye view: declare a goal, write a plan, execute leaves,
+<figcaption>The intended workflow: declare a goal, write a plan, execute leaves,
 inspect evidence, and replan.</figcaption>
 </figure>
+<p>This shows the intended workflow. Today's public demo runs one fixed example
+(<a href="GET_STARTED/">Get Started</a>); publishing your own plans and the Agent revision
+demonstration are not yet available (<a href="RUNTIME_STATUS/">Runtime availability</a>).</p>
 <p>The Agent authors the plan and its revisions; Host leaves can be existing tools,
 APIs, or separate worker LLM sessions. The Runtime maintains the committed
 structure while results and supported evidence inform what the Agent changes
 next. MCP is the Agent-facing adapter in this view; <code>.vyg</code> is the plan source.</p>
-<p>The figure uses Vessel as the Runtime connection point and omits its internal
-Vessel/Cable separation. gRPC and Protobuf describe the <code>host-wire/1</code> transport
+<p>The Runtime box includes Vessel and Cable, with internal components omitted.
+gRPC and Protobuf describe the <code>host-wire/1</code> transport
 to an out-of-process Host. Concrete Agent adapters and evidence access depend on
 the chosen implementation; see <a href="RUNTIME_STATUS/">Runtime availability</a>.</p>
 <h2 id="why-subsea-cable-exists">Why Subsea Cable exists<a class="headerlink" href="#why-subsea-cable-exists" title="Permanent link">&para;</a></h2>
