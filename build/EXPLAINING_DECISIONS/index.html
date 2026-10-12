@@ -1735,7 +1735,7 @@ decision" and get an answer grounded in what actually happened.</p>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>ReadDrawing = [sheet] -1&gt; $readDrawing(sheet)
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>ReadSiteRecord = [sheet] -1&gt; $readSiteRecord(sheet)
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>CheckClearance = [drawing, site] -1&gt; $checkClearance(drawing, site, "clearance-rule-2026-03")
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>CheckClearance = [drawing, site] -1&gt; $checkClearance(drawing, site, &quot;clearance-rule-2026-03&quot;)
 </code></pre></div>
 <p>Two kinds of record answer different parts of "why":</p>
 <table>
@@ -1762,7 +1762,7 @@ decision" and get an answer grounded in what actually happened.</p>
 </table>
 <p>The check itself can return its evidence along with its finding. Suppose
 <code>$checkClearance</code> returns:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{result: "violation", element: "stair B-2", measured: 0.85, required: 0.9}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{result: &quot;violation&quot;, element: &quot;stair B-2&quot;, measured: 0.85, required: 0.9}
 </code></pre></div>
 <p>Asked "why was stair B-2 flagged?", the record answers with what the check
 compared, the drawing and site Values it received, and the rule definition that
