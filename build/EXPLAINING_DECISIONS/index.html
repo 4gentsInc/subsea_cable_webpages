@@ -1748,7 +1748,7 @@ decision" and get an answer grounded in what actually happened.</p>
 <tbody>
 <tr>
 <td>Which rule edition and review procedure applied?</td>
-<td>The Goal definitions. Each committed step records the exact <code>ArtifactHash</code> it selected. Naming the rule edition in the plan, as above, makes that hash identify it.</td>
+<td>The Goal definitions. Each resolved named Goal occurrence, such as <code>CheckClearance</code>, records the exact <code>ArtifactHash</code> it selected. Inline structure, such as the two stages inside <code>ReviewSheet</code>, is identified through its enclosing artifact. An edition written into the definition, as <code>"clearance-rule-2026-03"</code> is above, is covered by that hash. An edition passed as an argument at run time is identified by the recorded argument instead.</td>
 </tr>
 <tr>
 <td>Which drawing revision and site evidence were used?</td>
@@ -1760,6 +1760,13 @@ decision" and get an answer grounded in what actually happened.</p>
 </tr>
 </tbody>
 </table>
+<p>The check itself can return its evidence along with its finding. Suppose
+<code>$checkClearance</code> returns:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{result: "violation", element: "stair B-2", measured: 0.85, required: 0.9}
+</code></pre></div>
+<p>Asked "why was stair B-2 flagged?", the record answers with what the check
+compared, the drawing and site Values it received, and the rule definition that
+applied. Whether 0.85 was measured correctly is a question for the tool.</p>
 <p>When a rule is revised, publish a new definition and rebind its name. Steps not
 yet deduced observe the new definition. Decisions already committed keep the
 definition they used, so they can still be explained as they were made. If an
@@ -1767,7 +1774,7 @@ earlier decision must be checked again, that is new work with its own record;
 the original decision and its evidence are not edited.</p>
 <h2 id="explaining-by-reading-not-by-re-running">Explaining by reading, not by re-running<a class="headerlink" href="#explaining-by-reading-not-by-re-running" title="Permanent link">&para;</a></h2>
 <p>Explaining a decision resembles walking up a debugger's call stack. You can see
-which definition each step used, which Values it received, and which branch a
+which definition each named Goal resolved to, which Values it received, and which branch a
 selector chose, then follow the lineage back to where a wrong assumption first
 entered. Where several inputs were joined, as <code>drawing</code> and <code>site</code> are above,
 there are several paths to follow.</p>
