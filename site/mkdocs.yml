@@ -78,6 +78,7 @@ extra:
     - conformance/cases.tsv
     - assets/subsea-cable-concept.jpg
     - assets/cable-touchdown.svg
+    - assets/subsea-cable-architecture-en.png
     - assets/branding/subsea-cable-footballfish-mascot-transparent.png
     - assets/branding/subsea-cable-footballfish-scene.png
   publication_asset_globs:
