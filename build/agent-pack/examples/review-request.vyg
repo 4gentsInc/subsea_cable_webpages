@@ -1,0 +1,9 @@
+root ReviewRequest/1
+
+ReviewRequest = [request] -1> [
+    [] -> {source: ReadSource[request], rules: ReadRules[request]},
+    [{source, rules}] -> Assess[source, rules],
+]
+ReadSource = [request] -1> $readSource(request)
+ReadRules = [request] -1> $readRules(request)
+Assess = [source, rules] -1> $assess(source, rules)

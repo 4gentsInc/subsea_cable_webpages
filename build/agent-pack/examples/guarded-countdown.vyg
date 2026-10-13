@@ -1,0 +1,4 @@
+root CountDown/1
+
+CountDown = [n] -1> [n <= 0, {true: Finish[n], false: CountDown[n - 1]}]
+Finish = (n) -> n

@@ -1,0 +1,144 @@
+{
+  "name": "subsea-cable-lang-pack",
+  "version": "0.1.0",
+  "status": "informative-authoring-pack",
+  "language_revision": "83a897276b0d50a240530b363101dc64cdc42c30",
+  "license": "Apache-2.0",
+  "compact_byte_budget": 18000,
+  "compact_modules": [
+    "knowledge/model.md",
+    "knowledge/pitfalls.md",
+    "knowledge/workflow.md"
+  ],
+  "payload": [
+    "SKILL.md",
+    "knowledge/model.md",
+    "knowledge/syntax.md",
+    "knowledge/patterns.md",
+    "knowledge/pitfalls.md",
+    "knowledge/workflow.md",
+    "adapters/README.md",
+    "adapters/AGENTS.snippet.md",
+    "examples/review-request.vyg",
+    "examples/guarded-countdown.vyg"
+  ],
+  "module_sources": {
+    "SKILL.md": [
+      "LANGUAGE_REFERENCE.md",
+      "GOVERNANCE.md",
+      "RUNTIME_STATUS.md"
+    ],
+    "knowledge/model.md": [
+      "FOR_AGENTS.md",
+      "METAPHORS.md",
+      "LANGUAGE_REFERENCE.md",
+      "ADOPTION.md",
+      "GOVERNANCE.md"
+    ],
+    "knowledge/syntax.md": [
+      "LANGUAGE_REFERENCE.md",
+      "SubseaCable.g4",
+      "SubseaCable.ebnf",
+      "conformance/README.md",
+      "BRAND.md",
+      "Recursion.md"
+    ],
+    "knowledge/patterns.md": [
+      "LANGUAGE_REFERENCE.md",
+      "FOR_AGENTS.md",
+      "ADOPTION.md",
+      "Recursion.md"
+    ],
+    "knowledge/pitfalls.md": [
+      "LANGUAGE_REFERENCE.md",
+      "FOR_AGENTS.md",
+      "ADOPTION.md",
+      "RUNTIME_STATUS.md"
+    ],
+    "knowledge/workflow.md": [
+      "FOR_AGENTS.md",
+      "ADOPTION.md",
+      "GOVERNANCE.md",
+      "RUNTIME_STATUS.md",
+      "GET_STARTED.md"
+    ],
+    "adapters/README.md": [
+      "GET_STARTED.md",
+      "RUNTIME_STATUS.md"
+    ],
+    "adapters/AGENTS.snippet.md": [
+      "FOR_AGENTS.md",
+      "RUNTIME_STATUS.md"
+    ],
+    "examples/review-request.vyg": [
+      "FOR_AGENTS.md",
+      "LANGUAGE_REFERENCE.md"
+    ],
+    "examples/guarded-countdown.vyg": [
+      "Recursion.md",
+      "LANGUAGE_REFERENCE.md"
+    ]
+  },
+  "sources": {
+    "LANGUAGE_REFERENCE.md": {
+      "path": "export/LANGUAGE_REFERENCE.md",
+      "sha256": "68cc46d820af9e2547d3f1c735561d3979b317c691bd41e878bcafc0405b3f0b",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/LANGUAGE_REFERENCE/"
+    },
+    "FOR_AGENTS.md": {
+      "path": "export/FOR_AGENTS.md",
+      "sha256": "237f7dc3721c667cd7967c5bdc23ab0b8961aea584e7db92ba37b6a84aec3990",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/FOR_AGENTS/"
+    },
+    "ADOPTION.md": {
+      "path": "export/ADOPTION.md",
+      "sha256": "27a37b399710cfd0aab154136cf4edccea7e39485fd53530aff4a4e72c62632d",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/ADOPTION/"
+    },
+    "Recursion.md": {
+      "path": "export/Recursion.md",
+      "sha256": "3af871351003127fa3f6c736c56bedccc319d81f1bc677298b126a5fb468ca37",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/Recursion/"
+    },
+    "GOVERNANCE.md": {
+      "path": "export/GOVERNANCE.md",
+      "sha256": "3acf8ec95ad68b096e28a4290e07a56fb73faf137641f6fb6f51a8e2e50d126b",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/GOVERNANCE/"
+    },
+    "RUNTIME_STATUS.md": {
+      "path": "export/RUNTIME_STATUS.md",
+      "sha256": "efe76d76f015e2a555e28e3abd74e57f19e90a0bd099f31c39e84b436de33d0e",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/RUNTIME_STATUS/"
+    },
+    "GET_STARTED.md": {
+      "path": "export/GET_STARTED.md",
+      "sha256": "193878b8e333bc57002f3e5c35c6cd621d3876f5530820c9f8184754ee48f472",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/GET_STARTED/"
+    },
+    "BRAND.md": {
+      "path": "export/BRAND.md",
+      "sha256": "7fd0d1528cbe502d7411ea623b5a0f8449bb7fb5b661145607686d16e267b64d",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/BRAND/"
+    },
+    "METAPHORS.md": {
+      "path": "export/METAPHORS.md",
+      "sha256": "1dc7b8c731a43d96fae4565a0e978ba8dc29dfe0a2011a188a224e64757f71cd",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/METAPHORS/"
+    },
+    "conformance/README.md": {
+      "path": "export/conformance/README.md",
+      "sha256": "a83ae6a7fe6910c2e2b0b66055898a266d6ecdae15a08cc5dbbea7067005b9f5",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/"
+    },
+    "SubseaCable.g4": {
+      "path": "export/SubseaCable.g4",
+      "sha256": "6f6501afdb56c384f29d0a7a43271f821a38143661abbc6262dc6611f3e43b04",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/SubseaCable.g4"
+    },
+    "SubseaCable.ebnf": {
+      "path": "export/SubseaCable.ebnf",
+      "sha256": "60cfaa21279093ce88d0d512b7f74c894d314a97b41041e7bf775fe6947e70ed",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/SubseaCable.ebnf"
+    }
+  }
+}

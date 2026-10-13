@@ -49,6 +49,16 @@ nav:
       - Brand & Mascot: BRAND.md
   - Adopt:
       - Prepare a Workflow: ADOPTION.md
+      - Agent Language Pack:
+          - Connect the Pack: AGENT_PACK.md
+          - Skill Entry: agent-pack/SKILL.md
+          - Mental Model: agent-pack/knowledge/model.md
+          - Syntax: agent-pack/knowledge/syntax.md
+          - Patterns: agent-pack/knowledge/patterns.md
+          - Pitfalls: agent-pack/knowledge/pitfalls.md
+          - Workflow: agent-pack/knowledge/workflow.md
+          - Connections: agent-pack/adapters/README.md
+          - Workspace Instructions: agent-pack/adapters/AGENTS.snippet.md
       - Runtime Availability: RUNTIME_STATUS.md
       - Roadmap: ROADMAP.md
       - Ecosystem: ECOSYSTEM.md
@@ -79,6 +89,10 @@ extra:
     - assets/subsea-cable-concept.jpg
     - assets/cable-touchdown.svg
     - assets/subsea-cable-architecture-en.png
+    - assets/subsea-cable-lang-pack-0.1.0.tar.gz
+    - agent-pack/pack.json
+    - agent-pack/examples/review-request.vyg
+    - agent-pack/examples/guarded-countdown.vyg
     - assets/branding/subsea-cable-footballfish-mascot-transparent.png
     - assets/branding/subsea-cable-footballfish-scene.png
   publication_asset_globs:
