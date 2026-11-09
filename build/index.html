@@ -1681,7 +1681,7 @@ revisions interact. The <a href="implementation/RUNTIME_CONTRACT/">Runtime Contr
 explains the user-visible obligations to verify.</p>
 <h2 id="from-a-goal-to-execution">From a goal to execution<a class="headerlink" href="#from-a-goal-to-execution" title="Permanent link">&para;</a></h2>
 <figure>
-<p><img alt="User and Agent exchange natural-language goals and explanations. The Agent publishes and revises a .vyg Voyage Plan through MCP. The Runtime connects to Host leaves over gRPC and Protobuf, and returns results and supported execution evidence to the Agent for replanning." src="assets/subsea-cable-architecture-en.png" /></p>
+<p><img alt="User and Agent exchange natural-language goals and explanations. The Agent publishes and revises a .vyg Voyage Plan through MCP. The Runtime evaluates function leaves itself and reaches other Host leaves as MCP tools, and returns results and supported execution evidence to the Agent for replanning." src="assets/subsea-cable-architecture-en.png" /></p>
 <figcaption>The intended workflow: declare a goal, write a plan, execute leaves,
 inspect evidence, and replan.</figcaption>
 </figure>
@@ -1693,8 +1693,8 @@ APIs, or separate worker LLM sessions. The Runtime maintains the committed
 structure while results and supported evidence inform what the Agent changes
 next. MCP is the Agent-facing adapter in this view; <code>.vyg</code> is the plan source.</p>
 <p>The Runtime box includes Vessel and Cable, with internal components omitted.
-gRPC and Protobuf describe the <code>host-wire/1</code> transport
-to an out-of-process Host. Concrete Agent adapters and evidence access depend on
+"builtin" is the Runtime's own evaluation of function leaves; other leaves,
+such as tools, APIs, and worker LLMs, are reached as MCP tools. Concrete Agent adapters and evidence access depend on
 the chosen implementation; see <a href="RUNTIME_STATUS/">Runtime availability</a>.</p>
 <h2 id="prepare-your-first-workflow">Prepare your first workflow<a class="headerlink" href="#prepare-your-first-workflow" title="Permanent link">&para;</a></h2>
 <p>Name the dependencies and genuine tool leaves of one bounded task, then record
